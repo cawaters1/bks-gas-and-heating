@@ -186,6 +186,64 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── HOW IT WORKS ─────────────────────────────────────────────── */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-14">
+            <p className="text-accent font-bold text-xs uppercase tracking-widest mb-3">The Process</p>
+            <h2 className="text-4xl font-extrabold text-gray-900">Booked and sorted in 3 steps.</h2>
+            <p className="mt-3 text-gray-500 max-w-lg">
+              No stress, no guesswork. Getting your plumbing fixed is simpler than you think.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+            {/* connector line desktop */}
+            <div className="hidden md:block absolute top-10 left-[calc(16.66%+1rem)] right-[calc(16.66%+1rem)] h-px bg-steel z-0" />
+            {[
+              {
+                step: "01",
+                title: "Call or WhatsApp",
+                desc: "Get in touch any day of the week. Tell us what you need and where you are — we'll respond fast.",
+                cta: PHONE_HREF,
+                ctaLabel: "Call now",
+              },
+              {
+                step: "02",
+                title: "Free quote, same day",
+                desc: "We come out, assess the job and give you a fixed price upfront. No surprises. No obligation.",
+                cta: WHATSAPP,
+                ctaLabel: "WhatsApp us",
+              },
+              {
+                step: "03",
+                title: "Job done. Guaranteed.",
+                desc: "We get it sorted properly, leave everything tidy and back everything we do with our workmanship guarantee.",
+                cta: PHONE_HREF,
+                ctaLabel: "Get started",
+              },
+            ].map(({ step, title, desc, cta, ctaLabel }) => (
+              <div key={step} className="relative z-10 bg-offwhite rounded-xl p-8 border border-steel flex flex-col gap-5">
+                <div className="w-10 h-10 rounded-full bg-brand flex items-center justify-center shrink-0">
+                  <span className="text-white text-xs font-extrabold tracking-wider">{step}</span>
+                </div>
+                <div>
+                  <h3 className="font-extrabold text-gray-900 text-lg mb-2">{title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+                </div>
+                <a
+                  href={cta}
+                  target={cta === WHATSAPP ? "_blank" : undefined}
+                  rel={cta === WHATSAPP ? "noopener noreferrer" : undefined}
+                  className="mt-auto inline-flex items-center gap-1.5 text-accent font-bold text-sm hover:underline"
+                >
+                  {ctaLabel} →
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── SERVICES ─────────────────────────────────────────────────── */}
       <section id="services" className="py-24 px-6 bg-offwhite">
         <div className="max-w-6xl mx-auto">
@@ -320,6 +378,40 @@ export default function Home() {
                 <MapPin size={11} className="text-accent" />{area}
               </span>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── EMERGENCY STRIP ──────────────────────────────────────────── */}
+      <section className="bg-brand py-16 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="text-white text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 bg-red-500/20 border border-red-400/30 rounded-full px-4 py-1.5 text-xs font-bold text-red-300 uppercase tracking-widest mb-4">
+              <AlertTriangle size={12} /> Plumbing Emergency?
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight mb-3">
+              Burst pipe? Flooding?<br />
+              <span className="text-blue-200">We pick up the phone.</span>
+            </h2>
+            <p className="text-blue-100/60 text-base max-w-md mx-auto lg:mx-0">
+              Available 7 days a week for urgent call-outs across Bedford and surrounding areas. Don&apos;t wait — call now.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+            <a
+              href={PHONE_HREF}
+              className="flex items-center justify-center gap-2 bg-white text-brand font-extrabold px-8 py-4 rounded-lg text-base hover:bg-blue-50 transition-colors shadow-lg whitespace-nowrap"
+            >
+              <Phone size={18} /> Call {PHONE}
+            </a>
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-green-500 text-white font-bold px-8 py-4 rounded-lg text-base hover:bg-green-600 transition-colors whitespace-nowrap"
+            >
+              <MessageCircle size={18} /> WhatsApp
+            </a>
           </div>
         </div>
       </section>
