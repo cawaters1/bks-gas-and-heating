@@ -8,11 +8,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brand:       "#2828D4",
-        "brand-dark":  "#1E1EAA",
-        "brand-light": "#3D3DEF",
-        offwhite:    "#F4F5FF",
-        steel:       "#E8EAF6",
+        brand:        "#0D1F5C",
+        "brand-mid":  "#162966",
+        "brand-light":"#1D3A8A",
+        accent:       "#2563EB",
+        offwhite:     "#F7F8FC",
+        steel:        "#E4E8F0",
       },
     },
   },

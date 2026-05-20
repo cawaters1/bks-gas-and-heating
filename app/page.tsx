@@ -45,10 +45,10 @@ const services = [
 ];
 
 const whyUs = [
-  { icon: Shield,       title: "Fully Insured",      desc: "Public liability cover on every single job." },
-  { icon: Clock,        title: "Same-Day Response",   desc: "Available 7 days a week — emergencies welcome." },
-  { icon: CheckCircle,  title: "Upfront Pricing",     desc: "You get a fixed price before any work starts. Always." },
-  { icon: Star,         title: "Guaranteed Work",     desc: "All work backed by our workmanship guarantee." },
+  { icon: Shield,      title: "Fully Insured",     desc: "Public liability cover on every single job." },
+  { icon: Clock,       title: "Same-Day Response",  desc: "Available 7 days a week — emergencies welcome." },
+  { icon: CheckCircle, title: "Upfront Pricing",    desc: "Fixed price agreed before any work starts. Always." },
+  { icon: Star,        title: "Guaranteed Work",    desc: "All work backed by our workmanship guarantee." },
 ];
 
 const areas = [
@@ -61,45 +61,45 @@ const reviews = [
   {
     name: "Tom B.",
     location: "Bedford",
-    text: "Nick came out same day for a burst pipe under the kitchen sink. Sorted it within the hour, left everywhere spotless. Genuinely one of the best tradesmen I've used. Highly recommended.",
+    text: "Nick came out same day for a burst pipe under the kitchen sink. Sorted it within the hour, left everywhere spotless. Genuinely one of the best tradesmen I've used.",
   },
   {
     name: "Rachel H.",
     location: "Kempston",
-    text: "Had a full bathroom ripped out and refitted. Nick was professional throughout — great communication, tidy work and finished exactly on schedule. The bathroom looks incredible.",
+    text: "Had a full bathroom ripped out and refitted. Nick was professional throughout — great communication, tidy work and finished exactly on schedule. The result looks incredible.",
   },
   {
     name: "Dave W.",
     location: "Ampthill",
-    text: "Blocked drain had been causing problems for weeks. NJ Plumbing sorted it same day, cleared properly and even checked the other drains while there. Fair price too — will use again.",
+    text: "Blocked drain causing problems for weeks. NJ Plumbing sorted it same day, cleared properly and checked the other drains too. Fair price and no fuss.",
   },
 ];
 
 export default function Home() {
   return (
     <>
-      {/* ── STICKY TOP BAR ───────────────────────────────────────────── */}
-      <div className="bg-brand-dark text-white py-2 px-4 text-center text-sm">
+      {/* ── TOP BAR ──────────────────────────────────────────────────── */}
+      <div className="bg-brand text-white py-2 px-4 text-center text-sm">
         <a
           href={PHONE_HREF}
-          className="flex items-center justify-center gap-2 font-semibold hover:text-blue-200 transition-colors"
+          className="flex items-center justify-center gap-2 font-medium hover:text-blue-200 transition-colors"
         >
-          <Phone size={13} />
-          Available now — call <span className="underline underline-offset-2">{PHONE}</span> for a free quote
+          <Phone size={12} />
+          Available now — call <span className="font-bold">{PHONE}</span> for a free quote
         </a>
       </div>
 
       {/* ── NAV ──────────────────────────────────────────────────────── */}
-      <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Image
             src="/logo.jpg"
             alt="NJ Plumbing & Heating"
-            width={140}
-            height={56}
-            className="h-12 w-auto object-contain rounded-lg"
+            width={120}
+            height={48}
+            className="h-11 w-auto object-contain rounded-md"
           />
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-500">
             <a href="#services" className="hover:text-brand transition-colors">Services</a>
             <a href="#about"    className="hover:text-brand transition-colors">About</a>
             <a href="#areas"    className="hover:text-brand transition-colors">Areas</a>
@@ -110,7 +110,7 @@ export default function Home() {
               href={WHATSAPP}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-2 bg-green-500 text-white text-sm font-bold px-4 py-2.5 rounded-lg hover:bg-green-600 transition-colors"
+              className="hidden sm:flex items-center gap-1.5 text-green-600 border border-green-200 bg-green-50 hover:bg-green-100 text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
             >
               <MessageCircle size={14} /> WhatsApp
             </a>
@@ -118,201 +118,180 @@ export default function Home() {
               href={PHONE_HREF}
               className="flex items-center gap-2 bg-brand text-white text-sm font-bold px-5 py-2.5 rounded-lg hover:bg-brand-light transition-colors"
             >
-              <Phone size={14} />{PHONE}
+              <Phone size={14} /> {PHONE}
             </a>
           </div>
         </div>
       </header>
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative bg-brand text-white pt-24 pb-32 px-4 overflow-hidden">
-        {/* grid overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 60px)",
-          }}
-        />
-        {/* glow blob */}
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-blue-400/20 blur-3xl pointer-events-none" />
+      <section className="bg-brand text-white pt-28 pb-36 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand via-brand-mid to-brand-light opacity-100" />
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-brand/60 to-transparent" />
 
-        <div className="max-w-6xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium mb-8">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse inline-block" />
-              Available now — Bedford &amp; surrounding areas
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 border border-white/20 rounded-full px-4 py-1.5 text-xs font-semibold tracking-widest uppercase text-blue-200 mb-8">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse inline-block" />
+              Bedford &amp; surrounding areas
             </div>
             <h1 className="text-5xl sm:text-6xl font-extrabold leading-[1.05] mb-6 tracking-tight">
-              Your Local<br />
               Plumbing &amp; Heating<br />
-              <span className="text-blue-200">Expert.</span>
+              <span className="text-blue-300">Done Properly.</span>
             </h1>
-            <p className="text-lg text-blue-100 leading-relaxed mb-10 max-w-lg">
-              Fast, reliable plumbing repairs, bathroom installations and drainage across Bedford and the surrounding area. Upfront pricing. No hidden costs. Quality guaranteed.
+            <p className="text-lg text-blue-100/80 leading-relaxed mb-10 max-w-xl">
+              Professional repairs, installations and drainage across Bedford. Upfront pricing, reliable workmanship and a service you can actually trust.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
+            <div className="flex flex-col sm:flex-row gap-3 mb-12">
               <a
                 href={PHONE_HREF}
-                className="flex items-center justify-center gap-2 bg-white text-brand font-extrabold px-8 py-4 rounded-xl text-base hover:bg-blue-50 transition-colors shadow-xl"
+                className="flex items-center justify-center gap-2 bg-white text-brand font-extrabold px-8 py-4 rounded-lg text-base hover:bg-blue-50 transition-colors shadow-lg"
               >
-                <Phone size={18} /> Call {PHONE}
+                <Phone size={17} /> Call {PHONE}
               </a>
               <a
                 href={WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-green-500 text-white font-bold px-8 py-4 rounded-xl text-base hover:bg-green-600 transition-colors"
+                className="flex items-center justify-center gap-2 border border-white/25 text-white font-semibold px-8 py-4 rounded-lg text-base hover:bg-white/10 transition-colors"
               >
-                <MessageCircle size={18} /> WhatsApp Us
+                <MessageCircle size={17} /> WhatsApp Us
               </a>
             </div>
-            <div className="flex flex-wrap gap-5 text-sm text-blue-200">
+            <div className="flex flex-wrap gap-6 text-sm text-blue-200/70">
               {["Fully insured", "No call-out fee", "Free quotes", "7-day availability"].map((t) => (
                 <span key={t} className="flex items-center gap-2">
-                  <CheckCircle size={15} className="text-green-400" />{t}
+                  <CheckCircle size={14} className="text-green-400" />{t}
                 </span>
               ))}
-            </div>
-          </div>
-
-          {/* logo panel */}
-          <div className="hidden lg:flex items-center justify-center">
-            <div className="bg-brand-dark rounded-3xl p-12 border border-white/10 shadow-2xl relative">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/5 to-transparent" />
-              <Image
-                src="/logo.jpg"
-                alt="NJ Plumbing & Heating"
-                width={260}
-                height={260}
-                className="rounded-2xl relative z-10"
-              />
             </div>
           </div>
         </div>
       </section>
 
       {/* ── TRUST BAR ────────────────────────────────────────────────── */}
-      <section className="bg-brand-dark text-white py-10 px-4">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <section className="bg-white border-b border-gray-100 py-10 px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
             { val: "5★",   label: "Customer Rating" },
             { val: "200+", label: "Jobs Completed" },
             { val: "7",    label: "Days a Week" },
-            { val: "Free", label: "No-Obligation Quote" },
+            { val: "Free", label: "No-Obligation Quotes" },
           ].map((s) => (
             <div key={s.label}>
-              <p className="text-3xl font-extrabold text-blue-200">{s.val}</p>
-              <p className="text-sm text-blue-300/70 mt-1">{s.label}</p>
+              <p className="text-3xl font-extrabold text-brand">{s.val}</p>
+              <p className="text-sm text-gray-400 mt-1">{s.label}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* ── SERVICES ─────────────────────────────────────────────────── */}
-      <section id="services" className="py-24 px-4 bg-offwhite">
+      <section id="services" className="py-24 px-6 bg-offwhite">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-brand font-bold text-sm uppercase tracking-widest mb-3">What We Do</p>
+          <div className="mb-14">
+            <p className="text-accent font-bold text-xs uppercase tracking-widest mb-3">What We Do</p>
             <h2 className="text-4xl font-extrabold text-gray-900">Plumbing, Heating &amp; Drainage</h2>
-            <p className="mt-4 text-gray-500 max-w-xl mx-auto">
-              From a dripping tap to a full bathroom renovation — we do it all. Based in Bedford and covering the whole surrounding area.
+            <p className="mt-4 text-gray-500 max-w-xl">
+              From a dripping tap to a full bathroom renovation — based in Bedford, covering the whole surrounding area.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
-                className="bg-white rounded-2xl p-7 border border-gray-100 hover:border-brand hover:shadow-lg transition-all group cursor-default"
+                className="bg-white rounded-xl p-7 border border-gray-100 hover:border-accent/30 hover:shadow-md transition-all group cursor-default"
               >
-                <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center mb-5 group-hover:bg-brand transition-colors">
-                  <Icon size={22} className="text-brand group-hover:text-white transition-colors" />
+                <div className="w-10 h-10 rounded-lg bg-brand/8 flex items-center justify-center mb-5 group-hover:bg-brand transition-colors" style={{ backgroundColor: "rgb(13 31 92 / 0.07)" }}>
+                  <Icon size={20} className="text-brand group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="font-bold text-gray-900 text-lg mb-2">{title}</h3>
+                <h3 className="font-bold text-gray-900 text-base mb-2">{title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
-          <div className="mt-12 text-center">
+          <div className="mt-10">
             <a
               href={PHONE_HREF}
-              className="inline-flex items-center gap-2 bg-brand text-white font-bold px-8 py-4 rounded-xl hover:bg-brand-light transition-colors text-base"
+              className="inline-flex items-center gap-2 bg-brand text-white font-bold px-7 py-3.5 rounded-lg hover:bg-brand-light transition-colors text-sm"
             >
-              <Phone size={16} /> Call for a free quote
+              <Phone size={15} /> Get a free quote
             </a>
           </div>
         </div>
       </section>
 
       {/* ── WHY US ───────────────────────────────────────────────────── */}
-      <section id="about" className="py-24 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-brand font-bold text-sm uppercase tracking-widest mb-3">Why Choose NJ</p>
-              <h2 className="text-4xl font-extrabold text-gray-900 mb-6">
-                A plumber you can<br />
-                <span className="text-brand">actually rely on.</span>
-              </h2>
-              <p className="text-gray-500 leading-relaxed mb-4">
-                NJ Plumbing &amp; Heating was built on doing things the right way — honest pricing, clean work and treating every customer with respect. No cowboys. No surprise invoices. Just a proper job done properly.
-              </p>
-              <p className="text-gray-500 leading-relaxed mb-8">
-                Based in Bedford and covering all surrounding areas, Nick brings a professional, friendly approach to every job — whether it&apos;s a quick repair or a full bathroom refit.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href={PHONE_HREF}
-                  className="inline-flex items-center gap-2 bg-brand text-white font-bold px-6 py-3 rounded-xl hover:bg-brand-light transition-colors"
-                >
-                  <Phone size={16} /> {PHONE}
-                </a>
-                <a
-                  href={WHATSAPP}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-green-500 text-white font-bold px-6 py-3 rounded-xl hover:bg-green-600 transition-colors"
-                >
-                  <MessageCircle size={16} /> WhatsApp
-                </a>
-              </div>
+      <section id="about" className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p className="text-accent font-bold text-xs uppercase tracking-widest mb-3">Why Choose NJ</p>
+            <h2 className="text-4xl font-extrabold text-gray-900 mb-6 leading-tight">
+              A plumber you can<br />
+              <span className="text-brand">actually rely on.</span>
+            </h2>
+            <p className="text-gray-500 leading-relaxed mb-4">
+              NJ Plumbing &amp; Heating was built on one principle — do the job properly and treat every customer with respect. No hidden charges, no upselling, no cowboys. Just reliable work from someone who takes pride in what they do.
+            </p>
+            <p className="text-gray-500 leading-relaxed mb-10">
+              Based in Bedford, Nick brings a professional and friendly approach to every job — from a quick repair to a full bathroom refit. You&apos;ll always know what you&apos;re paying before work begins.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href={PHONE_HREF}
+                className="inline-flex items-center gap-2 bg-brand text-white font-bold px-6 py-3 rounded-lg hover:bg-brand-light transition-colors text-sm"
+              >
+                <Phone size={15} /> {PHONE}
+              </a>
+              <a
+                href={WHATSAPP}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-green-600 border border-green-200 bg-green-50 hover:bg-green-100 font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+              >
+                <MessageCircle size={15} /> WhatsApp
+              </a>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {whyUs.map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="bg-offwhite rounded-2xl p-6 border border-steel">
-                  <Icon size={24} className="text-brand mb-3" />
-                  <h3 className="font-bold text-gray-900 mb-1">{title}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">{desc}</p>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            {whyUs.map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="bg-offwhite rounded-xl p-6 border border-steel">
+                <div className="w-9 h-9 rounded-lg bg-brand/10 flex items-center justify-center mb-4">
+                  <Icon size={18} className="text-brand" />
                 </div>
-              ))}
-            </div>
+                <h3 className="font-bold text-gray-900 text-sm mb-1">{title}</h3>
+                <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ── REVIEWS ──────────────────────────────────────────────────── */}
-      <section className="py-24 px-4 bg-offwhite">
+      <section className="py-24 px-6 bg-offwhite">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-brand font-bold text-sm uppercase tracking-widest mb-3">Reviews</p>
-            <h2 className="text-4xl font-extrabold text-gray-900">What Our Customers Say</h2>
-            <div className="flex items-center justify-center gap-1 mt-3">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />
-              ))}
-              <span className="ml-2 text-gray-400 text-sm">5.0 · Google Reviews</span>
+          <div className="mb-12">
+            <p className="text-accent font-bold text-xs uppercase tracking-widest mb-3">Reviews</p>
+            <div className="flex items-end gap-4">
+              <h2 className="text-4xl font-extrabold text-gray-900">What Our Customers Say</h2>
+              <div className="flex items-center gap-1 mb-1">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
+                ))}
+                <span className="ml-1.5 text-gray-400 text-sm">5.0</span>
+              </div>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {reviews.map((r) => (
-              <div key={r.name} className="bg-white rounded-2xl p-7 border border-steel flex flex-col">
+              <div key={r.name} className="bg-white rounded-xl p-7 border border-gray-100 flex flex-col">
                 <div className="flex gap-0.5 mb-4">
                   {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} size={14} className="fill-yellow-400 text-yellow-400" />
+                    <Star key={i} size={13} className="fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-5 flex-1">&ldquo;{r.text}&rdquo;</p>
-                <div>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">&ldquo;{r.text}&rdquo;</p>
+                <div className="border-t border-gray-50 pt-4">
                   <p className="font-bold text-gray-900 text-sm">{r.name}</p>
                   <p className="text-xs text-gray-400">{r.location}</p>
                 </div>
@@ -323,22 +302,22 @@ export default function Home() {
       </section>
 
       {/* ── AREAS ────────────────────────────────────────────────────── */}
-      <section id="areas" className="py-24 px-4 bg-white">
+      <section id="areas" className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-brand font-bold text-sm uppercase tracking-widest mb-3">Coverage</p>
+          <div className="mb-12">
+            <p className="text-accent font-bold text-xs uppercase tracking-widest mb-3">Coverage</p>
             <h2 className="text-4xl font-extrabold text-gray-900">Areas We Cover</h2>
-            <p className="mt-4 text-gray-500 max-w-xl mx-auto">
+            <p className="mt-3 text-gray-500 max-w-lg">
               Based in Bedford — serving the whole surrounding area with the same fast, professional service.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+          <div className="flex flex-wrap gap-2.5 max-w-3xl">
             {areas.map((area) => (
               <span
                 key={area}
-                className="flex items-center gap-1.5 bg-offwhite border border-steel rounded-full px-4 py-2 text-sm font-medium text-gray-700 hover:border-brand hover:text-brand transition-colors cursor-default"
+                className="flex items-center gap-1.5 bg-offwhite border border-steel rounded-full px-4 py-2 text-sm font-medium text-gray-600 hover:border-brand hover:text-brand transition-colors cursor-default"
               >
-                <MapPin size={12} className="text-brand" />{area}
+                <MapPin size={11} className="text-accent" />{area}
               </span>
             ))}
           </div>
@@ -346,150 +325,146 @@ export default function Home() {
       </section>
 
       {/* ── CONTACT ──────────────────────────────────────────────────── */}
-      <section id="contact" className="py-24 px-4 bg-brand text-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <p className="text-blue-200 font-bold text-sm uppercase tracking-widest mb-3">Get In Touch</p>
-              <h2 className="text-4xl font-extrabold mb-6">
-                Need a plumber?<br />
-                <span className="text-blue-200">We&apos;re ready now.</span>
-              </h2>
-              <p className="text-blue-100 leading-relaxed mb-10">
-                Free quotes on all work. Same-day bookings available. No call-out charge. Call, WhatsApp or email — we&apos;ll get back to you fast.
-              </p>
-              <div className="space-y-5">
-                <a href={PHONE_HREF} className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-brand-light transition-colors shrink-0">
-                    <Phone size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-blue-300 uppercase tracking-widest">Phone</p>
-                    <p className="font-bold text-xl">{PHONE}</p>
-                  </div>
-                </a>
-                <a
-                  href={WHATSAPP}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 group"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-green-500/80 flex items-center justify-center group-hover:bg-green-500 transition-colors shrink-0">
-                    <MessageCircle size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-blue-300 uppercase tracking-widest">WhatsApp</p>
-                    <p className="font-bold">Message us directly</p>
-                  </div>
-                </a>
-                <a href={EMAIL_HREF} className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-brand-light transition-colors shrink-0">
-                    <Mail size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-blue-300 uppercase tracking-widest">Email</p>
-                    <p className="font-bold">{EMAIL}</p>
-                  </div>
-                </a>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                    <MapPin size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-blue-300 uppercase tracking-widest">Location</p>
-                    <p className="font-bold">Bedford, Bedfordshire</p>
-                  </div>
+      <section id="contact" className="py-24 px-6 bg-brand">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="text-white">
+            <p className="text-blue-300/70 font-bold text-xs uppercase tracking-widest mb-3">Get In Touch</p>
+            <h2 className="text-4xl font-extrabold mb-5 leading-tight">
+              Need a plumber?<br />
+              <span className="text-blue-300">Let&apos;s get it sorted.</span>
+            </h2>
+            <p className="text-blue-100/70 leading-relaxed mb-10 max-w-md">
+              Free quotes on all work. Same-day bookings available. No call-out charge. Call, WhatsApp or email and we&apos;ll come back to you fast.
+            </p>
+            <div className="space-y-4">
+              <a href={PHONE_HREF} className="flex items-center gap-4 group">
+                <div className="w-11 h-11 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors shrink-0">
+                  <Phone size={18} className="text-white" />
+                </div>
+                <div>
+                  <p className="text-xs text-blue-300/60 uppercase tracking-widest">Phone</p>
+                  <p className="font-bold text-lg">{PHONE}</p>
+                </div>
+              </a>
+              <a
+                href={WHATSAPP}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 group"
+              >
+                <div className="w-11 h-11 rounded-lg bg-green-500/20 flex items-center justify-center group-hover:bg-green-500/40 transition-colors shrink-0">
+                  <MessageCircle size={18} className="text-green-300" />
+                </div>
+                <div>
+                  <p className="text-xs text-blue-300/60 uppercase tracking-widest">WhatsApp</p>
+                  <p className="font-bold">Message us directly</p>
+                </div>
+              </a>
+              <a href={EMAIL_HREF} className="flex items-center gap-4 group">
+                <div className="w-11 h-11 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors shrink-0">
+                  <Mail size={18} className="text-white" />
+                </div>
+                <div>
+                  <p className="text-xs text-blue-300/60 uppercase tracking-widest">Email</p>
+                  <p className="font-bold text-sm">{EMAIL}</p>
+                </div>
+              </a>
+              <div className="flex items-center gap-4">
+                <div className="w-11 h-11 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                  <MapPin size={18} className="text-white" />
+                </div>
+                <div>
+                  <p className="text-xs text-blue-300/60 uppercase tracking-widest">Location</p>
+                  <p className="font-bold">Bedford, Bedfordshire</p>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* contact card */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <h3 className="font-bold text-xl mb-2">Request a callback</h3>
-              <p className="text-blue-200 text-sm mb-6">Fill in your details and we&apos;ll call you back within the hour.</p>
-              <div className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs text-blue-300 uppercase tracking-widest mb-1.5">First name</label>
-                    <input
-                      type="text"
-                      className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-blue-300"
-                      placeholder="John"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs text-blue-300 uppercase tracking-widest mb-1.5">Last name</label>
-                    <input
-                      type="text"
-                      className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-blue-300"
-                      placeholder="Smith"
-                    />
-                  </div>
-                </div>
+          {/* form card */}
+          <div className="bg-white rounded-2xl p-8 shadow-xl">
+            <h3 className="font-extrabold text-gray-900 text-xl mb-1">Request a callback</h3>
+            <p className="text-gray-400 text-sm mb-7">Fill in your details and we&apos;ll call you back within the hour.</p>
+            <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs text-blue-300 uppercase tracking-widest mb-1.5">Phone number</label>
+                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-1.5">First name</label>
                   <input
-                    type="tel"
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-blue-300"
-                    placeholder="07700 000000"
+                    type="text"
+                    className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 placeholder:text-gray-300 focus:outline-none focus:border-brand transition-colors"
+                    placeholder="John"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-blue-300 uppercase tracking-widest mb-1.5">Service needed</label>
-                  <select className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-300">
-                    <option value="" className="text-gray-900">Select a service</option>
-                    <option value="repair"     className="text-gray-900">Plumbing repair</option>
-                    <option value="bathroom"   className="text-gray-900">Bathroom installation</option>
-                    <option value="drainage"   className="text-gray-900">Drainage &amp; unblocking</option>
-                    <option value="leak"       className="text-gray-900">Leak detection</option>
-                    <option value="emergency"  className="text-gray-900">Emergency call-out</option>
-                    <option value="heating"    className="text-gray-900">Heating system work</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-xs text-blue-300 uppercase tracking-widest mb-1.5">Tell us about the job</label>
-                  <textarea
-                    rows={3}
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-blue-300 resize-none"
-                    placeholder="Describe what you need..."
+                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-1.5">Last name</label>
+                  <input
+                    type="text"
+                    className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 placeholder:text-gray-300 focus:outline-none focus:border-brand transition-colors"
+                    placeholder="Smith"
                   />
                 </div>
-                <a
-                  href={PHONE_HREF}
-                  className="block w-full text-center bg-white text-brand font-extrabold py-4 rounded-xl hover:bg-blue-50 transition-colors"
-                >
-                  Call {PHONE} →
-                </a>
-                <a
-                  href={WHATSAPP}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full text-center bg-green-500 text-white font-bold py-3 rounded-xl hover:bg-green-600 transition-colors text-sm"
-                >
-                  <span className="flex items-center justify-center gap-2">
-                    <MessageCircle size={16} /> Or message on WhatsApp
-                  </span>
-                </a>
               </div>
+              <div>
+                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-1.5">Phone number</label>
+                <input
+                  type="tel"
+                  className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 placeholder:text-gray-300 focus:outline-none focus:border-brand transition-colors"
+                  placeholder="07700 000000"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-1.5">Service needed</label>
+                <select className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-700 focus:outline-none focus:border-brand transition-colors bg-white">
+                  <option value="">Select a service</option>
+                  <option value="repair">Plumbing repair</option>
+                  <option value="bathroom">Bathroom installation</option>
+                  <option value="drainage">Drainage &amp; unblocking</option>
+                  <option value="leak">Leak detection</option>
+                  <option value="emergency">Emergency call-out</option>
+                  <option value="heating">Heating system work</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-1.5">Tell us about the job</label>
+                <textarea
+                  rows={3}
+                  className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 placeholder:text-gray-300 focus:outline-none focus:border-brand transition-colors resize-none"
+                  placeholder="Describe what you need..."
+                />
+              </div>
+              <a
+                href={PHONE_HREF}
+                className="block w-full text-center bg-brand text-white font-extrabold py-4 rounded-lg hover:bg-brand-light transition-colors text-sm"
+              >
+                Call {PHONE} →
+              </a>
+              <a
+                href={WHATSAPP}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full text-center border border-green-200 text-green-600 font-semibold py-3 rounded-lg hover:bg-green-50 transition-colors text-sm"
+              >
+                <MessageCircle size={15} /> Or message on WhatsApp
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* ── FOOTER ───────────────────────────────────────────────────── */}
-      <footer className="bg-brand-dark text-white py-8 px-4">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-blue-300">
+      <footer className="bg-brand text-white border-t border-white/10 py-8 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <Image
             src="/logo.jpg"
             alt="NJ Plumbing & Heating"
-            width={100}
-            height={40}
-            className="rounded-lg h-10 w-auto object-contain"
+            width={80}
+            height={32}
+            className="rounded-md h-9 w-auto object-contain"
           />
-          <p className="text-blue-400">
+          <p className="text-blue-300/50 text-sm">
             © {new Date().getFullYear()} NJ Plumbing &amp; Heating. All rights reserved.
           </p>
-          <a href={PHONE_HREF} className="text-white font-bold hover:text-blue-200 transition-colors">
+          <a href={PHONE_HREF} className="text-white font-semibold text-sm hover:text-blue-200 transition-colors">
             {PHONE}
           </a>
         </div>
@@ -503,7 +478,7 @@ export default function Home() {
         className="fixed bottom-6 right-6 z-50 bg-green-500 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-2xl hover:bg-green-600 transition-colors"
         aria-label="Chat on WhatsApp"
       >
-        <MessageCircle size={26} />
+        <MessageCircle size={25} />
       </a>
     </>
   );
