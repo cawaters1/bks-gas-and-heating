@@ -1,0 +1,271 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  Phone,
+  Droplets,
+  CheckCircle,
+  AlertTriangle,
+  Camera,
+  Zap,
+  Layers,
+  Settings,
+  Shield,
+  Search,
+} from "lucide-react";
+import CTABanner from "../../components/CTABanner";
+import { PHONE, PHONE_HREF } from "../../lib/constants";
+
+export const metadata: Metadata = {
+  title: "Drain Unblocking Bedford | CCTV Surveys & High Pressure Jetting",
+  description:
+    "Professional drain unblocking and drainage services in Bedford. Blocked drains cleared same day with CCTV surveys and high-pressure jetting. Call 07927 910665.",
+};
+
+const serviceCards = [
+  {
+    icon: Droplets,
+    title: "Blocked Drain Clearing",
+    desc: "Fast clearance of all types of blocked drains — kitchen, bathroom, external and more.",
+  },
+  {
+    icon: Zap,
+    title: "High-Pressure Jetting",
+    desc: "Powerful water jetting to clear stubborn blockages and remove built-up grease and debris.",
+  },
+  {
+    icon: Camera,
+    title: "CCTV Drain Survey",
+    desc: "Camera inspection to pinpoint blockages, damage or root intrusion inside your drains.",
+  },
+  {
+    icon: Settings,
+    title: "Sewer Unblocking",
+    desc: "Full sewer clearance for residential and commercial properties across Bedford.",
+  },
+  {
+    icon: Layers,
+    title: "Root Cutting",
+    desc: "Specialist cutting equipment to remove tree roots growing inside drain pipes.",
+  },
+  {
+    icon: Shield,
+    title: "External Drain Repairs",
+    desc: "Broken or collapsed drain sections repaired or replaced to restore flow.",
+  },
+  {
+    icon: Layers,
+    title: "Drain Lining",
+    desc: "No-dig drain lining to repair cracks and joint failures from the inside.",
+  },
+  {
+    icon: Search,
+    title: "Manhole Clearing",
+    desc: "Blocked or overflowing manholes cleared and rodded thoroughly.",
+  },
+];
+
+const processSteps = [
+  {
+    step: "1",
+    title: "Assessment",
+    desc: "We assess the blockage and identify the best method to clear it — either rods, jetting or CCTV.",
+  },
+  {
+    step: "2",
+    title: "Clearance",
+    desc: "The blockage is cleared using high-pressure water jetting or specialist drainage rods.",
+  },
+  {
+    step: "3",
+    title: "Inspection",
+    desc: "We check the drain is fully flowing and carry out a CCTV inspection if needed.",
+  },
+  {
+    step: "4",
+    title: "Advice",
+    desc: "We advise on any underlying issues found and provide a report if a survey was carried out.",
+  },
+];
+
+export default function DrainagePage() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="bg-brand text-white py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <nav className="text-sm text-white/50 mb-6">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="mx-2">/</span>
+            <Link href="/services" className="hover:text-white transition-colors">Services</Link>
+            <span className="mx-2">/</span>
+            <span className="text-white">Drainage</span>
+          </nav>
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center">
+              <Droplets size={28} className="text-white" />
+            </div>
+            <h1 className="text-5xl font-extrabold">
+              Drain Unblocking &amp; Drainage Services in Bedford
+            </h1>
+          </div>
+          <p className="text-blue-100 text-lg max-w-2xl mt-4">
+            Blocked drains cleared the same day across Bedford and Bedfordshire. High-pressure
+            jetting, CCTV surveys and full drainage repairs — fast, professional and fairly priced.
+          </p>
+          <a
+            href={PHONE_HREF}
+            className="inline-flex items-center gap-2 bg-white text-brand font-bold px-6 py-3 rounded-xl mt-8 hover:bg-offwhite transition-colors"
+          >
+            <Phone size={18} />
+            Call {PHONE}
+          </a>
+        </div>
+      </section>
+
+      {/* Service cards */}
+      <section className="bg-offwhite py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-gray-900">Drainage Services We Offer</h2>
+            <p className="text-gray-500 mt-3 max-w-xl mx-auto">
+              Comprehensive drainage services for residential and commercial properties
+              across Bedford and Bedfordshire.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {serviceCards.map(({ icon: Icon, title, desc }) => (
+              <div
+                key={title}
+                className="bg-white rounded-2xl p-6 border border-steel hover:border-brand hover:shadow-md transition-all"
+              >
+                <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center mb-4">
+                  <Icon size={20} className="text-brand" />
+                </div>
+                <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Signs of a blocked drain */}
+      <section className="bg-white py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
+            Signs of a Blocked Drain
+          </h2>
+          <p className="text-gray-600 leading-relaxed mb-6">
+            Don&apos;t ignore the warning signs — a small blockage left untreated can quickly
+            become a serious problem. Look out for:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              "Water draining slowly from sinks, baths or showers",
+              "Gurgling sounds from plugs or toilets",
+              "Unpleasant smells from drains",
+              "Water pooling on the floor near drains",
+              "Toilets that take a long time to flush clear",
+              "Overflowing manholes in the garden",
+              "Wet patches on lawns above drain runs",
+              "Sewage smell inside or outside the property",
+            ].map((sign) => (
+              <div key={sign} className="flex items-start gap-3">
+                <AlertTriangle size={16} className="text-yellow-500 flex-shrink-0 mt-0.5" />
+                <p className="text-gray-700 text-sm">{sign}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our process */}
+      <section className="bg-offwhite py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-extrabold text-gray-900 mb-10 text-center">
+            How We Clear Your Drain
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {processSteps.map(({ step, title, desc }) => (
+              <div key={step} className="text-center">
+                <div className="w-14 h-14 rounded-full bg-brand flex items-center justify-center text-white font-extrabold text-xl mx-auto mb-4">
+                  {step}
+                </div>
+                <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why us */}
+      <section className="bg-white py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
+            Why Choose Us for Drainage in Bedford?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              "Same-day drain unblocking across Bedford",
+              "No call-out fee — free quotes on all drainage work",
+              "High-pressure jetting equipment on every vehicle",
+              "CCTV surveys to find hidden problems",
+              "Upfront fixed pricing — no hidden charges",
+              "Fully insured with public liability cover",
+            ].map((point) => (
+              <div key={point} className="flex items-center gap-3">
+                <CheckCircle size={18} className="text-brand flex-shrink-0" />
+                <p className="text-gray-700 text-sm">{point}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-offwhite py-16 px-4">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-extrabold text-gray-900 mb-8">Drainage FAQ</h2>
+          <div className="divide-y divide-steel">
+            {[
+              {
+                q: "How quickly can you unblock a drain in Bedford?",
+                a: "We offer same-day drain unblocking across Bedford and the surrounding area. For most locations in Bedford we can be with you within a few hours.",
+              },
+              {
+                q: "How much does drain unblocking cost in Bedford?",
+                a: "Most drain blockages are cleared from £80+VAT. We always provide a fixed, upfront quote before any work starts so there are no surprises.",
+              },
+              {
+                q: "What is a CCTV drain survey?",
+                a: "A CCTV drain survey uses a specialist camera pushed through your drains to inspect the condition from the inside. It can identify blockages, cracks, root intrusion and other problems that can't be seen from the surface.",
+              },
+              {
+                q: "Can you unblock an outside drain?",
+                a: "Yes — we unblock external drains, gullets and manholes as well as internal drainage. All our vehicles carry high-pressure jetting equipment.",
+              },
+              {
+                q: "Do you provide a report after a CCTV survey?",
+                a: "Yes — we provide a written report with our findings and recommendations following any CCTV drain survey.",
+              },
+            ].map(({ q, a }) => (
+              <details key={q} className="group">
+                <summary className="cursor-pointer font-bold py-4 text-gray-900 list-none flex items-center justify-between gap-4 hover:text-brand transition-colors">
+                  {q}
+                  <span className="text-brand text-lg group-open:rotate-45 transition-transform flex-shrink-0">+</span>
+                </summary>
+                <p className="pb-4 text-gray-500 leading-relaxed text-sm">{a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTABanner
+        title="Blocked drain in Bedford?"
+        subtitle="Same-day drain unblocking. No call-out fee. Call us now."
+      />
+    </>
+  );
+}

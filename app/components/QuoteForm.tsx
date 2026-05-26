@@ -1,0 +1,214 @@
+"use client";
+
+import { useState } from "react";
+import { CheckCircle, Phone, ChevronLeft } from "lucide-react";
+import { PHONE, PHONE_HREF } from "../lib/constants";
+
+const services = [
+  "Plumbing repair",
+  "Drain unblocking",
+  "Bathroom installation",
+  "Underfloor heating",
+  "Radiator fitting",
+  "Emergency call-out",
+  "Other",
+];
+
+interface FormData {
+  service: string;
+  description: string;
+  postcode: string;
+  name: string;
+  phone: string;
+  preferredDate: string;
+}
+
+export default function QuoteForm() {
+  const [step, setStep] = useState(1);
+  const [data, setData] = useState<FormData>({
+    service: "",
+    description: "",
+    postcode: "",
+    name: "",
+    phone: "",
+    preferredDate: "",
+  });
+
+  const progress = Math.min(step, 3);
+
+  function selectService(s: string) {
+    setData((d) => ({ ...d, service: s }));
+    setStep(2);
+  }
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStep(4);
+  }
+
+  if (step === 4) {
+    return (
+      <div className="flex flex-col items-center justify-center py-12 text-center gap-6">
+        <CheckCircle size={56} className="text-green-400" />
+        <div>
+          <h3 className="text-2xl font-extrabold text-white mb-2">Request received!</h3>
+          <p className="text-white/70">We&apos;ll call you back within the hour.</p>
+        </div>
+        <a
+          href={PHONE_HREF}
+          className="flex items-center gap-2 bg-white text-brand font-bold px-8 py-4 rounded-xl text-lg hover:bg-offwhite transition-colors"
+        >
+          <Phone size={20} />
+          Call {PHONE}
+        </a>
+      </div>
+    );
+  }
+
+  const inputClass =
+    "w-full bg-white/10 border border-white/20 rounded-xl text-white placeholder:text-white/30 px-4 py-3 focus:outline-none focus:border-white/50 transition-colors";
+
+  return (
+    <div>
+      {/* Progress bar */}
+      <div className="mb-6">
+        <div className="flex justify-between items-center mb-2">
+          <span className="text-white/60 text-sm">Step {Math.min(step, 3)} of 3</span>
+        </div>
+        <div className="flex gap-1">
+          {[1, 2, 3].map((s) => (
+            <div
+              key={s}
+              className={`h-1.5 flex-1 rounded-full transition-colors ${
+                s <= progress ? "bg-white" : "bg-white/20"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Step 1 */}
+      {step === 1 && (
+        <div>
+          <h3 className="text-white font-bold text-lg mb-4">What service do you need?</h3>
+          <div className="grid grid-cols-2 gap-3">
+            {services.map((s) => (
+              <button
+                key={s}
+                onClick={() => selectService(s)}
+                className="bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 text-white text-sm font-medium rounded-xl px-4 py-3 text-left transition-colors"
+              >
+                {s}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Step 2 */}
+      {step === 2 && (
+        <div>
+          <h3 className="text-white font-bold text-lg mb-4">Describe the job</h3>
+          <div className="space-y-4">
+            <div>
+              <label className="block text-white/70 text-sm mb-1">
+                Job description
+              </label>
+              <textarea
+                rows={4}
+                value={data.description}
+                onChange={(e) => setData((d) => ({ ...d, description: e.target.value }))}
+                placeholder="Tell us what needs doing..."
+                className={inputClass}
+              />
+            </div>
+            <div>
+              <label className="block text-white/70 text-sm mb-1">Postcode</label>
+              <input
+                type="text"
+                value={data.postcode}
+                onChange={(e) => setData((d) => ({ ...d, postcode: e.target.value }))}
+                placeholder="e.g. MK40 1AA"
+                className={inputClass}
+              />
+            </div>
+            <div className="flex gap-3 pt-2">
+              <button
+                onClick={() => setStep(1)}
+                className="flex items-center gap-1 text-white/60 hover:text-white text-sm transition-colors"
+              >
+                <ChevronLeft size={16} />
+                Back
+              </button>
+              <button
+                onClick={() => setStep(3)}
+                disabled={!data.description.trim()}
+                className="flex-1 bg-white text-brand font-bold py-3 rounded-xl hover:bg-offwhite transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Step 3 */}
+      {step === 3 && (
+        <form onSubmit={handleSubmit}>
+          <h3 className="text-white font-bold text-lg mb-4">Your details</h3>
+          <div className="space-y-4">
+            <div>
+              <label className="block text-white/70 text-sm mb-1">Full name</label>
+              <input
+                type="text"
+                required
+                value={data.name}
+                onChange={(e) => setData((d) => ({ ...d, name: e.target.value }))}
+                placeholder="Your name"
+                className={inputClass}
+              />
+            </div>
+            <div>
+              <label className="block text-white/70 text-sm mb-1">Phone number</label>
+              <input
+                type="tel"
+                required
+                value={data.phone}
+                onChange={(e) => setData((d) => ({ ...d, phone: e.target.value }))}
+                placeholder="Your phone number"
+                className={inputClass}
+              />
+            </div>
+            <div>
+              <label className="block text-white/70 text-sm mb-1">
+                Preferred date (optional)
+              </label>
+              <input
+                type="date"
+                value={data.preferredDate}
+                onChange={(e) => setData((d) => ({ ...d, preferredDate: e.target.value }))}
+                className={inputClass}
+              />
+            </div>
+            <div className="flex gap-3 pt-2">
+              <button
+                type="button"
+                onClick={() => setStep(2)}
+                className="flex items-center gap-1 text-white/60 hover:text-white text-sm transition-colors"
+              >
+                <ChevronLeft size={16} />
+                Back
+              </button>
+              <button
+                type="submit"
+                className="flex-1 bg-white text-brand font-bold py-3 rounded-xl hover:bg-offwhite transition-colors"
+              >
+                Request Free Quote
+              </button>
+            </div>
+          </div>
+        </form>
+      )}
+    </div>
+  );
+}
