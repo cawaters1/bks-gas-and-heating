@@ -13,16 +13,20 @@ import {
 } from "lucide-react";
 import CTABanner from "../components/CTABanner";
 import { PHONE, PHONE_HREF, AREAS } from "../lib/constants";
+import BreadcrumbSchema from "../components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "About NJ Plumbing & Heating | Bedford Plumber",
   description:
     "NJ Plumbing & Heating — Bedford-based plumbing, drainage and heating specialists. Honest service, upfront pricing and quality guaranteed on every job.",
+  alternates: { canonical: "/about" },
+  openGraph: { url: "https://njplumbingheating.co.uk/about" },
 };
 
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://njplumbingheating.co.uk" }, { name: "About", url: "https://njplumbingheating.co.uk/about" }]} />
       {/* Hero */}
       <section className="bg-brand text-white py-20 px-4">
         <div className="max-w-7xl mx-auto">

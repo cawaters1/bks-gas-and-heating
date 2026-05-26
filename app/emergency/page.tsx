@@ -10,11 +10,14 @@ import {
   Shield,
 } from "lucide-react";
 import { PHONE, PHONE_HREF, AREAS, GOOGLE_BUSINESS_URL } from "../lib/constants";
+import BreadcrumbSchema from "../components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Emergency Plumber Bedford | 24/7 Burst Pipes & Flooding",
   description:
     "Emergency plumber in Bedford available 24/7. Burst pipes, flooding, major leaks — fast response across Bedford and Bedfordshire. Call 07927 910665.",
+  alternates: { canonical: "/emergency" },
+  openGraph: { url: "https://njplumbingheating.co.uk/emergency" },
 };
 
 const emergencyReviews = [
@@ -41,6 +44,7 @@ const emergencyReviews = [
 export default function EmergencyPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://njplumbingheating.co.uk" }, { name: "Emergency Plumber Bedford", url: "https://njplumbingheating.co.uk/emergency" }]} />
       {/* HERO — urgent, dark, large phone */}
       <section className="bg-gray-950 text-white py-24 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-red-950/40 to-gray-950" />

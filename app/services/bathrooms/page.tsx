@@ -14,11 +14,14 @@ import {
 } from "lucide-react";
 import CTABanner from "../../components/CTABanner";
 import { PHONE, PHONE_HREF } from "../../lib/constants";
+import BreadcrumbSchema from "../../components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Bathroom Fitting Bedford | Full Bathroom Installations",
   description:
     "Complete bathroom fitting and installation service in Bedford. From en-suites to full bathroom refits. Quality finish guaranteed. Call 07927 910665.",
+  alternates: { canonical: "/services/bathrooms" },
+  openGraph: { url: "https://njplumbingheating.co.uk/services/bathrooms" },
 };
 
 const serviceCards = [
@@ -95,6 +98,7 @@ const process = [
 export default function BathroomsPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://njplumbingheating.co.uk" }, { name: "Services", url: "https://njplumbingheating.co.uk/services" }, { name: "Bathroom Fitting Bedford", url: "https://njplumbingheating.co.uk/services/bathrooms" }]} />
       {/* Hero */}
       <section className="bg-brand text-white py-20 px-4">
         <div className="max-w-7xl mx-auto">

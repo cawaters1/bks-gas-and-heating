@@ -14,11 +14,14 @@ import {
 } from "lucide-react";
 import CTABanner from "../../components/CTABanner";
 import { PHONE, PHONE_HREF } from "../../lib/constants";
+import BreadcrumbSchema from "../../components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Plumbing Services Bedford | Leaks, Repairs & Installations",
   description:
     "Expert plumbing services in Bedford. Leaking pipes, dripping taps, burst pipes, toilet repairs and full plumbing installations. Call 07927 910665.",
+  alternates: { canonical: "/services/plumbing" },
+  openGraph: { url: "https://njplumbingheating.co.uk/services/plumbing" },
 };
 
 const serviceSchema = {
@@ -79,6 +82,7 @@ const serviceCards = [
 export default function PlumbingPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://njplumbingheating.co.uk" }, { name: "Services", url: "https://njplumbingheating.co.uk/services" }, { name: "Plumbing Services Bedford", url: "https://njplumbingheating.co.uk/services/plumbing" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}

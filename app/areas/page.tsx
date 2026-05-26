@@ -3,11 +3,14 @@ import Link from "next/link";
 import { Phone, MapPin } from "lucide-react";
 import CTABanner from "../components/CTABanner";
 import { PHONE, PHONE_HREF, AREAS, GOOGLE_BUSINESS_URL } from "../lib/constants";
+import BreadcrumbSchema from "../components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Areas We Cover | Bedford Plumber — Kempston, Ampthill & More",
   description:
     "NJ Plumbing & Heating covers Bedford, Kempston, Ampthill, Flitwick, Sandy, Biggleswade and all surrounding Bedfordshire towns. Call 07927 910665.",
+  alternates: { canonical: "/areas" },
+  openGraph: { url: "https://njplumbingheating.co.uk/areas" },
 };
 
 const featuredAreas = [
@@ -46,6 +49,7 @@ const featuredAreas = [
 export default function AreasPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://njplumbingheating.co.uk" }, { name: "Areas We Cover", url: "https://njplumbingheating.co.uk/areas" }]} />
       {/* Hero */}
       <section className="bg-brand text-white py-20 px-4">
         <div className="max-w-7xl mx-auto">

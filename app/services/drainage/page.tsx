@@ -14,11 +14,14 @@ import {
 } from "lucide-react";
 import CTABanner from "../../components/CTABanner";
 import { PHONE, PHONE_HREF } from "../../lib/constants";
+import BreadcrumbSchema from "../../components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Drain Unblocking Bedford | CCTV Surveys & High Pressure Jetting",
   description:
     "Professional drain unblocking and drainage services in Bedford. Blocked drains cleared same day with CCTV surveys and high-pressure jetting. Call 07927 910665.",
+  alternates: { canonical: "/services/drainage" },
+  openGraph: { url: "https://njplumbingheating.co.uk/services/drainage" },
 };
 
 const serviceCards = [
@@ -90,6 +93,7 @@ const processSteps = [
 export default function DrainagePage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://njplumbingheating.co.uk" }, { name: "Services", url: "https://njplumbingheating.co.uk/services" }, { name: "Drain Unblocking Bedford", url: "https://njplumbingheating.co.uk/services/drainage" }]} />
       {/* Hero */}
       <section className="bg-brand text-white py-20 px-4">
         <div className="max-w-7xl mx-auto">

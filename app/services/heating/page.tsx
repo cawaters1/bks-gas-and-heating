@@ -14,11 +14,14 @@ import {
 } from "lucide-react";
 import CTABanner from "../../components/CTABanner";
 import { PHONE, PHONE_HREF } from "../../lib/constants";
+import BreadcrumbSchema from "../../components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Heating Services Bedford | Radiators, Underfloor Heating & Power Flushing",
   description:
     "Non-gas heating services in Bedford. Radiator installation, underfloor heating, power flushing and heating system upgrades. Call 07927 910665.",
+  alternates: { canonical: "/services/heating" },
+  openGraph: { url: "https://njplumbingheating.co.uk/services/heating" },
 };
 
 const serviceCards = [
@@ -67,6 +70,7 @@ const serviceCards = [
 export default function HeatingPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://njplumbingheating.co.uk" }, { name: "Services", url: "https://njplumbingheating.co.uk/services" }, { name: "Heating Services Bedford", url: "https://njplumbingheating.co.uk/services/heating" }]} />
       {/* Hero */}
       <section className="bg-brand text-white py-20 px-4">
         <div className="max-w-7xl mx-auto">

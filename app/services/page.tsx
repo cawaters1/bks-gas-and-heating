@@ -11,11 +11,14 @@ import {
 } from "lucide-react";
 import CTABanner from "../components/CTABanner";
 import { PHONE, PHONE_HREF } from "../lib/constants";
+import BreadcrumbSchema from "../components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Plumbing & Heating Services Bedford | NJ Plumbing & Heating",
   description:
     "Full range of plumbing, heating, drainage and bathroom services in Bedford and Bedfordshire. Emergency call-outs available. Call 07927 910665.",
+  alternates: { canonical: "/services" },
+  openGraph: { url: "https://njplumbingheating.co.uk/services" },
 };
 
 const services = [
@@ -84,6 +87,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://njplumbingheating.co.uk" }, { name: "Services", url: "https://njplumbingheating.co.uk/services" }]} />
       {/* Hero */}
       <section className="bg-brand text-white py-20 px-4">
         <div className="max-w-7xl mx-auto">

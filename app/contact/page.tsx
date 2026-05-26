@@ -3,16 +3,20 @@ import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, ExternalLink, MessageCircle } from "lucide-react";
 import QuoteForm from "../components/QuoteForm";
 import { PHONE, PHONE_HREF, EMAIL, EMAIL_HREF, LOCATION, GOOGLE_BUSINESS_URL, WHATSAPP } from "../lib/constants";
+import BreadcrumbSchema from "../components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Contact NJ Plumbing & Heating Bedford | Get a Free Quote",
   description:
     "Contact NJ Plumbing & Heating in Bedford for a free, no-obligation quote. Call 07927 910665, WhatsApp or fill in our quick quote form.",
+  alternates: { canonical: "/contact" },
+  openGraph: { url: "https://njplumbingheating.co.uk/contact" },
 };
 
 export default function ContactPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://njplumbingheating.co.uk" }, { name: "Contact", url: "https://njplumbingheating.co.uk/contact" }]} />
       {/* Hero */}
       <section className="bg-brand text-white py-20 px-4">
         <div className="max-w-7xl mx-auto">

@@ -24,6 +24,8 @@ export const metadata: Metadata = {
   title: "NJ Plumbing & Heating Bedford | Plumber Bedford",
   description:
     "Expert plumber in Bedford. Plumbing repairs, bathroom installations, drain unblocking and heating services across Bedford and Bedfordshire. Call 07927 910665.",
+  alternates: { canonical: "/" },
+  openGraph: { url: "https://njplumbingheating.co.uk" },
 };
 
 const faqSchema = {
@@ -506,7 +508,7 @@ export default function Home() {
         href={WHATSAPP}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-green-500 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-2xl hover:bg-green-600 transition-colors"
+        className="fixed bottom-6 right-6 z-50 bg-green-500 text-white rounded-full w-14 h-14 hidden md:flex items-center justify-center shadow-2xl hover:bg-green-600 transition-colors"
         aria-label="Chat on WhatsApp"
       >
         <MessageCircle size={25} />
