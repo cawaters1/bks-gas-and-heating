@@ -73,7 +73,6 @@ export default function Footer() {
                 { label: "Areas We Cover", href: "/areas" },
                 { label: "Pricing", href: "/pricing" },
                 { label: "Contact", href: "/contact" },
-                { label: "Book Online", href: "/booking" },
                 { label: "Privacy Policy", href: "/privacy" },
               ].map((link) => (
                 <li key={link.href}>

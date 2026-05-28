@@ -115,12 +115,6 @@ export default function Header() {
               <Phone size={16} />
               {PHONE}
             </a>
-            <Link
-              href="/booking"
-              className="flex items-center gap-2 bg-orange-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-600 transition-colors"
-            >
-              Book Online
-            </Link>
           </div>
 
           {/* Mobile Hamburger */}
@@ -159,7 +153,6 @@ export default function Header() {
               { label: "Pricing", href: "/pricing" },
               { label: "About", href: "/about" },
               { label: "Contact", href: "/contact" },
-              { label: "Book Online", href: "/booking" },
             ].map((link) => (
               <Link
                 key={link.href}
