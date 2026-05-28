@@ -47,7 +47,6 @@ const schema = {
   telephone: "07927910665",
   email: "njplumbingandheating1@gmail.com",
   sameAs: [
-    "https://www.facebook.com/njplumbingheating",
     "https://www.instagram.com/nj.plumbingandheating",
     "https://maps.app.goo.gl/FEdm2KHkVyyugheu7",
   ],

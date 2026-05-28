@@ -83,6 +83,9 @@ export default function Header() {
             <Link href="/areas" className="text-gray-700 font-medium hover:text-brand transition-colors">
               Areas
             </Link>
+            <Link href="/pricing" className="text-gray-700 font-medium hover:text-brand transition-colors">
+              Pricing
+            </Link>
             <Link href="/about" className="text-gray-700 font-medium hover:text-brand transition-colors">
               About
             </Link>
@@ -112,6 +115,12 @@ export default function Header() {
               <Phone size={16} />
               {PHONE}
             </a>
+            <Link
+              href="/booking"
+              className="flex items-center gap-2 bg-orange-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-600 transition-colors"
+            >
+              Book Online
+            </Link>
           </div>
 
           {/* Mobile Hamburger */}
@@ -147,8 +156,10 @@ export default function Header() {
             <div className="border-t border-steel my-2" />
             {[
               { label: "Areas", href: "/areas" },
+              { label: "Pricing", href: "/pricing" },
               { label: "About", href: "/about" },
               { label: "Contact", href: "/contact" },
+              { label: "Book Online", href: "/booking" },
             ].map((link) => (
               <Link
                 key={link.href}

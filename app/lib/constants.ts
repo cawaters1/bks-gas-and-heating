@@ -4,7 +4,6 @@ export const PHONE_HREF = "tel:07927910665";
 export const EMAIL = "njplumbingandheating1@gmail.com";
 export const EMAIL_HREF = "mailto:njplumbingandheating1@gmail.com";
 export const WHATSAPP = "https://wa.me/447927910665";
-export const FACEBOOK = "https://www.facebook.com/njplumbingheating";
 export const INSTAGRAM = "https://www.instagram.com/nj.plumbingandheating";
 export const LOCATION = "Bedford, Bedfordshire";
 export const ADDRESS = "96 Hillesden Avenue, Bedford, Bedfordshire";

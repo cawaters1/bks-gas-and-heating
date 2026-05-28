@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, ExternalLink, MessageCircle, Facebook, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, ExternalLink, MessageCircle, Instagram } from "lucide-react";
 import {
   BUSINESS_NAME,
   PHONE,
@@ -10,7 +10,6 @@ import {
   LOCATION,
   GOOGLE_BUSINESS_URL,
   WHATSAPP,
-  FACEBOOK,
   INSTAGRAM,
 } from "../lib/constants";
 
@@ -142,15 +141,6 @@ export default function Footer() {
               {/* Social icons */}
               <li>
                 <div className="flex items-center gap-3 pt-1">
-                  <a
-                    href={FACEBOOK}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white/60 hover:text-blue-300 transition-colors"
-                    aria-label="Facebook"
-                  >
-                    <Facebook size={18} />
-                  </a>
                   <a
                     href={INSTAGRAM}
                     target="_blank"
