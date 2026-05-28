@@ -6,9 +6,9 @@ import { PHONE, PHONE_HREF, AREAS, GOOGLE_BUSINESS_URL } from "../lib/constants"
 import BreadcrumbSchema from "../components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Areas We Cover | Bedford Plumber — Kempston, Ampthill & More",
+  title: "Areas We Cover | Bedford, Milton Keynes & Northampton Plumber",
   description:
-    "NJ Plumbing & Heating covers Bedford, Kempston, Ampthill, Flitwick, Sandy, Biggleswade and all surrounding Bedfordshire towns. Call 07927 910665.",
+    "NJ Plumbing & Heating covers Bedford, Kempston, Ampthill, Milton Keynes, Northampton and all surrounding towns. Call 07927 910665.",
   alternates: { canonical: "/areas" },
   openGraph: { url: "https://njplumbingheating.co.uk/areas" },
 };
@@ -44,6 +44,16 @@ const featuredAreas = [
     slug: "biggleswade",
     text: "Biggleswade is fully within our service area. Whether you need a drain unblocked, a radiator fitted or a full bathroom refit, our team is ready to help.",
   },
+  {
+    name: "Milton Keynes",
+    slug: "milton-keynes",
+    text: "We cover Milton Keynes and its surrounding areas for plumbing repairs, drain unblocking, bathroom installations and heating pipework. Same-day cover available.",
+  },
+  {
+    name: "Northampton",
+    slug: "northampton",
+    text: "Northampton customers can expect the same fast, professional service. From leaking pipes to full bathroom refits — we cover Northampton and nearby towns.",
+  },
 ];
 
 export default function AreasPage() {
@@ -62,11 +72,11 @@ export default function AreasPage() {
             <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center">
               <MapPin size={28} className="text-white" />
             </div>
-            <h1 className="text-5xl font-extrabold">Areas We Cover in Bedfordshire</h1>
+            <h1 className="text-5xl font-extrabold">Areas We Cover</h1>
           </div>
           <p className="text-blue-100 text-lg max-w-2xl mt-4">
-            Based in Bedford, we cover the whole of Bedfordshire and surrounding towns. If
-            you&apos;re not sure if we cover your area, just call — we&apos;ll let you know.
+            Based in Bedford, we cover the whole of Bedfordshire, Milton Keynes, Northampton
+            and surrounding towns. Not sure if we reach you? Just call — if we can get to you, we will.
           </p>
           <a
             href={PHONE_HREF}
@@ -111,7 +121,7 @@ export default function AreasPage() {
           <div className="text-center mb-10">
             <h2 className="text-3xl font-extrabold text-gray-900">All Areas Covered</h2>
             <p className="text-gray-500 mt-3">
-              We serve all of these towns and their surrounding villages.
+              Bedfordshire, Milton Keynes, Northampton and all surrounding villages.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-3">
@@ -134,8 +144,8 @@ export default function AreasPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold text-gray-900">Local Plumbing Services</h2>
             <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-              We serve every corner of Bedfordshire. Here&apos;s a little more detail on our
-              key service areas.
+              We serve Bedfordshire, Milton Keynes, Northampton and surrounding areas. Here&apos;s
+              a little more detail on our key service areas.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -4,12 +4,16 @@ import { useState } from "react";
 import { CheckCircle, Phone, ChevronLeft } from "lucide-react";
 import { PHONE, PHONE_HREF } from "../lib/constants";
 
+// Replace YOUR_FORM_ID with Nick's Formspree form ID from formspree.io
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
 const services = [
   "Plumbing repair",
   "Drain unblocking",
   "Bathroom installation",
-  "Underfloor heating",
+  "Power flushing",
   "Radiator fitting",
+  "Underfloor heating",
   "Emergency call-out",
   "Other",
 ];
@@ -25,6 +29,8 @@ interface FormData {
 
 export default function QuoteForm() {
   const [step, setStep] = useState(1);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [data, setData] = useState<FormData>({
     service: "",
     description: "",
@@ -41,9 +47,34 @@ export default function QuoteForm() {
     setStep(2);
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setStep(4);
+    setSubmitting(true);
+    setError("");
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          service: data.service,
+          description: data.description,
+          postcode: data.postcode,
+          name: data.name,
+          phone: data.phone,
+          preferredDate: data.preferredDate || "Not specified",
+          _subject: `New quote request from ${data.name} — ${data.service}`,
+        }),
+      });
+      if (res.ok) {
+        setStep(4);
+      } else {
+        setError("Something went wrong. Please call us directly on " + PHONE + ".");
+      }
+    } catch {
+      setError("Something went wrong. Please call us directly on " + PHONE + ".");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (step === 4) {
@@ -190,6 +221,9 @@ export default function QuoteForm() {
                 className={inputClass}
               />
             </div>
+            {error && (
+              <p className="text-red-300 text-sm bg-red-500/20 rounded-xl px-4 py-3">{error}</p>
+            )}
             <div className="flex gap-3 pt-2">
               <button
                 type="button"
@@ -201,9 +235,10 @@ export default function QuoteForm() {
               </button>
               <button
                 type="submit"
-                className="flex-1 bg-white text-brand font-bold py-3 rounded-xl hover:bg-offwhite transition-colors"
+                disabled={submitting}
+                className="flex-1 bg-white text-brand font-bold py-3 rounded-xl hover:bg-offwhite transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Request Free Quote
+                {submitting ? "Sending…" : "Request Free Quote"}
               </button>
             </div>
           </div>

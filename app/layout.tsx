@@ -1,5 +1,13 @@
 import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
 import StickyBar from "./components/StickyBar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -33,6 +41,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GB",
     siteName: "NJ Plumbing & Heating",
+    images: [{ url: "/logo.jpg", width: 800, height: 800, alt: "NJ Plumbing & Heating Bedford" }],
   },
   alternates: {
     canonical: "/",
@@ -86,7 +95,7 @@ const schema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB">
+    <html lang="en-GB" className={inter.variable}>
       <head>
         <script
           type="application/ld+json"

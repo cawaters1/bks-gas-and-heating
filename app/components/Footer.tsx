@@ -71,8 +71,10 @@ export default function Footer() {
               {[
                 { label: "About Us", href: "/about" },
                 { label: "Areas We Cover", href: "/areas" },
+                { label: "Pricing", href: "/pricing" },
                 { label: "Contact", href: "/contact" },
-                { label: "Get a Quote", href: "/contact" },
+                { label: "Book Online", href: "/booking" },
+                { label: "Privacy Policy", href: "/privacy" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link

@@ -3,7 +3,7 @@ import { PHONE, PHONE_HREF, WHATSAPP } from "../lib/constants";
 
 export default function StickyBar() {
   return (
-    <div className="bg-brand-mid text-white text-sm py-2 px-4">
+    <div className="hidden md:block bg-brand-mid text-white text-sm py-2 px-4">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-0">
         <span className="text-white/80">Available now &middot; Bedford &amp; Bedfordshire</span>
         <div className="flex items-center gap-4">
