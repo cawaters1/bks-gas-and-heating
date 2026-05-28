@@ -52,55 +52,39 @@ const faqSchema = {
         text: "We cover West London and surrounding areas including West Drayton, Uxbridge, Hayes, Ealing, Hounslow, Richmond, Slough, Windsor, Guildford, Woking, and parts of Buckinghamshire and Hertfordshire.",
       },
     },
-    {
-      "@type": "Question",
-      name: "Do you install Vaillant boilers?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes — we install and service Vaillant boilers as well as other leading brands. As Gas Safe registered engineers we can carry out all boiler installation and commissioning work.",
-      },
-    },
   ],
 };
 
 export default function Home() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="bg-brand pt-20 pb-28 px-4 relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 60px)",
-          }}
-        />
+      <section className="bg-[#000000] pt-20 pb-24 px-4 relative overflow-hidden">
+        {/* Subtle blue vignette at bottom */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-40 bg-brand/10 blur-[80px] pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium mb-8 text-white">
+              <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-sm font-medium mb-8 text-steel">
                 <ShieldCheck size={14} className="text-gas-safe" />
                 Gas Safe Registered &middot; No. {GAS_SAFE_NUMBER}
               </div>
-              <h1 className="text-5xl sm:text-6xl font-extrabold leading-[1.05] mb-6 tracking-tight text-white">
+              <h1 className="text-5xl sm:text-6xl font-extrabold leading-[1.05] mb-6 tracking-tight text-ink">
                 Gas Safe Heating
                 <br />
                 Engineers in
                 <br />
-                <span className="text-gold">West London.</span>
+                <span className="text-[#3A6FBF]">West London.</span>
               </h1>
-              <p className="text-lg text-white/80 leading-relaxed mb-10 max-w-lg">
+              <p className="text-base text-steel leading-relaxed mb-10 max-w-lg">
                 Boiler installation, servicing and repair by Gas Safe registered engineers. Heating systems, plumbing repairs and premium bathroom fitting across West London and surrounding areas.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-10">
+              <div className="flex flex-col sm:flex-row gap-3 mb-10">
                 <a
                   href={PHONE_HREF}
-                  className="flex items-center justify-center gap-2 bg-white text-brand font-extrabold px-8 py-4 rounded-xl text-base hover:bg-ink transition-colors shadow-xl"
+                  className="flex items-center justify-center gap-2 bg-brand text-white font-bold px-8 py-4 rounded-xl text-base hover:bg-brand-light transition-colors shadow-lg shadow-brand/20"
                 >
                   <Phone size={18} />
                   Call {PHONE}
@@ -109,34 +93,35 @@ export default function Home() {
                   href={WHATSAPP}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 border-2 border-green-400 text-green-300 font-semibold px-8 py-4 rounded-xl text-base hover:bg-green-900/30 transition-colors"
+                  className="flex items-center justify-center gap-2 border border-green-700/60 text-green-400 font-semibold px-8 py-4 rounded-xl text-base hover:bg-green-900/20 transition-colors"
                 >
                   <MessageCircle size={18} />
                   WhatsApp Us
                 </a>
               </div>
-              <div className="flex flex-wrap gap-5 text-sm text-white/70">
+              <div className="flex flex-wrap gap-5 text-sm text-steel">
                 {[
                   { label: "Gas Safe No. 973556", icon: ShieldCheck, iconClass: "text-gas-safe" },
-                  { label: "10+ Years Experience", icon: CheckCircle, iconClass: "text-green-400" },
-                  { label: "£100 Call-Out — First Hour", icon: CheckCircle, iconClass: "text-green-400" },
-                  { label: "Free Estimates", icon: CheckCircle, iconClass: "text-green-400" },
+                  { label: "10+ Years Experience", icon: CheckCircle, iconClass: "text-brand-light" },
+                  { label: "£100 Call-Out", icon: CheckCircle, iconClass: "text-brand-light" },
+                  { label: "Free Estimates", icon: CheckCircle, iconClass: "text-brand-light" },
                 ].map(({ label, icon: Icon, iconClass }) => (
                   <span key={label} className="flex items-center gap-2">
-                    <Icon size={15} className={iconClass} />
+                    <Icon size={14} className={iconClass} />
                     {label}
                   </span>
                 ))}
               </div>
             </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+            {/* Van image — cropped, no black bars */}
+            <div className="relative rounded-2xl overflow-hidden border border-white/8 shadow-2xl" style={{ aspectRatio: "4/3" }}>
               <Image
                 src="/images/van-side.jpg"
                 alt="BKS Gas & Heating van — West London"
-                width={700}
-                height={500}
-                className="w-full object-cover"
+                fill
+                className="object-cover object-center"
                 priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -144,42 +129,42 @@ export default function Home() {
       </section>
 
       {/* ── GAS SAFE TRUST BAR ───────────────────────────────────────── */}
-      <section className="bg-surface py-10 px-4 border-b border-border-dark">
-        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
-          <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-gas-safe/10 border border-gas-safe/30 flex items-center justify-center">
-            <ShieldCheck size={32} className="text-gas-safe" />
+      <section className="bg-[#080810] py-8 px-4 border-y border-white/5">
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+          <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gas-safe/10 border border-gas-safe/20 flex items-center justify-center">
+            <ShieldCheck size={28} className="text-gas-safe" />
           </div>
           <div>
-            <p className="text-lg font-extrabold text-ink mb-1">
+            <p className="text-base font-bold text-ink mb-1">
               Gas Safe Registered Engineer &mdash; No. {GAS_SAFE_NUMBER}
             </p>
-            <p className="text-steel leading-relaxed">
-              All gas work is carried out by a registered Gas Safe engineer. It is illegal to work on gas appliances, boilers or gas pipework without this qualification. Always ask to see the Gas Safe card.
+            <p className="text-steel text-sm leading-relaxed">
+              All gas work is carried out by a registered Gas Safe engineer. It is illegal to work on gas appliances without this qualification. Always ask to see the Gas Safe card.
             </p>
           </div>
         </div>
       </section>
 
       {/* ── SERVICES GRID ────────────────────────────────────────────── */}
-      <section className="bg-bg py-24 px-4">
+      <section className="bg-[#000000] py-24 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-brand font-bold text-sm uppercase tracking-widest mb-3">
+            <p className="text-brand-light font-semibold text-xs uppercase tracking-[0.2em] mb-3">
               What We Do
             </p>
             <h2 className="text-4xl font-extrabold text-ink">
               Gas, Heating, Plumbing &amp; Bathrooms
             </h2>
-            <p className="mt-4 text-steel max-w-xl mx-auto">
+            <p className="mt-4 text-steel text-sm max-w-lg mx-auto">
               From boiler installation to premium bathroom refits — quality work across West London and the surrounding areas.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               {
                 icon: Flame,
                 title: "Boilers",
-                desc: "Installation, servicing, repair and Gas Safe certificates. Vaillant specialists.",
+                desc: "Installation, servicing, repair and Gas Safe certificates. All major brands.",
                 href: "/services/boilers",
                 badge: "Gas Safe",
               },
@@ -200,7 +185,7 @@ export default function Home() {
               {
                 icon: ShowerHead,
                 title: "Bathrooms",
-                desc: "Premium bathroom refits — gold fixtures, stone tiles, freestanding baths.",
+                desc: "Premium bathroom refits — freestanding baths, stone tiles, quality sanitaryware.",
                 href: "/services/bathrooms",
                 badge: null,
               },
@@ -208,21 +193,21 @@ export default function Home() {
               <Link
                 key={title}
                 href={href}
-                className="bg-surface rounded-2xl p-7 border border-border-dark hover:border-brand hover:bg-elevated transition-all group block"
+                className="bg-[#0a0a10] rounded-2xl p-7 border border-white/6 hover:border-brand/40 transition-all group block"
               >
                 <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center group-hover:bg-brand transition-colors">
-                    <Icon size={22} className="text-brand group-hover:text-white transition-colors" />
+                  <div className="w-11 h-11 rounded-xl bg-brand/10 border border-brand/15 flex items-center justify-center group-hover:bg-brand/20 transition-colors">
+                    <Icon size={20} className="text-brand-light" />
                   </div>
                   {badge && (
-                    <span className="text-xs font-bold text-gas-safe border border-gas-safe/30 bg-gas-safe/10 rounded-full px-2 py-0.5">
+                    <span className="text-xs font-bold text-gas-safe border border-gas-safe/25 bg-gas-safe/8 rounded-full px-2 py-0.5">
                       {badge}
                     </span>
                   )}
                 </div>
-                <h3 className="font-bold text-ink text-lg mb-2">{title}</h3>
+                <h3 className="font-bold text-ink text-base mb-2">{title}</h3>
                 <p className="text-steel text-sm leading-relaxed mb-4">{desc}</p>
-                <span className="text-brand-light text-sm font-semibold group-hover:underline">
+                <span className="text-brand-light text-sm font-medium group-hover:underline">
                   Learn more &rarr;
                 </span>
               </Link>
@@ -232,25 +217,25 @@ export default function Home() {
       </section>
 
       {/* ── WORK GALLERY ─────────────────────────────────────────────── */}
-      <section className="bg-surface py-24 px-4">
+      <section className="bg-[#050508] py-24 px-4 border-y border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-brand font-bold text-sm uppercase tracking-widest mb-3">Portfolio</p>
+            <p className="text-brand-light font-semibold text-xs uppercase tracking-[0.2em] mb-3">Portfolio</p>
             <h2 className="text-4xl font-extrabold text-ink">Our Work</h2>
-            <p className="mt-4 text-steel max-w-xl mx-auto">
+            <p className="mt-4 text-steel text-sm max-w-lg mx-auto">
               Boiler installations, premium bathrooms and full heating system upgrades across West London.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {[
-              { src: "/images/boiler-service.jpg", label: "Boiler Service" },
+              { src: "/images/boiler-install-1.jpg", label: "Boiler Installation" },
               { src: "/images/boiler-install-2.jpg", label: "Vaillant Installation" },
               { src: "/images/bathroom-1.jpg", label: "Premium Bathroom" },
-              { src: "/images/bathroom-5.jpg", label: "Luxury En-Suite" },
-              { src: "/images/bathroom-detail-2.jpg", label: "Stone Sink Detail" },
-              { src: "/images/van-rear.jpg", label: "Gas Safe Registered" },
+              { src: "/images/bathroom-5.jpg", label: "En-Suite" },
+              { src: "/images/bathroom-detail-2.jpg", label: "Quality Finish" },
+              { src: "/images/cylinder-1.jpg", label: "Unvented Cylinder" },
             ].map(({ src, label }) => (
-              <div key={src} className="relative aspect-square rounded-xl overflow-hidden group">
+              <div key={src} className="relative aspect-square rounded-xl overflow-hidden group border border-white/5">
                 <Image
                   src={src}
                   alt={`BKS Gas & Heating — ${label}`}
@@ -258,7 +243,7 @@ export default function Home() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                   <span className="text-white font-semibold text-sm">{label}</span>
                 </div>
               </div>
@@ -268,36 +253,36 @@ export default function Home() {
       </section>
 
       {/* ── VAN SECTION ──────────────────────────────────────────────── */}
-      <section className="bg-bg py-24 px-4">
+      <section className="bg-[#000000] py-24 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border-dark">
+          <div className="relative rounded-2xl overflow-hidden border border-white/8 shadow-2xl" style={{ aspectRatio: "4/3" }}>
             <Image
               src="/images/van-rear.jpg"
-              alt="BKS Gas & Heating van — Gas Safe badge visible, reg BK5 4GAS"
-              width={700}
-              height={500}
-              className="w-full object-cover"
+              alt="BKS Gas & Heating van — reg BK5 4GAS"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
           <div>
-            <p className="text-brand font-bold text-sm uppercase tracking-widest mb-3">
+            <p className="text-brand-light font-semibold text-xs uppercase tracking-[0.2em] mb-3">
               You&apos;ll Know Our Van
             </p>
             <h2 className="text-4xl font-extrabold text-ink mb-6">
-              Fully branded. Gas Safe registered.
+              Fully branded.<br />Gas Safe registered.
             </h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6 text-sm">
               When we pull up, you know exactly who we are and that the work is covered. Our van is fully branded with our Gas Safe registration — no grey-area operators, no unqualified traders.
             </p>
             <ul className="space-y-3 mb-8">
               {[
-                "Gas Safe badge displayed on van",
+                "Gas Safe badge on van",
                 "Registration BK5 4GAS",
-                "West London based — fast response times",
+                "West London based — fast response",
                 "ID and Gas Safe card presented on arrival",
               ].map((point) => (
                 <li key={point} className="flex items-center gap-3 text-steel text-sm">
-                  <CheckCircle size={16} className="text-brand flex-shrink-0" />
+                  <CheckCircle size={15} className="text-brand-light flex-shrink-0" />
                   {point}
                 </li>
               ))}
@@ -314,50 +299,50 @@ export default function Home() {
       </section>
 
       {/* ── WHY BKS ──────────────────────────────────────────────────── */}
-      <section className="bg-surface py-24 px-4">
+      <section className="bg-[#050508] py-24 px-4 border-y border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-brand font-bold text-sm uppercase tracking-widest mb-3">
+            <p className="text-brand-light font-semibold text-xs uppercase tracking-[0.2em] mb-3">
               Why Choose BKS
             </p>
             <h2 className="text-4xl font-extrabold text-ink">
               Qualified. Transparent. Reliable.
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               {
                 icon: ShieldCheck,
                 title: "Gas Safe Registered",
                 desc: "No. 973556. Legally qualified to work on all gas appliances, boilers and pipework.",
                 iconClass: "text-gas-safe",
-                bgClass: "bg-gas-safe/10",
+                bgClass: "bg-gas-safe/8 border-gas-safe/15",
               },
               {
                 icon: Star,
                 title: "10+ Years Experience",
-                desc: "Bailey has been working in the trade for over a decade. You get that experience on every job.",
+                desc: "Bailey has been in the trade for over a decade. You get that experience on every job.",
                 iconClass: "text-gold",
-                bgClass: "bg-gold/10",
+                bgClass: "bg-gold/8 border-gold/15",
               },
               {
                 icon: CheckCircle,
                 title: "Transparent Pricing",
                 desc: "£100 call-out covers the first hour. Fixed quotes on all larger jobs before we start.",
-                iconClass: "text-brand",
-                bgClass: "bg-brand/10",
+                iconClass: "text-brand-light",
+                bgClass: "bg-brand/8 border-brand/15",
               },
               {
                 icon: Phone,
                 title: "West London Based",
                 desc: "Covering West London, Surrey, Buckinghamshire and Hertfordshire.",
-                iconClass: "text-brand",
-                bgClass: "bg-brand/10",
+                iconClass: "text-brand-light",
+                bgClass: "bg-brand/8 border-brand/15",
               },
             ].map(({ icon: Icon, title, desc, iconClass, bgClass }) => (
-              <div key={title} className="bg-elevated rounded-2xl p-7 border border-border-dark">
-                <div className={`w-12 h-12 rounded-xl ${bgClass} flex items-center justify-center mb-5`}>
-                  <Icon size={22} className={iconClass} />
+              <div key={title} className="bg-[#0a0a10] rounded-2xl p-7 border border-white/6">
+                <div className={`w-11 h-11 rounded-xl border ${bgClass} flex items-center justify-center mb-5`}>
+                  <Icon size={20} className={iconClass} />
                 </div>
                 <h3 className="font-bold text-ink text-base mb-2">{title}</h3>
                 <p className="text-steel text-sm leading-relaxed">{desc}</p>
@@ -368,23 +353,23 @@ export default function Home() {
       </section>
 
       {/* ── PRICING CALLOUT ──────────────────────────────────────────── */}
-      <section className="bg-bg py-16 px-4">
-        <div className="max-w-3xl mx-auto bg-elevated border border-border-dark rounded-2xl p-10">
+      <section className="bg-[#000000] py-16 px-4">
+        <div className="max-w-3xl mx-auto bg-[#0a0a10] border border-white/8 rounded-2xl p-10">
           <div className="text-center mb-10">
-            <p className="text-brand font-bold text-sm uppercase tracking-widest mb-3">Pricing</p>
+            <p className="text-brand-light font-semibold text-xs uppercase tracking-[0.2em] mb-3">Pricing</p>
             <h2 className="text-3xl font-extrabold text-ink mb-2">
               £100 Call-Out — Here&apos;s What&apos;s Included
             </h2>
-            <p className="text-steel">No surprises. You know the cost before we arrive.</p>
+            <p className="text-steel text-sm">No surprises. You know the cost before we arrive.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
               { step: "01", title: "We Arrive", desc: "Punctual, fully equipped, Gas Safe ID presented on the door." },
               { step: "02", title: "We Diagnose", desc: "Full assessment in the first hour — fault found and options explained clearly." },
-              { step: "03", title: "We Fix It", desc: "Repair carried out where possible within that first hour. Larger jobs quoted before proceeding." },
+              { step: "03", title: "We Fix It", desc: "Repair carried out where possible in that first hour. Larger jobs quoted before proceeding." },
             ].map(({ step, title, desc }) => (
               <div key={step} className="text-center">
-                <div className="text-4xl font-extrabold text-brand/30 mb-2">{step}</div>
+                <div className="text-4xl font-extrabold text-brand/25 mb-2">{step}</div>
                 <h3 className="font-bold text-ink mb-1">{title}</h3>
                 <p className="text-steel text-sm leading-relaxed">{desc}</p>
               </div>
@@ -402,16 +387,16 @@ export default function Home() {
       </section>
 
       {/* ── REVIEWS ──────────────────────────────────────────────────── */}
-      <section className="bg-surface py-24 px-4">
+      <section className="bg-[#050508] py-24 px-4 border-y border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-brand font-bold text-sm uppercase tracking-widest mb-3">Reviews</p>
+            <p className="text-brand-light font-semibold text-xs uppercase tracking-[0.2em] mb-3">Reviews</p>
             <h2 className="text-4xl font-extrabold text-ink mb-3">
               What West London Says About Us
             </h2>
             <div className="flex items-center justify-center gap-1">
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />
+                <Star key={i} size={18} className="fill-yellow-400 text-yellow-400" />
               ))}
               <span className="ml-2 text-steel text-sm">5.0 &middot; Google Reviews</span>
             </div>
@@ -421,39 +406,46 @@ export default function Home() {
       </section>
 
       {/* ── QUOTE FORM ───────────────────────────────────────────────── */}
-      <section className="bg-brand py-24 px-4">
+      <section className="bg-[#000000] py-24 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div className="text-white">
-            <p className="text-white/60 font-bold text-sm uppercase tracking-widest mb-3">
+          <div>
+            <p className="text-brand-light font-semibold text-xs uppercase tracking-[0.2em] mb-3">
               Free Quote
             </p>
             <h2 className="text-4xl font-extrabold mb-6 text-ink">
               Get a free, no-obligation quote
             </h2>
-            <ul className="space-y-4">
+            <ul className="space-y-4 mb-8">
               {[
                 "We call you back within the hour",
                 "Fixed pricing before any work starts",
                 "Gas Safe registered for all boiler work",
                 "Covering West London and surrounding areas",
               ].map((point) => (
-                <li key={point} className="flex items-center gap-3 text-ink/80">
-                  <CheckCircle size={18} className="text-green-400 flex-shrink-0" />
+                <li key={point} className="flex items-center gap-3 text-steel text-sm">
+                  <CheckCircle size={16} className="text-brand-light flex-shrink-0" />
                   {point}
                 </li>
               ))}
             </ul>
+            <div className="p-5 bg-[#0a0a10] border border-white/8 rounded-2xl">
+              <div className="flex items-center gap-3 mb-2">
+                <ShieldCheck size={18} className="text-gas-safe" />
+                <p className="font-bold text-ink text-sm">Gas Safe Registered</p>
+              </div>
+              <p className="text-steel text-sm">No. {GAS_SAFE_NUMBER} — you can verify at gassaferegister.co.uk</p>
+            </div>
           </div>
-          <div className="bg-bg/40 border border-white/10 rounded-2xl p-8">
+          <div className="bg-[#0a0a10] border border-white/8 rounded-2xl p-8">
             <QuoteForm />
             <div className="mt-4 text-center">
               <a
                 href={WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-green-300 hover:text-green-200 text-sm font-semibold transition-colors"
+                className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 text-sm font-semibold transition-colors"
               >
-                <MessageCircle size={16} />
+                <MessageCircle size={15} />
                 Or WhatsApp us directly
               </a>
             </div>
@@ -462,13 +454,13 @@ export default function Home() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────────────── */}
-      <section className="bg-bg py-16 px-4">
+      <section className="bg-[#050508] py-16 px-4 border-y border-white/5">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
-            <p className="text-brand font-bold text-sm uppercase tracking-widest mb-3">FAQ</p>
+            <p className="text-brand-light font-semibold text-xs uppercase tracking-[0.2em] mb-3">FAQ</p>
             <h2 className="text-4xl font-extrabold text-ink">Frequently Asked Questions</h2>
           </div>
-          <div className="divide-y divide-border-dark">
+          <div className="space-y-3">
             {[
               {
                 q: "Are you Gas Safe registered?",
@@ -486,38 +478,34 @@ export default function Home() {
                 q: "How often should I service my boiler?",
                 a: "We recommend an annual boiler service to maintain efficiency, safety and to keep manufacturer warranties valid. Most gas boiler warranties require annual servicing by a Gas Safe registered engineer.",
               },
-              {
-                q: "Do you install Vaillant boilers?",
-                a: "Yes — we install and service Vaillant boilers as well as other leading brands. All installations are commissioned and certified by our Gas Safe registered engineer.",
-              },
             ].map(({ q, a }) => (
-              <details key={q} className="group">
-                <summary className="cursor-pointer font-bold py-4 text-ink list-none flex items-center justify-between gap-4 hover:text-brand-light transition-colors">
+              <details key={q} className="group bg-[#0a0a10] border border-white/6 rounded-xl">
+                <summary className="cursor-pointer font-semibold py-4 px-5 text-ink list-none flex items-center justify-between gap-4 hover:text-brand-light transition-colors">
                   {q}
-                  <span className="text-brand text-lg group-open:rotate-45 transition-transform flex-shrink-0">
+                  <span className="text-brand-light text-xl group-open:rotate-45 transition-transform flex-shrink-0 leading-none">
                     +
                   </span>
                 </summary>
-                <p className="pb-4 text-steel leading-relaxed text-sm">{a}</p>
+                <p className="pb-4 px-5 text-steel leading-relaxed text-sm">{a}</p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────────────── */}
-      <section className="bg-brand py-16 px-4">
+      {/* ── FINAL CTA ────────────────────────────────────────────────── */}
+      <section className="bg-[#000000] py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 text-ink">
             Ready to book?
           </h2>
-          <p className="text-lg mb-8 text-ink/70">
+          <p className="text-steel mb-8 max-w-lg mx-auto">
             Call now or send a WhatsApp — we respond fast. Gas Safe registered. West London based.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href={PHONE_HREF}
-              className="inline-flex items-center gap-2 bg-white text-brand font-bold px-8 py-4 rounded-xl text-lg hover:bg-ink transition-colors"
+              className="inline-flex items-center gap-2 bg-brand text-white font-bold px-8 py-4 rounded-xl text-lg hover:bg-brand-light transition-colors shadow-lg shadow-brand/20"
             >
               <Phone size={20} />
               Call {PHONE}
@@ -526,7 +514,7 @@ export default function Home() {
               href={WHATSAPP}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border-2 border-green-400 text-green-300 font-bold px-8 py-4 rounded-xl text-lg hover:bg-green-900/30 transition-colors"
+              className="inline-flex items-center gap-2 border border-green-700/60 text-green-400 font-semibold px-8 py-4 rounded-xl text-lg hover:bg-green-900/20 transition-colors"
             >
               <MessageCircle size={20} />
               WhatsApp Us
@@ -535,7 +523,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Floating WhatsApp button */}
+      {/* Floating WhatsApp */}
       <a
         href={WHATSAPP}
         target="_blank"

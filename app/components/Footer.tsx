@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, ExternalLink, MessageCircle, Instagram, Facebook, ShieldCheck } from "lucide-react";
 import {
   BUSINESS_NAME,
@@ -23,10 +24,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Col 1: Brand */}
           <div>
-            <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <span className="font-extrabold text-ink text-2xl tracking-tight">BKS</span>
-              <div className="w-px h-7 bg-border-emphasis" />
-              <span className="text-xs font-semibold text-steel tracking-widest uppercase leading-tight">GAS &amp;<br />HEATING</span>
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src="/images/logo.jpg"
+                alt="BKS Gas & Heating"
+                width={140}
+                height={97}
+                className="h-12 w-auto"
+              />
             </Link>
             <p className="text-steel text-sm leading-relaxed mt-2">
               Gas Safe registered heating engineer based in West Drayton. Boiler installation, servicing, plumbing and bathrooms across West London, Surrey, Buckinghamshire and Hertfordshire.
