@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Phone,
   CheckCircle,
@@ -14,6 +13,7 @@ import {
 import QuoteForm from "../../components/QuoteForm";
 import CTABanner from "../../components/CTABanner";
 import BreadcrumbSchema from "../../components/BreadcrumbSchema";
+import ImageCarousel from "../../components/ImageCarousel";
 import { PHONE, PHONE_HREF, WHATSAPP, GAS_SAFE_NUMBER } from "../../lib/constants";
 
 export const metadata: Metadata = {
@@ -183,26 +183,15 @@ export default function BoilersPage() {
         </div>
       </section>
 
-      {/* Photos Grid */}
+      {/* Photo Carousel */}
       <section className="py-14 bg-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {[
-              { src: "/images/boiler-install-1.jpg", alt: "New boiler installation by BKS Gas & Heating" },
-              { src: "/images/boiler-install-2.jpg", alt: "Boiler pipework and fittings" },
-              { src: "/images/boiler-install-3.jpg", alt: "Boiler installation West London" },
-            ].map((img) => (
-              <div key={img.src} className="aspect-video rounded-xl overflow-hidden border border-border-dark">
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  width={600}
-                  height={400}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
+          <ImageCarousel
+            images={[
+              { src: "/images/boiler-install-1.jpg", alt: "Vaillant boiler installation by BKS Gas & Heating, West London" },
+              { src: "/images/boiler-install-2.jpg", alt: "Boiler pipework and magnetic filter — BKS Gas & Heating" },
+            ]}
+          />
         </div>
       </section>
 
@@ -283,51 +272,33 @@ export default function BoilersPage() {
       {/* Cylinder Section */}
       <section className="py-14 bg-surface border-y border-border-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div>
-              <div className="flex items-center gap-2 mb-3">
-                <ShieldCheck size={18} className="text-gas-safe" />
-                <span className="text-gas-safe text-sm font-semibold">G3 Qualified</span>
-              </div>
-              <h2 className="text-3xl font-bold text-ink mb-4">Unvented Hot Water Cylinders</h2>
-              <p className="text-steel leading-relaxed mb-6">
-                Bailey is G3 qualified for the installation and maintenance of unvented hot water cylinders — a specialist qualification required by law. Unvented cylinders deliver mains-pressure hot water to every tap and shower in your home.
-              </p>
-              <ul className="space-y-2 mb-6">
-                {[
-                  "Mains-pressure hot water throughout the home",
-                  "No cold water tank required in the loft",
-                  "Compatible with solar thermal and heat pumps",
-                  "G3 Building Regulations compliance certificate provided",
-                  "Annual unvented service available",
-                ].map((point) => (
-                  <li key={point} className="flex items-start gap-2 text-sm text-steel">
-                    <CheckCircle size={15} className="text-gas-safe flex-shrink-0 mt-0.5" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-              <a href={PHONE_HREF} className="inline-flex items-center gap-2 bg-brand text-white px-5 py-2.5 rounded-xl font-semibold hover:bg-brand-light transition-colors text-sm">
-                <Phone size={15} />
-                Ask About Cylinders
-              </a>
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-2 mb-3">
+              <ShieldCheck size={18} className="text-gas-safe" />
+              <span className="text-gas-safe text-sm font-semibold">G3 Qualified</span>
             </div>
-            <div className="grid grid-cols-2 gap-3">
+            <h2 className="text-3xl font-bold text-ink mb-4">Unvented Hot Water Cylinders</h2>
+            <p className="text-steel leading-relaxed mb-6">
+              Bailey is G3 qualified for the installation and maintenance of unvented hot water cylinders — a specialist qualification required by law. Unvented cylinders deliver mains-pressure hot water to every tap and shower in your home.
+            </p>
+            <ul className="space-y-2 mb-6">
               {[
-                { src: "/images/cylinder-1.jpg", alt: "Unvented hot water cylinder installation" },
-                { src: "/images/cylinder-2.jpg", alt: "Hot water cylinder West London" },
-              ].map((img) => (
-                <div key={img.src} className="aspect-square rounded-xl overflow-hidden border border-border-dark">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    width={400}
-                    height={400}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                "Mains-pressure hot water throughout the home",
+                "No cold water tank required in the loft",
+                "Compatible with solar thermal and heat pumps",
+                "G3 Building Regulations compliance certificate provided",
+                "Annual unvented service available",
+              ].map((point) => (
+                <li key={point} className="flex items-start gap-2 text-sm text-steel">
+                  <CheckCircle size={15} className="text-gas-safe flex-shrink-0 mt-0.5" />
+                  {point}
+                </li>
               ))}
-            </div>
+            </ul>
+            <a href={PHONE_HREF} className="inline-flex items-center gap-2 bg-brand text-white px-5 py-2.5 rounded-xl font-semibold hover:bg-brand-light transition-colors text-sm">
+              <Phone size={15} />
+              Ask About Cylinders
+            </a>
           </div>
         </div>
       </section>
