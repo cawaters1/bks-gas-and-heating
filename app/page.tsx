@@ -190,7 +190,7 @@ export default function Home() {
               {
                 icon: Droplets,
                 title: "Drain Unblocking",
-                desc: "Blocked or slow drains cleared with high-pressure jetting and CCTV.",
+                desc: "Blocked drains, toilets and sinks cleared with drain rods and specialist tools.",
                 href: "/services/drainage",
               },
               {
@@ -202,7 +202,7 @@ export default function Home() {
               {
                 icon: Thermometer,
                 title: "Heating Systems",
-                desc: "Radiators, underfloor heating, power flushing — all non-gas work.",
+                desc: "Radiators, G3 unvented cylinders, wet underfloor heating, power flushing — all non-gas.",
                 href: "/services/heating",
               },
               {

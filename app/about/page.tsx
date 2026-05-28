@@ -142,13 +142,12 @@ export default function AboutPage() {
               <ul className="space-y-3">
                 {[
                   "Plumbing repairs and installations",
-                  "Drain unblocking and CCTV surveys",
-                  "High-pressure drain jetting",
+                  "Drain unblocking, toilet unblocking and drain rodding",
                   "Bathroom fitting and refurbishment",
                   "Radiator installation and replacement",
-                  "Underfloor heating (wet and electric)",
+                  "Unvented hot water cylinders — G3 qualified",
+                  "Wet underfloor heating",
                   "Power flushing",
-                  "Hot water cylinders (vented)",
                   "Heating pipework and TRV fitting",
                   "Emergency call-outs",
                 ].map((item) => (

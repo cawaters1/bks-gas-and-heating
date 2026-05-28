@@ -27,7 +27,7 @@ const reviews = [
     name: "Rachel T.",
     location: "Bedford",
     date: "1 month ago",
-    text: "Had underfloor heating installed throughout the ground floor. They were thorough, explained everything clearly and the finish is brilliant. Our house is so much warmer now. Brilliant service.",
+    text: "Had a new unvented cylinder installed. Nick knew exactly what he was doing, walked me through everything and had it commissioned the same day. Brilliant service.",
   },
   {
     name: "Tom B.",

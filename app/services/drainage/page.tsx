@@ -5,21 +5,17 @@ import {
   Droplets,
   CheckCircle,
   AlertTriangle,
-  Camera,
-  Zap,
-  Layers,
   Settings,
   Shield,
-  Search,
 } from "lucide-react";
 import CTABanner from "../../components/CTABanner";
 import { PHONE, PHONE_HREF } from "../../lib/constants";
 import BreadcrumbSchema from "../../components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Drain Unblocking Bedford | CCTV Surveys & High Pressure Jetting",
+  title: "Drain Unblocking Bedford | Toilet Unblocking & Drain Rodding",
   description:
-    "Professional drain unblocking and drainage services in Bedford. Blocked drains cleared same day with CCTV surveys and high-pressure jetting. Call 07927 910665.",
+    "Blocked drains, toilets and sinks cleared across Bedford and Bedfordshire. Drain rodding and toilet unblocking — fast, professional and fairly priced. Call 07927 910665.",
   alternates: { canonical: "/services/drainage" },
   openGraph: { url: "https://njplumbingheating.co.uk/services/drainage" },
 };
@@ -28,42 +24,32 @@ const serviceCards = [
   {
     icon: Droplets,
     title: "Blocked Drain Clearing",
-    desc: "Fast clearance of all types of blocked drains — kitchen, bathroom, external and more.",
-  },
-  {
-    icon: Zap,
-    title: "High-Pressure Jetting",
-    desc: "Powerful water jetting to clear stubborn blockages and remove built-up grease and debris.",
-  },
-  {
-    icon: Camera,
-    title: "CCTV Drain Survey",
-    desc: "Camera inspection to pinpoint blockages, damage or root intrusion inside your drains.",
+    desc: "Fast clearance of blocked kitchen, bathroom and external drains using drain rods and manual techniques.",
   },
   {
     icon: Settings,
-    title: "Sewer Unblocking",
-    desc: "Full sewer clearance for residential and commercial properties across Bedford.",
+    title: "Toilet Unblocking",
+    desc: "Blocked toilets cleared quickly and cleanly. Most toilet blockages resolved on the same visit.",
   },
   {
-    icon: Layers,
-    title: "Root Cutting",
-    desc: "Specialist cutting equipment to remove tree roots growing inside drain pipes.",
+    icon: Settings,
+    title: "Drain Rodding",
+    desc: "Traditional drain rodding to clear blockages in internal and external drain runs.",
+  },
+  {
+    icon: Droplets,
+    title: "Sink & Bath Unblocking",
+    desc: "Slow or blocked sinks, baths and showers cleared — kitchen grease build-up, hair and debris.",
   },
   {
     icon: Shield,
-    title: "External Drain Repairs",
-    desc: "Broken or collapsed drain sections repaired or replaced to restore flow.",
+    title: "External Drain Clearing",
+    desc: "Blocked gullets and external drain runs cleared. Manholes rodded and flow restored.",
   },
   {
-    icon: Layers,
-    title: "Drain Lining",
-    desc: "No-dig drain lining to repair cracks and joint failures from the inside.",
-  },
-  {
-    icon: Search,
-    title: "Manhole Clearing",
-    desc: "Blocked or overflowing manholes cleared and rodded thoroughly.",
+    icon: Settings,
+    title: "Waste Pipe Work",
+    desc: "Waste pipe repairs and replacements for sinks, baths and toilets — leaking joints fixed properly.",
   },
 ];
 
@@ -71,22 +57,22 @@ const processSteps = [
   {
     step: "1",
     title: "Assessment",
-    desc: "We assess the blockage and identify the best method to clear it — either rods, jetting or CCTV.",
+    desc: "We assess the blockage and identify the best method to clear it using drain rods or manual tools.",
   },
   {
     step: "2",
     title: "Clearance",
-    desc: "The blockage is cleared using high-pressure water jetting or specialist drainage rods.",
+    desc: "The blockage is cleared using specialist drainage rods and appropriate techniques.",
   },
   {
     step: "3",
-    title: "Inspection",
-    desc: "We check the drain is fully flowing and carry out a CCTV inspection if needed.",
+    title: "Check",
+    desc: "We run water through the drain to confirm full flow is restored.",
   },
   {
     step: "4",
     title: "Advice",
-    desc: "We advise on any underlying issues found and provide a report if a survey was carried out.",
+    desc: "We advise on any underlying issues found and how to prevent the blockage returning.",
   },
 ];
 
@@ -113,8 +99,8 @@ export default function DrainagePage() {
             </h1>
           </div>
           <p className="text-blue-100 text-lg max-w-2xl mt-4">
-            Blocked drains cleared the same day across Bedford and Bedfordshire. High-pressure
-            jetting, CCTV surveys and full drainage repairs — fast, professional and fairly priced.
+            Blocked drains, toilets and sinks cleared across Bedford and Bedfordshire.
+            Drain rodding and toilet unblocking — fast, professional and fairly priced.
           </p>
           <a
             href={PHONE_HREF}
@@ -132,11 +118,11 @@ export default function DrainagePage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold text-gray-900">Drainage Services We Offer</h2>
             <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-              Comprehensive drainage services for residential and commercial properties
-              across Bedford and Bedfordshire.
+              Drain rodding, toilet unblocking and drainage clearance for residential
+              properties across Bedford and Bedfordshire.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {serviceCards.map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
@@ -213,10 +199,10 @@ export default function DrainagePage() {
             {[
               "Same-day drain unblocking across Bedford",
               "£80 call-out — first hour, diagnostics and repair included",
-              "High-pressure jetting equipment on every vehicle",
-              "CCTV surveys to find hidden problems",
+              "Toilet unblocking and drain rodding specialist",
               "Upfront fixed pricing — no hidden charges",
               "Fully insured with public liability cover",
+              "Honest advice — no upselling work you don't need",
             ].map((point) => (
               <div key={point} className="flex items-center gap-3">
                 <CheckCircle size={18} className="text-brand flex-shrink-0" />
@@ -238,20 +224,20 @@ export default function DrainagePage() {
                 a: "We offer same-day drain unblocking across Bedford and the surrounding area. For most locations in Bedford we can be with you within a few hours.",
               },
               {
-                q: "How much does drain unblocking cost in Bedford?",
-                a: "Most drain blockages are cleared from £80+VAT. We always provide a fixed, upfront quote before any work starts so there are no surprises.",
+                q: "How much does drain unblocking cost?",
+                a: "Most drain blockages are cleared within the £80 call-out, which includes the first hour. We always give you a fixed, upfront price before any work starts.",
               },
               {
-                q: "What is a CCTV drain survey?",
-                a: "A CCTV drain survey uses a specialist camera pushed through your drains to inspect the condition from the inside. It can identify blockages, cracks, root intrusion and other problems that can't be seen from the surface.",
+                q: "Can you unblock a toilet?",
+                a: "Yes — toilet unblocking is one of our most common call-outs. Most blockages are cleared on the first visit using drain rods and specialist tools.",
               },
               {
                 q: "Can you unblock an outside drain?",
-                a: "Yes — we unblock external drains, gullets and manholes as well as internal drainage. All our vehicles carry high-pressure jetting equipment.",
+                a: "Yes — we unblock external drains, gullets and manholes as well as internal drainage.",
               },
               {
-                q: "Do you provide a report after a CCTV survey?",
-                a: "Yes — we provide a written report with our findings and recommendations following any CCTV drain survey.",
+                q: "Do you do high-pressure jetting or CCTV surveys?",
+                a: "We don't carry high-pressure jetting equipment or CCTV camera systems. We specialise in drain rodding, toilet unblocking and manual drainage clearance. For jetting or CCTV surveys, we'll point you to a specialist drainage contractor.",
               },
             ].map(({ q, a }) => (
               <details key={q} className="group">
@@ -268,7 +254,7 @@ export default function DrainagePage() {
 
       <CTABanner
         title="Blocked drain in Bedford?"
-        subtitle="Same-day drain unblocking. £80 call-out — first hour and diagnostics included. Call us now."
+        subtitle="Same-day drain unblocking and toilet unblocking. £80 call-out — first hour included. Call us now."
       />
     </>
   );

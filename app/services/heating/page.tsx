@@ -5,7 +5,7 @@ import {
   Thermometer,
   AlertTriangle,
   Info,
-  Zap,
+  ShieldCheck,
   Waves,
   Settings,
   Gauge,
@@ -17,9 +17,9 @@ import { PHONE, PHONE_HREF } from "../../lib/constants";
 import BreadcrumbSchema from "../../components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Heating Services Bedford | Radiators, Underfloor Heating & Power Flushing",
+  title: "Heating Services Bedford | Radiators, Unvented Cylinders (G3) & Power Flushing",
   description:
-    "Non-gas heating services in Bedford. Radiator installation, underfloor heating, power flushing and heating system upgrades. Call 07927 910665.",
+    "Non-gas heating services in Bedford. Radiator installation, G3-qualified unvented cylinder installation and maintenance, underfloor heating, power flushing. Call 07927 910665.",
   alternates: { canonical: "/services/heating" },
   openGraph: { url: "https://njplumbingheating.co.uk/services/heating" },
 };
@@ -41,9 +41,9 @@ const serviceCards = [
     desc: "Full system power flush to remove sludge and improve heating efficiency.",
   },
   {
-    icon: Zap,
-    title: "Underfloor Heating (Electric)",
-    desc: "Electric UFH mats installed under tiles, laminate or stone flooring.",
+    icon: ShieldCheck,
+    title: "Unvented Cylinders (G3)",
+    desc: "G3-qualified installation and maintenance of unvented hot water cylinders, including Megaflow and similar systems.",
   },
   {
     icon: Layers,
@@ -89,7 +89,7 @@ export default function HeatingPage() {
           </div>
           <p className="text-blue-100 text-lg max-w-2xl mt-4">
             Specialist non-gas heating services across Bedford and Bedfordshire. Radiators,
-            underfloor heating, power flushing and more — without the need for gas.
+            G3-qualified unvented cylinder work, wet underfloor heating and power flushing.
           </p>
           <a
             href={PHONE_HREF}
@@ -101,19 +101,30 @@ export default function HeatingPage() {
         </div>
       </section>
 
-      {/* Important note box */}
+      {/* G3 callout */}
       <section className="bg-blue-50 border-b border-blue-100 py-6 px-4">
         <div className="max-w-4xl mx-auto flex items-start gap-4">
-          <Info size={24} className="text-brand flex-shrink-0 mt-0.5" />
+          <ShieldCheck size={24} className="text-brand flex-shrink-0 mt-0.5" />
           <div>
-            <p className="font-bold text-brand mb-1">Non-gas heating specialists</p>
+            <p className="font-bold text-brand mb-1">G3-qualified unvented cylinder specialist</p>
             <p className="text-gray-700 text-sm leading-relaxed">
-              We specialise in non-gas heating work — radiator installation, underfloor heating,
-              power flushing and hot water systems. We are not Gas Safe registered and cannot
-              work on gas appliances, boilers or gas pipework. For gas appliance work, please
-              contact a registered Gas Safe engineer.
+              Nick holds a G3 qualification, which is required by law to install and service unvented
+              hot water cylinders (Megaflow and similar). Many plumbers cannot legally carry out this
+              work — if your cylinder is unvented, make sure you use a qualified engineer.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Non-gas note */}
+      <section className="bg-white border-b border-steel py-5 px-4">
+        <div className="max-w-4xl mx-auto flex items-start gap-4">
+          <Info size={22} className="text-gray-400 flex-shrink-0 mt-0.5" />
+          <p className="text-gray-500 text-sm leading-relaxed">
+            We specialise in non-gas heating work. We are not Gas Safe registered and cannot
+            work on gas appliances, boilers or gas pipework. For gas work, please contact a
+            registered Gas Safe engineer.
+          </p>
         </div>
       </section>
 
@@ -146,8 +157,51 @@ export default function HeatingPage() {
         </div>
       </section>
 
-      {/* What is power flushing */}
+      {/* Unvented cylinders section */}
       <section className="bg-white py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center gap-3 mb-6">
+            <ShieldCheck size={28} className="text-brand flex-shrink-0" />
+            <h2 className="text-3xl font-extrabold text-gray-900">
+              Unvented Hot Water Cylinders (G3)
+            </h2>
+          </div>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            Unvented cylinders — like Megaflow, Tribune and similar systems — operate at mains
+            pressure and deliver powerful, consistent hot water to every tap and shower in your
+            home. Because they work at higher pressures than traditional vented cylinders, UK
+            building regulations (Part G3) require that installation and servicing is carried out
+            by a qualified engineer only.
+          </p>
+          <p className="text-gray-600 leading-relaxed mb-6">
+            Nick holds a current G3 qualification, which means he can legally install, commission
+            and service unvented cylinders. If you&apos;re replacing a cylinder or having one installed
+            for the first time, it&apos;s important to check your engineer has this qualification — not
+            all plumbers do.
+          </p>
+          <div className="bg-offwhite rounded-2xl p-6 border border-steel">
+            <h3 className="font-bold text-gray-900 mb-4">G3 unvented work we cover:</h3>
+            <ul className="space-y-2">
+              {[
+                "New unvented cylinder installation",
+                "Like-for-like cylinder replacement",
+                "Annual servicing and safety checks",
+                "Pressure relief valve and expansion vessel replacement",
+                "Thermostat and immersion heater replacement",
+                "Fault diagnosis and repair",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-3 text-sm text-gray-700">
+                  <ShieldCheck size={15} className="text-brand flex-shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* What is power flushing */}
+      <section className="bg-offwhite py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
             What is Power Flushing?
@@ -163,7 +217,7 @@ export default function HeatingPage() {
             system and pumping a high-velocity flow of water through it. This dislodges and
             removes the sludge and deposits, restoring your system to near-new performance.
           </p>
-          <div className="bg-offwhite rounded-2xl p-6 border border-steel mt-6">
+          <div className="bg-white rounded-2xl p-6 border border-steel mt-6">
             <h3 className="font-bold text-gray-900 mb-4">Signs you need a power flush:</h3>
             <ul className="space-y-2">
               {[
@@ -183,44 +237,27 @@ export default function HeatingPage() {
         </div>
       </section>
 
-      {/* Underfloor heating */}
-      <section className="bg-offwhite py-16 px-4">
+      {/* Wet underfloor heating */}
+      <section className="bg-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
-            Underfloor Heating in Bedford
+            Wet Underfloor Heating in Bedford
           </h2>
           <p className="text-gray-600 leading-relaxed mb-4">
-            Underfloor heating is an increasingly popular choice for Bedford homeowners — it
-            provides even, consistent warmth, eliminates the need for visible radiators, and can
-            be more energy efficient when properly designed.
+            Wet underfloor heating uses pipework laid under the floor and connected to your
+            existing heating system. It provides even, consistent warmth across the whole floor
+            area and eliminates the need for visible radiators. Ideal for new builds, extensions
+            and ground floor renovations.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="bg-white rounded-2xl p-6 border border-steel">
-              <div className="flex items-center gap-3 mb-3">
-                <Zap size={20} className="text-brand" />
-                <h3 className="font-bold text-gray-900">Electric Underfloor Heating</h3>
-              </div>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Electric mats are ideal for smaller areas like bathrooms and kitchens. Quick to
-                install and easy to control with a programmable thermostat.
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-6 border border-steel">
-              <div className="flex items-center gap-3 mb-3">
-                <Layers size={20} className="text-brand" />
-                <h3 className="font-bold text-gray-900">Wet Underfloor Heating</h3>
-              </div>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Wet systems use pipework laid under the floor and connected to your heating
-                system. Ideal for new builds and extensions, providing whole-room warmth.
-              </p>
-            </div>
-          </div>
+          <p className="text-gray-600 leading-relaxed">
+            We install wet underfloor heating systems only — not electric mat systems. If you&apos;re
+            unsure which type suits your project, give us a call and we&apos;ll advise.
+          </p>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="bg-white py-16 px-4">
+      <section className="bg-offwhite py-16 px-4">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-extrabold text-gray-900 mb-8">Heating FAQ</h2>
           <div className="divide-y divide-steel">
@@ -228,6 +265,14 @@ export default function HeatingPage() {
               {
                 q: "Can you work on my gas boiler?",
                 a: "No — we are not Gas Safe registered. We cannot work on gas boilers, gas appliances or gas pipework. For any gas work, please contact a registered Gas Safe engineer.",
+              },
+              {
+                q: "Are you qualified to install an unvented cylinder?",
+                a: "Yes — Nick holds a G3 qualification, which is the certification required by UK building regulations to install and service unvented hot water cylinders. This is a legal requirement that not all plumbers hold.",
+              },
+              {
+                q: "What is a G3 qualification?",
+                a: "G3 is the Building Regulations requirement for anyone installing or servicing unvented hot water storage systems. It covers systems like Megaflow, Tribune and other pressurised cylinders. Installing an unvented cylinder without this qualification is illegal.",
               },
               {
                 q: "My radiator has a cold spot — can you fix it?",
@@ -242,8 +287,8 @@ export default function HeatingPage() {
                 a: "Yes — we can design and install additional radiators, including running new pipework, on most existing heating systems across Bedford.",
               },
               {
-                q: "Do you install underfloor heating under tiles?",
-                a: "Yes — we install both electric mat systems and wet underfloor heating. We can advise on the best option for your flooring type and room size.",
+                q: "Do you install electric underfloor heating?",
+                a: "No — we only install wet (water) underfloor heating systems. Electric mat systems are outside our scope.",
               },
             ].map(({ q, a }) => (
               <details key={q} className="group">
@@ -260,7 +305,7 @@ export default function HeatingPage() {
 
       <CTABanner
         title="Need heating work in Bedford?"
-        subtitle="Non-gas heating specialists. £80 call-out — first hour and diagnostics included. Call today."
+        subtitle="G3-qualified unvented cylinder specialist. Non-gas heating. £80 call-out — first hour included."
       />
     </>
   );

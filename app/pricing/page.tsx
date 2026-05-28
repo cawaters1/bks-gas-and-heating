@@ -33,9 +33,9 @@ const services = [
     category: "Drainage",
     items: [
       { job: "Drain unblocking (standard)", price: "From £80" },
-      { job: "High-pressure jetting", price: "Fixed quote" },
-      { job: "CCTV drain survey", price: "Fixed quote" },
-      { job: "Drainage repair", price: "Fixed quote" },
+      { job: "Toilet unblocking", price: "From £80" },
+      { job: "Drain rodding", price: "From £80" },
+      { job: "Waste pipe repair", price: "Fixed quote" },
     ],
   },
   {
@@ -55,7 +55,9 @@ const services = [
     items: [
       { job: "Radiator installation or replacement", price: "From £80" },
       { job: "Power flushing (domestic)", price: "Fixed quote" },
-      { job: "Underfloor heating installation", price: "Fixed quote" },
+      { job: "Unvented cylinder installation (G3)", price: "Fixed quote" },
+      { job: "Unvented cylinder service (G3)", price: "Fixed quote" },
+      { job: "Wet underfloor heating installation", price: "Fixed quote" },
       { job: "Heating pipework repair", price: "From £80" },
       { job: "Thermostatic radiator valve replacement", price: "From £80" },
     ],

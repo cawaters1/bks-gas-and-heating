@@ -9,11 +9,12 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwvzyegj";
 
 const services = [
   "Plumbing repair",
-  "Drain unblocking",
+  "Drain unblocking / toilet unblocking",
   "Bathroom installation",
   "Power flushing",
   "Radiator fitting",
-  "Underfloor heating",
+  "Unvented cylinder (G3)",
+  "Wet underfloor heating",
   "Emergency call-out",
   "Other",
 ];

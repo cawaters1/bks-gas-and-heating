@@ -11,7 +11,7 @@ export const CITY = "Bedford";
 export const GOOGLE_BUSINESS_URL = "https://maps.app.goo.gl/FEdm2KHkVyyugheu7";
 export const SITE_URL = "https://njplumbingheating.co.uk";
 export const AREAS = [
-  "Bedford","Kempston","Shortstown","Wixams","Stewartby",
+  "Bedford","Kempston","Elstow","Shortstown","Wixams","Stewartby",
   "Ampthill","Flitwick","Sandy","Biggleswade","Shefford",
   "Clapham","Bromham","Wilstead","Cranfield","Woburn",
   "Marston Moretaine","Oakley","Turvey","Houghton Conquest","Flitton",

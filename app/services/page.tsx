@@ -42,13 +42,13 @@ const services = [
     title: "Heating",
     slug: "heating",
     description:
-      "We specialise in non-gas heating work — radiator installation, underfloor heating, power flushing and hot water systems. All the heating services your home needs, without gas.",
+      "Non-gas heating work including radiators, G3-qualified unvented cylinder installation and maintenance, wet underfloor heating and power flushing.",
     bullets: [
       "Radiator installation and replacement",
-      "Underfloor heating (wet and electric)",
+      "Unvented cylinders — G3 qualified",
+      "Wet underfloor heating",
       "Power flushing",
       "TRV fitting",
-      "Hot water cylinders (vented)",
       "Heating system pipework",
     ],
   },
@@ -57,14 +57,14 @@ const services = [
     title: "Drainage",
     slug: "drainage",
     description:
-      "Blocked drains cleared the same day using high-pressure jetting and CCTV survey technology. We tackle everything from slow drains to full sewer blockages.",
+      "Blocked drains, toilets and sinks cleared the same day using drain rods and specialist tools. Fast, reliable drainage clearance across Bedford.",
     bullets: [
       "Blocked drain clearing",
-      "High-pressure water jetting",
-      "CCTV drain surveys",
-      "Sewer unblocking",
-      "Root cutting",
-      "Drain lining and repairs",
+      "Toilet unblocking",
+      "Drain rodding",
+      "Sink and bath unblocking",
+      "External drain clearing",
+      "Waste pipe repairs",
     ],
   },
   {
