@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Phone,
   ShowerHead,
@@ -90,33 +89,6 @@ export default function BathroomsPage() {
         </div>
       </section>
 
-      {/* Gallery */}
-      <section className="py-10 bg-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {[
-              { src: "/images/bathroom-1.jpg", alt: "Bathroom installation by BKS Gas & Heating" },
-              { src: "/images/bathroom-2.jpg", alt: "Modern bathroom West London" },
-              { src: "/images/bathroom-3.jpg", alt: "En-suite bathroom installation" },
-              { src: "/images/bathroom-4.jpg", alt: "Full bathroom refit West London" },
-              { src: "/images/bathroom-5.jpg", alt: "Bathroom fitting West London" },
-              { src: "/images/bathroom-6.jpg", alt: "Tiled bathroom installation" },
-              { src: "/images/bathroom-7.jpg", alt: "Shower room installation" },
-              { src: "/images/bathroom-detail-1.jpg", alt: "Bathroom detail — quality finish" },
-            ].map((img) => (
-              <div key={img.src} className="aspect-square rounded-xl overflow-hidden border border-border-dark">
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  width={400}
-                  height={400}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Service cards */}
       <section className="bg-surface border-y border-border-dark py-14 px-4">

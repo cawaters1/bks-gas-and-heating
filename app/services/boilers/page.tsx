@@ -13,7 +13,6 @@ import {
 import QuoteForm from "../../components/QuoteForm";
 import CTABanner from "../../components/CTABanner";
 import BreadcrumbSchema from "../../components/BreadcrumbSchema";
-import ImageCarousel from "../../components/ImageCarousel";
 import { PHONE, PHONE_HREF, WHATSAPP, GAS_SAFE_NUMBER } from "../../lib/constants";
 
 export const metadata: Metadata = {
@@ -183,17 +182,6 @@ export default function BoilersPage() {
         </div>
       </section>
 
-      {/* Photo Carousel */}
-      <section className="py-14 bg-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ImageCarousel
-            images={[
-              { src: "/images/boiler-install-1.jpg", alt: "Vaillant boiler installation by BKS Gas & Heating, West London" },
-              { src: "/images/boiler-install-2.jpg", alt: "Boiler pipework and magnetic filter — BKS Gas & Heating" },
-            ]}
-          />
-        </div>
-      </section>
 
       {/* Services Split */}
       <section className="py-14 bg-surface border-y border-border-dark">
