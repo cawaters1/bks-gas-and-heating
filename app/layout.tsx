@@ -45,15 +45,16 @@ const schema = {
   name: "NJ Plumbing & Heating",
   url: "https://njplumbingheating.co.uk",
   telephone: "07927910665",
-  email: "Nicholasjudge21@gmail.com",
+  email: "njplumbingandheating1@gmail.com",
   sameAs: [
     "https://www.facebook.com/njplumbingheating",
-    "https://www.instagram.com/njplumbingheating",
+    "https://www.instagram.com/nj.plumbingandheating",
     "https://maps.app.goo.gl/FEdm2KHkVyyugheu7",
   ],
   hasMap: "https://maps.app.goo.gl/FEdm2KHkVyyugheu7",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "96 Hillesden Avenue",
     addressLocality: "Bedford",
     addressRegion: "Bedfordshire",
     addressCountry: "GB",
@@ -66,20 +67,15 @@ const schema = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "07:00",
-      closes: "20:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Sunday"],
-      opens: "08:00",
-      closes: "18:00",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "08:30",
+      closes: "17:00",
     },
   ],
   areaServed: [
     "Bedford", "Kempston", "Ampthill", "Flitwick", "Sandy",
     "Biggleswade", "Shefford", "Cranfield", "Wixams", "Bedfordshire",
+    "Milton Keynes", "Northampton",
   ],
   aggregateRating: {
     "@type": "AggregateRating",

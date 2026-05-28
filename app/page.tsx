@@ -45,7 +45,7 @@ const faqSchema = {
       name: "Do you charge a call-out fee?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No, we don't charge a call-out fee. We provide free, no-obligation quotes on all work.",
+        text: "Our call-out fee is £80, which covers the first hour, full diagnostics and a repair where possible. For larger jobs we provide a fixed quotation before any additional work begins.",
       },
     },
     {
@@ -100,8 +100,8 @@ export default function Home() {
               "repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 60px)",
           }}
         />
-        <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium mb-8">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse inline-block" />
               Available Now &middot; Bedford &amp; Bedfordshire
@@ -136,7 +136,7 @@ export default function Home() {
               </a>
             </div>
             <div className="flex flex-wrap gap-5 text-sm text-blue-200">
-              {["Fully insured", "No call-out fee", "Free quotes", "Same-day cover"].map((t) => (
+              {["Fully insured", "£80 call-out — first hour included", "Free estimates", "Same-day cover"].map((t) => (
                 <span key={t} className="flex items-center gap-2">
                   <CheckCircle size={15} className="text-green-400" />
                   {t}
@@ -145,19 +145,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right — logo panel */}
-          <div className="hidden lg:flex items-center justify-center">
-            <div className="bg-brand-mid rounded-3xl p-12 border border-white/10 shadow-2xl">
-              <Image
-                src="/logo.jpg"
-                alt="NJ Plumbing & Heating"
-                width={280}
-                height={280}
-                className="rounded-2xl"
-                priority
-              />
-            </div>
-          </div>
         </div>
       </section>
 
@@ -426,7 +413,7 @@ export default function Home() {
               },
               {
                 q: "Do you charge a call-out fee?",
-                a: "No call-out fee — ever. We provide free, no-obligation quotes on all work before we start.",
+                a: "Our call-out fee is £80, which covers the first hour, full diagnostics and a repair where possible. For larger jobs we provide a fixed quotation before any additional work begins.",
               },
               {
                 q: "Are you insured?",

@@ -212,7 +212,7 @@ export default function DrainagePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
               "Same-day drain unblocking across Bedford",
-              "No call-out fee — free quotes on all drainage work",
+              "£80 call-out — first hour, diagnostics and repair included",
               "High-pressure jetting equipment on every vehicle",
               "CCTV surveys to find hidden problems",
               "Upfront fixed pricing — no hidden charges",
@@ -268,7 +268,7 @@ export default function DrainagePage() {
 
       <CTABanner
         title="Blocked drain in Bedford?"
-        subtitle="Same-day drain unblocking. No call-out fee. Call us now."
+        subtitle="Same-day drain unblocking. £80 call-out — first hour and diagnostics included. Call us now."
       />
     </>
   );

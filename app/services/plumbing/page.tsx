@@ -187,7 +187,7 @@ export default function PlumbingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
               "Fully insured — public liability on every job",
-              "No call-out fee — free quotes on all work",
+              "£80 call-out — first hour, diagnostics and repair included",
               "Same-day service available across Bedford",
               "Upfront, fixed pricing with no hidden costs",
               "Experienced, reliable tradespeople",

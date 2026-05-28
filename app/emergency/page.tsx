@@ -76,7 +76,7 @@ export default function EmergencyPage() {
             {[
               { icon: Clock, text: "Available 7 days" },
               { icon: Shield, text: "Fully insured" },
-              { icon: CheckCircle, text: "No call-out fee" },
+              { icon: CheckCircle, text: "£80 call-out — first hour included" },
             ].map(({ icon: Icon, text }) => (
               <span key={text} className="flex items-center gap-2 text-gray-300">
                 <Icon size={16} className="text-red-400" />
@@ -185,7 +185,7 @@ export default function EmergencyPage() {
             {[
               { val: "~1hr", label: "Average response time in Bedford" },
               { val: "7 days", label: "Available every day of the week" },
-              { val: "No fee", label: "No call-out charge" },
+              { val: "£80", label: "Call-out — first hour included" },
             ].map((stat) => (
               <div key={stat.label} className="bg-white/10 rounded-2xl p-6 border border-white/20">
                 <p className="text-3xl font-extrabold text-blue-300 mb-2">{stat.val}</p>

@@ -260,7 +260,7 @@ export default function HeatingPage() {
 
       <CTABanner
         title="Need heating work in Bedford?"
-        subtitle="Non-gas heating specialists. Free quotes, no call-out fee. Call today."
+        subtitle="Non-gas heating specialists. £80 call-out — first hour and diagnostics included. Call today."
       />
     </>
   );

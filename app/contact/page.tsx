@@ -27,7 +27,7 @@ export default function ContactPage() {
           </nav>
           <h1 className="text-5xl font-extrabold mb-4">Get in Touch</h1>
           <p className="text-blue-100 text-lg max-w-2xl">
-            Free quotes on all work. No call-out fee. We call you back within the hour.
+            Free estimates on all work. £80 call-out fee — first hour, diagnostics and repair included. We call you back within the hour.
           </p>
         </div>
       </section>
@@ -100,9 +100,8 @@ export default function ContactPage() {
                 <div>
                   <p className="text-xs text-gray-400 uppercase tracking-widest mb-0.5">Opening Hours</p>
                   <div className="space-y-0.5">
-                    <p className="font-bold text-gray-900 text-sm">Monday – Saturday: 7:00am – 8:00pm</p>
-                    <p className="text-gray-700 text-sm">Sunday: 8:00am – 6:00pm</p>
-                    <p className="text-brand text-xs font-semibold mt-1">Emergency cover available outside these hours</p>
+                    <p className="font-bold text-gray-900 text-sm">Monday – Sunday: 8:30am – 5:00pm</p>
+                    <p className="text-brand text-xs font-semibold mt-1">Emergency call-outs available outside these hours</p>
                   </div>
                 </div>
               </div>

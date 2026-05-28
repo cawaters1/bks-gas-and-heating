@@ -241,7 +241,7 @@ export default function AboutPage() {
 
       <CTABanner
         title="Get a free quote today"
-        subtitle="No call-out fee, upfront pricing, quality guaranteed."
+        subtitle="£80 call-out — first hour, diagnostics and repair included. Upfront fixed pricing, quality guaranteed."
         dark={false}
       />
     </>
