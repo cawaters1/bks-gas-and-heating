@@ -48,7 +48,7 @@ export default function Header() {
               alt="BKS Gas & Heating"
               width={140}
               height={97}
-              className="h-11 w-auto"
+              className="h-14 w-auto"
               priority
             />
           </Link>
