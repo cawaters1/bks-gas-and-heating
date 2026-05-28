@@ -61,10 +61,10 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="bg-[#000000] pt-24 pb-28 px-4 relative overflow-hidden">
+      <section className="bg-bg pt-24 pb-28 px-4 relative overflow-hidden">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-48 bg-brand/8 blur-[100px] pointer-events-none" />
         <div className="max-w-3xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-sm font-medium mb-8 text-steel">
+          <div className="inline-flex items-center gap-2 bg-elevated border border-border-dark rounded-full px-4 py-1.5 text-sm font-medium mb-8 text-steel">
             <ShieldCheck size={14} className="text-gas-safe" />
             Gas Safe Registered &middot; No. {GAS_SAFE_NUMBER}
           </div>
@@ -113,7 +113,7 @@ export default function Home() {
       </section>
 
       {/* ── GAS SAFE TRUST BAR ───────────────────────────────────────── */}
-      <section className="bg-[#07070e] py-8 px-4 border-y border-white/10">
+      <section className="bg-surface py-8 px-4 border-y border-border-dark">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
           <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gas-safe/10 border border-gas-safe/20 flex items-center justify-center">
             <ShieldCheck size={28} className="text-gas-safe" />
@@ -130,7 +130,7 @@ export default function Home() {
       </section>
 
       {/* ── SERVICES GRID ────────────────────────────────────────────── */}
-      <section className="bg-[#000000] py-24 px-4">
+      <section className="bg-bg py-24 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-brand-light font-semibold text-xs uppercase tracking-[0.2em] mb-3">
@@ -177,7 +177,7 @@ export default function Home() {
               <Link
                 key={title}
                 href={href}
-                className="bg-[#0a0a10] rounded-2xl p-7 border border-white/6 hover:border-brand/40 transition-all group block"
+                className="bg-elevated rounded-2xl p-7 border border-border-dark hover:border-brand/40 transition-all group block"
               >
                 <div className="flex items-center justify-between mb-5">
                   <div className="w-11 h-11 rounded-xl bg-brand/10 border border-brand/15 flex items-center justify-center group-hover:bg-brand/20 transition-colors">
@@ -201,7 +201,7 @@ export default function Home() {
       </section>
 
       {/* ── WORK GALLERY ─────────────────────────────────────────────── */}
-      <section className="bg-[#07070e] py-24 px-4 border-y border-white/10">
+      <section className="bg-surface py-24 px-4 border-y border-border-dark">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-brand-light font-semibold text-xs uppercase tracking-[0.2em] mb-3">Portfolio</p>
@@ -219,7 +219,7 @@ export default function Home() {
               "/images/bathroom-detail-2.jpg",
               "/images/cylinder-1.jpg",
             ].map((src) => (
-              <div key={src} className="relative aspect-square rounded-xl overflow-hidden border border-white/5">
+              <div key={src} className="relative aspect-square rounded-xl overflow-hidden border border-border-dark">
                 <Image
                   src={src}
                   alt="BKS Gas & Heating — recent work"
@@ -234,7 +234,7 @@ export default function Home() {
       </section>
 
       {/* ── WHY BKS ──────────────────────────────────────────────────── */}
-      <section className="bg-[#07070e] py-24 px-4 border-y border-white/10">
+      <section className="bg-surface py-24 px-4 border-y border-border-dark">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-brand-light font-semibold text-xs uppercase tracking-[0.2em] mb-3">
@@ -275,7 +275,7 @@ export default function Home() {
                 bgClass: "bg-brand/8 border-brand/15",
               },
             ].map(({ icon: Icon, title, desc, iconClass, bgClass }) => (
-              <div key={title} className="bg-[#0a0a10] rounded-2xl p-7 border border-white/6">
+              <div key={title} className="bg-elevated rounded-2xl p-7 border border-border-dark">
                 <div className={`w-11 h-11 rounded-xl border ${bgClass} flex items-center justify-center mb-5`}>
                   <Icon size={20} className={iconClass} />
                 </div>
@@ -288,8 +288,8 @@ export default function Home() {
       </section>
 
       {/* ── PRICING CALLOUT ──────────────────────────────────────────── */}
-      <section className="bg-[#000000] py-16 px-4">
-        <div className="max-w-3xl mx-auto bg-[#0a0a10] border border-white/8 rounded-2xl p-10">
+      <section className="bg-bg py-16 px-4">
+        <div className="max-w-3xl mx-auto bg-elevated border border-border-dark rounded-2xl p-10">
           <div className="text-center mb-10">
             <p className="text-brand-light font-semibold text-xs uppercase tracking-[0.2em] mb-3">Pricing</p>
             <h2 className="text-3xl font-extrabold text-ink mb-2">
@@ -322,7 +322,7 @@ export default function Home() {
       </section>
 
       {/* ── REVIEWS ──────────────────────────────────────────────────── */}
-      <section className="bg-[#07070e] py-24 px-4 border-y border-white/10">
+      <section className="bg-surface py-24 px-4 border-y border-border-dark">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-brand-light font-semibold text-xs uppercase tracking-[0.2em] mb-3">Reviews</p>
@@ -341,7 +341,7 @@ export default function Home() {
       </section>
 
       {/* ── QUOTE FORM ───────────────────────────────────────────────── */}
-      <section className="bg-[#000000] py-24 px-4">
+      <section className="bg-bg py-24 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
             <p className="text-brand-light font-semibold text-xs uppercase tracking-[0.2em] mb-3">
@@ -363,7 +363,7 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <div className="p-5 bg-[#0a0a10] border border-white/8 rounded-2xl">
+            <div className="p-5 bg-elevated border border-border-dark rounded-2xl">
               <div className="flex items-center gap-3 mb-2">
                 <ShieldCheck size={18} className="text-gas-safe" />
                 <p className="font-bold text-ink text-sm">Gas Safe Registered</p>
@@ -371,7 +371,7 @@ export default function Home() {
               <p className="text-steel text-sm">No. {GAS_SAFE_NUMBER} — you can verify at gassaferegister.co.uk</p>
             </div>
           </div>
-          <div className="bg-[#0a0a10] border border-white/8 rounded-2xl p-8">
+          <div className="bg-elevated border border-border-dark rounded-2xl p-8">
             <QuoteForm />
             <div className="mt-4 text-center">
               <a
@@ -389,7 +389,7 @@ export default function Home() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────────────── */}
-      <section className="bg-[#07070e] py-16 px-4 border-y border-white/10">
+      <section className="bg-surface py-16 px-4 border-y border-border-dark">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <p className="text-brand-light font-semibold text-xs uppercase tracking-[0.2em] mb-3">FAQ</p>
@@ -414,7 +414,7 @@ export default function Home() {
                 a: "We recommend an annual boiler service to maintain efficiency, safety and to keep manufacturer warranties valid. Most gas boiler warranties require annual servicing by a Gas Safe registered engineer.",
               },
             ].map(({ q, a }) => (
-              <details key={q} className="group bg-[#0a0a10] border border-white/6 rounded-xl">
+              <details key={q} className="group bg-elevated border border-border-dark rounded-xl">
                 <summary className="cursor-pointer font-semibold py-4 px-5 text-ink list-none flex items-center justify-between gap-4 hover:text-brand-light transition-colors">
                   {q}
                   <span className="text-brand-light text-xl group-open:rotate-45 transition-transform flex-shrink-0 leading-none">
@@ -429,7 +429,7 @@ export default function Home() {
       </section>
 
       {/* ── FINAL CTA ────────────────────────────────────────────────── */}
-      <section className="bg-[#000000] py-16 px-4">
+      <section className="bg-bg py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 text-ink">
             Ready to book?

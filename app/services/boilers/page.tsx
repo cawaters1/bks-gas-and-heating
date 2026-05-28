@@ -186,20 +186,19 @@ export default function BoilersPage() {
       {/* Photos Grid */}
       <section className="py-14 bg-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {[
               { src: "/images/boiler-install-1.jpg", alt: "New boiler installation by BKS Gas & Heating" },
               { src: "/images/boiler-install-2.jpg", alt: "Boiler pipework and fittings" },
               { src: "/images/boiler-install-3.jpg", alt: "Boiler installation West London" },
-              { src: "/images/boiler-service.jpg", alt: "Boiler service and maintenance" },
             ].map((img) => (
-              <div key={img.src} className="aspect-square rounded-xl overflow-hidden border border-border-dark">
+              <div key={img.src} className="aspect-video rounded-xl overflow-hidden border border-border-dark">
                 <Image
                   src={img.src}
                   alt={img.alt}
-                  width={400}
+                  width={600}
                   height={400}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover"
                 />
               </div>
             ))}

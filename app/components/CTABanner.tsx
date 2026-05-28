@@ -8,7 +8,7 @@ interface CTABannerProps {
 
 export default function CTABanner({ title, subtitle }: CTABannerProps) {
   return (
-    <section className="py-16 px-4 bg-[#050508] border-t border-white/8">
+    <section className="py-16 px-4 bg-surface border-t border-border-dark">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 text-ink">
           {title}

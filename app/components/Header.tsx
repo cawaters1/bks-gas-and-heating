@@ -30,9 +30,9 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 bg-[#000000] border-b border-white/8 shadow-[0_1px_20px_rgba(0,0,0,0.8)]">
+    <header className="sticky top-0 z-40 bg-bg border-b border-border-dark shadow-[0_2px_24px_rgba(0,0,0,0.5)]">
       {/* Gas Safe trust bar */}
-      <div className="bg-[#080810] border-b border-white/5 py-1.5 px-4 hidden md:block">
+      <div className="bg-surface border-b border-border-dark py-1.5 px-4 hidden md:block">
         <div className="max-w-7xl mx-auto flex items-center justify-center gap-2">
           <ShieldCheck size={12} className="text-gas-safe" />
           <span className="text-xs text-steel font-medium tracking-wide">Gas Safe Registered Engineer · No. {GAS_SAFE_NUMBER}</span>
@@ -64,7 +64,7 @@ export default function Header() {
                 <ChevronDown size={15} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
               </button>
               {servicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-[#0f0f18] rounded-xl shadow-2xl border border-white/8 py-2 z-50">
+                <div className="absolute top-full left-0 mt-2 w-48 bg-elevated rounded-xl shadow-2xl border border-border-dark py-2 z-50">
                   {serviceLinks.map((link) => (
                     <Link
                       key={link.href}
@@ -125,7 +125,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-[#0a0a10] border-t border-white/8 px-4 pb-5">
+        <div className="lg:hidden bg-surface border-t border-border-dark px-4 pb-5">
           <div className="pt-3 space-y-1">
             <p className="text-xs font-bold text-steel-muted uppercase tracking-wider px-3 pt-2 pb-1">Services</p>
             {serviceLinks.map((link) => (
@@ -140,7 +140,7 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <div className="border-t border-white/8 my-2" />
+            <div className="border-t border-border-dark my-2" />
             {[
               { label: "Areas", href: "/areas" },
               { label: "Pricing", href: "/pricing" },
