@@ -6,8 +6,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: #fff;
-  color: #0D1117;
+  background-color: #0C0E14;
+  color: #E4E0D6;
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }

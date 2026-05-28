@@ -1,247 +1,214 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
-import {
-  Phone,
-  Shield,
-  Star,
-  Heart,
-  Users,
-  CheckCircle,
-  XCircle,
-  MapPin,
-} from "lucide-react";
+import Link from "next/link";
+import { CheckCircle, ShieldCheck, Star, Wrench, Phone, MessageCircle } from "lucide-react";
 import CTABanner from "../components/CTABanner";
-import { PHONE, PHONE_HREF, AREAS } from "../lib/constants";
 import BreadcrumbSchema from "../components/BreadcrumbSchema";
+import { PHONE, PHONE_HREF, WHATSAPP, GAS_SAFE_NUMBER } from "../lib/constants";
 
 export const metadata: Metadata = {
-  title: "About NJ Plumbing & Heating | Bedford Plumber",
+  title: "About BKS Gas & Heating | Gas Safe Engineer West London",
   description:
-    "NJ Plumbing & Heating — Bedford-based plumbing, drainage and heating specialists. Honest service, upfront pricing and quality guaranteed on every job.",
+    "BKS Gas & Heating is run by Bailey Kessler-Sutton — Gas Safe registered engineer (No. 973556) with over 10 years experience. Boiler installation, servicing, plumbing and bathrooms across West London.",
   alternates: { canonical: "/about" },
-  openGraph: { url: "https://njplumbingheating.co.uk/about" },
+  openGraph: { url: "https://bksgasheating.co.uk/about" },
 };
+
+const values = [
+  { title: "Gas Safe Every Time", body: "All gas work is carried out by a fully registered Gas Safe engineer. No. 973556 — verifiable on the national register." },
+  { title: "Upfront Pricing", body: "You get a clear quote before any work starts. No nasty surprises on the final invoice." },
+  { title: "Quality Guaranteed", body: "We take pride in the finish. From boiler installs to bathroom tiling, the detail matters." },
+  { title: "Reliable & Punctual", body: "We show up when we say we will. No waiting around for engineers who don't turn up." },
+];
+
+const services = [
+  "Boiler installation & replacement",
+  "Boiler servicing & repairs",
+  "Unvented cylinder installation (G3 qualified)",
+  "Gas safety certificates (CP12)",
+  "Central heating installation & repairs",
+  "General plumbing repairs",
+  "Bathroom design & installation",
+  "Emergency call-outs",
+];
 
 export default function AboutPage() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "Home", url: "https://njplumbingheating.co.uk" }, { name: "About", url: "https://njplumbingheating.co.uk/about" }]} />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "About", href: "/about" },
+        ]}
+      />
+
       {/* Hero */}
-      <section className="bg-brand text-white py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <nav className="text-sm text-white/50 mb-6">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span className="mx-2">/</span>
-            <span className="text-white">About</span>
-          </nav>
-          <h1 className="text-5xl font-extrabold mb-4">About NJ Plumbing &amp; Heating</h1>
-          <p className="text-blue-100 text-lg max-w-2xl">
-            Bedford&apos;s trusted plumbing, heating and drainage specialists. Built on
-            honesty, quality and a genuine commitment to our local community.
+      <section className="bg-surface border-b border-border-dark py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 text-steel text-sm mb-4">
+            <Link href="/" className="hover:text-ink transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-ink">About</span>
+          </div>
+          <div className="flex items-center gap-2 mb-4">
+            <ShieldCheck size={18} className="text-gas-safe" />
+            <span className="text-gas-safe text-sm font-semibold">Gas Safe Registered · No. {GAS_SAFE_NUMBER}</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-ink mb-4">About BKS Gas &amp; Heating</h1>
+          <p className="text-steel text-lg max-w-2xl leading-relaxed">
+            Run by Bailey Kessler-Sutton — a Gas Safe registered engineer with over 10 years of hands-on experience across West London.
           </p>
         </div>
       </section>
 
       {/* Story */}
-      <section className="bg-white py-20 px-4">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="text-brand font-bold text-sm uppercase tracking-widest mb-3">
-              Our Story
-            </p>
-            <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
-              A Bedford company built on doing things right.
-            </h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              NJ Plumbing &amp; Heating was founded by Nick, a Bedford-based plumber with one
-              simple goal — to provide genuinely reliable plumbing and drainage services to the
-              people of Bedfordshire, without the nonsense.
-            </p>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              Too many customers have told us about tradespeople who turned up late, overcharged,
-              did poor quality work or simply didn&apos;t finish the job. Nick built this company
-              to be the opposite of that. Every customer gets honest communication, upfront
-              pricing and work they can be proud of.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              Bedford is our home. Our reputation is everything to us — and that means treating
-              every job, big or small, with the same care and professionalism.
-            </p>
-          </div>
-          <div className="flex items-center justify-center">
-            <div className="bg-offwhite rounded-3xl p-10 border border-steel">
-              <Image
-                src="/logo.jpg"
-                alt="NJ Plumbing & Heating"
-                width={240}
-                height={240}
-                className="rounded-2xl"
-              />
+      <section className="py-16 bg-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div>
+              <h2 className="text-3xl font-bold text-ink mb-5">The Business</h2>
+              <div className="space-y-4 text-steel leading-relaxed">
+                <p>
+                  BKS Gas &amp; Heating was founded in 2025 by Bailey Kessler-Sutton, based in West Drayton. The business was built on a simple idea: every customer deserves a gas engineer who turns up, does the job properly, and charges a fair price.
+                </p>
+                <p>
+                  With over 10 years of industry experience, Bailey has worked across residential and commercial properties throughout West London, Surrey, Buckinghamshire and Hertfordshire — building a reputation for reliable workmanship and honest communication.
+                </p>
+                <p>
+                  From boiler installs and annual services to bathroom renovations and general plumbing, every job is treated with the same care and attention to detail. No cutting corners, no hidden costs.
+                </p>
+              </div>
+
+              <div className="mt-8 p-5 bg-surface border border-border-dark rounded-2xl">
+                <div className="flex items-center gap-3 mb-2">
+                  <ShieldCheck size={20} className="text-gas-safe" />
+                  <span className="font-bold text-ink">Gas Safe Registered</span>
+                </div>
+                <p className="text-steel text-sm leading-relaxed">
+                  Registration No. <strong className="text-ink">{GAS_SAFE_NUMBER}</strong>. Gas Safe registration is a legal requirement for anyone carrying out gas work in the UK. You can verify Bailey&apos;s registration at{" "}
+                  <a href="https://www.gassaferegister.co.uk" target="_blank" rel="noopener noreferrer" className="text-brand-light underline hover:text-ink">
+                    gassaferegister.co.uk
+                  </a>.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="rounded-2xl overflow-hidden border border-border-dark">
+                <Image
+                  src="/images/van-side.jpg"
+                  alt="BKS Gas & Heating van — West London"
+                  width={700}
+                  height={500}
+                  className="w-full object-cover"
+                />
+              </div>
+              <div className="grid grid-cols-3 gap-4 text-center">
+                {[
+                  { val: "10+", label: "Years Experience" },
+                  { val: "Gas Safe", label: `No. ${GAS_SAFE_NUMBER}` },
+                  { val: "Free", label: "Estimates" },
+                ].map((s) => (
+                  <div key={s.label} className="bg-surface border border-border-dark rounded-xl p-4">
+                    <div className="text-2xl font-extrabold text-ink">{s.val}</div>
+                    <div className="text-xs text-steel mt-1">{s.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="bg-offwhite py-20 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-brand font-bold text-sm uppercase tracking-widest mb-3">
-              Our Values
-            </p>
-            <h2 className="text-3xl font-extrabold text-gray-900">
-              What we stand for
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                icon: Shield,
-                title: "Honesty",
-                desc: "We tell you what the job involves, what it will cost and how long it will take — before we start. No surprises.",
-              },
-              {
-                icon: Star,
-                title: "Quality",
-                desc: "We take pride in our work. Every job is completed to the same high standard, whether it's a dripping tap or a full bathroom refit.",
-              },
-              {
-                icon: Heart,
-                title: "Transparency",
-                desc: "Upfront, fixed pricing on all work. You know exactly what you&apos;re paying before we pick up a single tool.",
-              },
-              {
-                icon: Users,
-                title: "Community",
-                desc: "We&apos;re Bedford people serving Bedford people. Our reputation in the local community is something we protect fiercely.",
-              },
-            ].map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="bg-white rounded-2xl p-7 border border-steel">
-                <Icon size={28} className="text-brand mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+      <section className="py-14 bg-surface border-y border-border-dark">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-ink text-center mb-10">How We Work</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((v) => (
+              <div key={v.title} className="bg-elevated border border-border-dark rounded-2xl p-6">
+                <Star size={20} className="text-gold mb-3" />
+                <h3 className="font-bold text-ink mb-2">{v.title}</h3>
+                <p className="text-steel text-sm leading-relaxed">{v.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* What we do + what we don't */}
-      <section className="bg-white py-16 px-4">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-8 text-center">
-            What We Do — and What We Don&apos;t
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Services */}
+      <section className="py-14 bg-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
-              <h3 className="font-bold text-gray-900 text-lg mb-4 flex items-center gap-2">
-                <CheckCircle size={22} className="text-brand" />
-                We specialise in:
-              </h3>
+              <h2 className="text-3xl font-bold text-ink mb-6">What We Do</h2>
               <ul className="space-y-3">
-                {[
-                  "Plumbing repairs and installations",
-                  "Drain unblocking, toilet unblocking and drain rodding",
-                  "Bathroom fitting and refurbishment",
-                  "Radiator installation and replacement",
-                  "Unvented hot water cylinders — G3 qualified",
-                  "Wet underfloor heating",
-                  "Power flushing",
-                  "Heating pipework and TRV fitting",
-                  "Emergency call-outs",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-gray-700 text-sm">
-                    <CheckCircle size={16} className="text-brand flex-shrink-0" />
-                    {item}
+                {services.map((s) => (
+                  <li key={s} className="flex items-center gap-3 text-steel">
+                    <CheckCircle size={16} className="text-brand-light flex-shrink-0" />
+                    {s}
                   </li>
                 ))}
               </ul>
-            </div>
-            <div>
-              <h3 className="font-bold text-gray-900 text-lg mb-4 flex items-center gap-2">
-                <XCircle size={22} className="text-red-500" />
-                We do not carry out:
-              </h3>
-              <div className="bg-red-50 border border-red-100 rounded-2xl p-6">
-                <p className="text-red-800 font-semibold mb-3">
-                  We are not Gas Safe registered.
-                </p>
-                <ul className="space-y-2">
-                  {[
-                    "Gas boiler installation",
-                    "Gas boiler servicing or repair",
-                    "Gas safety certificates (CP12)",
-                    "Gas pipework",
-                    "Any work on gas appliances",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-red-700 text-sm">
-                      <XCircle size={14} className="flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-red-600 text-xs mt-4">
-                  For gas work, please contact a registered Gas Safe engineer.
-                </p>
+              <div className="mt-8 flex gap-3">
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-2 bg-brand text-white px-5 py-2.5 rounded-xl font-semibold hover:bg-brand-light transition-colors text-sm"
+                >
+                  <Wrench size={15} />
+                  View Services
+                </Link>
+                <Link
+                  href="/areas"
+                  className="inline-flex items-center gap-2 border border-border-emphasis text-steel px-5 py-2.5 rounded-xl font-semibold hover:text-ink transition-colors text-sm"
+                >
+                  Areas We Cover
+                </Link>
               </div>
             </div>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                { src: "/images/boiler-install-1.jpg", alt: "Boiler installation by BKS Gas & Heating" },
+                { src: "/images/bathroom-1.jpg", alt: "Bathroom installation West London" },
+                { src: "/images/cylinder-1.jpg", alt: "Unvented cylinder installation" },
+                { src: "/images/van-rear.jpg", alt: "BKS Gas & Heating van" },
+              ].map((img) => (
+                <div key={img.src} className="aspect-square rounded-xl overflow-hidden border border-border-dark">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    width={300}
+                    height={300}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Coverage */}
-      <section className="bg-offwhite py-16 px-4">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-4">
-            Serving Bedford &amp; Bedfordshire
-          </h2>
-          <p className="text-gray-500 mb-8 max-w-xl mx-auto">
-            Based in Bedford, we cover the whole of Bedfordshire including:
-          </p>
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {AREAS.map((area) => (
-              <span
-                key={area}
-                className="flex items-center gap-1.5 bg-white border border-steel rounded-full px-4 py-2 text-sm font-medium text-gray-700"
-              >
-                <MapPin size={12} className="text-brand" />
-                {area}
-              </span>
-            ))}
+      {/* Contact block */}
+      <section className="py-14 bg-surface border-t border-border-dark">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-ink mb-4">Get in Touch</h2>
+          <p className="text-steel mb-8">Free estimates on all work. Call, WhatsApp, or use the contact form.</p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 bg-brand text-white px-6 py-3 rounded-xl font-semibold hover:bg-brand-light transition-colors">
+              <Phone size={18} />
+              Call {PHONE}
+            </a>
+            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 border border-green-600 text-green-400 px-6 py-3 rounded-xl font-semibold hover:bg-green-900/30 transition-colors">
+              <MessageCircle size={18} />
+              WhatsApp Us
+            </a>
           </div>
-          <Link
-            href="/areas"
-            className="inline-flex items-center gap-2 text-brand font-bold text-sm hover:underline"
-          >
-            View all coverage areas &rarr;
-          </Link>
-        </div>
-      </section>
-
-      {/* Phone CTA */}
-      <section className="bg-brand-mid py-12 px-4 text-white text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-extrabold mb-2">
-            Ready to work with us?
-          </h2>
-          <p className="text-white/70 mb-6">
-            Call us today for a free, no-obligation quote.
-          </p>
-          <a
-            href={PHONE_HREF}
-            className="inline-flex items-center gap-2 bg-white text-brand font-bold px-8 py-4 rounded-xl text-lg hover:bg-offwhite transition-colors"
-          >
-            <Phone size={20} />
-            {PHONE}
-          </a>
         </div>
       </section>
 
       <CTABanner
-        title="Get a free quote today"
-        subtitle="£80 call-out — first hour, diagnostics and repair included. Upfront fixed pricing, quality guaranteed."
-        dark={false}
+        title="Ready to book your gas engineer?"
+        subtitle="£100 call-out — first hour, diagnostics and repair included. Free estimates on all installations."
       />
     </>
   );

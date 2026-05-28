@@ -1,6 +1,8 @@
+const BASE = "https://bksgasheating.co.uk";
+
 interface Item {
   name: string;
-  url: string;
+  href: string;
 }
 
 export default function BreadcrumbSchema({ items }: { items: Item[] }) {
@@ -11,7 +13,7 @@ export default function BreadcrumbSchema({ items }: { items: Item[] }) {
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: item.url,
+      item: `${BASE}${item.href}`,
     })),
   };
   return (

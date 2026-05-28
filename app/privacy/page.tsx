@@ -1,44 +1,44 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { EMAIL, EMAIL_HREF } from "../lib/constants";
+import { EMAIL, EMAIL_HREF, ADDRESS, BUSINESS_NAME } from "../lib/constants";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | NJ Plumbing & Heating",
-  description: "Privacy policy for NJ Plumbing & Heating. How we collect, use and protect your personal data.",
+  title: "Privacy Policy | BKS Gas & Heating",
+  description: "Privacy policy for BKS Gas & Heating. How we collect, use and protect your personal data.",
   alternates: { canonical: "/privacy" },
   robots: { index: false, follow: false },
 };
 
 export default function PrivacyPage() {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-bg min-h-screen">
       <div className="max-w-3xl mx-auto px-4 py-20">
-        <nav className="text-sm text-gray-400 mb-8">
-          <Link href="/" className="hover:text-brand transition-colors">Home</Link>
+        <nav className="text-sm text-steel mb-8">
+          <Link href="/" className="hover:text-ink transition-colors">Home</Link>
           <span className="mx-2">/</span>
-          <span>Privacy Policy</span>
+          <span className="text-ink">Privacy Policy</span>
         </nav>
 
-        <h1 className="text-4xl font-extrabold text-gray-900 mb-2">Privacy Policy</h1>
-        <p className="text-gray-400 text-sm mb-10">Last updated: May 2026</p>
+        <h1 className="text-4xl font-extrabold text-ink mb-2">Privacy Policy</h1>
+        <p className="text-steel text-sm mb-10">Last updated: May 2026</p>
 
-        <div className="prose prose-gray max-w-none space-y-8 text-sm text-gray-700 leading-relaxed">
+        <div className="space-y-8 text-sm text-steel leading-relaxed">
 
           <section>
-            <h2 className="text-xl font-extrabold text-gray-900 mb-3">1. Who we are</h2>
+            <h2 className="text-xl font-bold text-ink mb-3">1. Who we are</h2>
             <p>
-              NJ Plumbing &amp; Heating is a sole trader business operated by Nicholas Judge,
-              based at 96 Hillesden Avenue, Bedford, Bedfordshire. We provide plumbing, drainage,
-              bathroom and heating services across Bedford and the surrounding areas.
+              {BUSINESS_NAME} is a sole trader business operated by Bailey Kessler-Sutton,
+              based at {ADDRESS}. We provide gas, heating, plumbing and bathroom services
+              across West London and the surrounding areas.
             </p>
             <p className="mt-2">
               For any data-related queries, contact us at{" "}
-              <a href={EMAIL_HREF} className="text-brand underline">{EMAIL}</a>.
+              <a href={EMAIL_HREF} className="text-brand-light underline">{EMAIL}</a>.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-extrabold text-gray-900 mb-3">2. What data we collect</h2>
+            <h2 className="text-xl font-bold text-ink mb-3">2. What data we collect</h2>
             <p>When you use our website we may collect:</p>
             <ul className="list-disc pl-5 mt-2 space-y-1">
               <li>Your name and phone number (when you submit a quote request or contact form)</li>
@@ -50,7 +50,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-extrabold text-gray-900 mb-3">3. How we use your data</h2>
+            <h2 className="text-xl font-bold text-ink mb-3">3. How we use your data</h2>
             <p>We use the information you provide solely to:</p>
             <ul className="list-disc pl-5 mt-2 space-y-1">
               <li>Respond to your enquiry or quote request</li>
@@ -64,7 +64,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-extrabold text-gray-900 mb-3">4. Legal basis</h2>
+            <h2 className="text-xl font-bold text-ink mb-3">4. Legal basis</h2>
             <p>
               We process your personal data on the basis of legitimate interests (responding to
               your enquiry) and, where you book an appointment, on the basis of performing a
@@ -73,7 +73,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-extrabold text-gray-900 mb-3">5. How long we keep your data</h2>
+            <h2 className="text-xl font-bold text-ink mb-3">5. How long we keep your data</h2>
             <p>
               We retain contact details and job information for up to 2 years for warranty
               and record-keeping purposes. After this period, your data is securely deleted.
@@ -81,17 +81,16 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-extrabold text-gray-900 mb-3">6. Third-party services</h2>
+            <h2 className="text-xl font-bold text-ink mb-3">6. Third-party services</h2>
             <p>Our website uses the following third-party services which may process your data:</p>
             <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li><strong>Formspree</strong> — processes quote form submissions and forwards them to us by email</li>
-              <li><strong>Calendly</strong> — used for online booking; governed by Calendly&apos;s own privacy policy</li>
-              <li><strong>Google Maps</strong> — embedded maps on our contact and areas pages</li>
+              <li><strong className="text-ink">Formspree</strong> — processes quote form submissions and forwards them to us by email</li>
+              <li><strong className="text-ink">Google Maps</strong> — embedded maps on our contact and areas pages</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-xl font-extrabold text-gray-900 mb-3">7. Your rights</h2>
+            <h2 className="text-xl font-bold text-ink mb-3">7. Your rights</h2>
             <p>Under UK GDPR you have the right to:</p>
             <ul className="list-disc pl-5 mt-2 space-y-1">
               <li>Access the personal data we hold about you</li>
@@ -101,13 +100,13 @@ export default function PrivacyPage() {
             </ul>
             <p className="mt-2">
               To exercise any of these rights, email us at{" "}
-              <a href={EMAIL_HREF} className="text-brand underline">{EMAIL}</a>. We will
+              <a href={EMAIL_HREF} className="text-brand-light underline">{EMAIL}</a>. We will
               respond within 30 days.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-extrabold text-gray-900 mb-3">8. Cookies</h2>
+            <h2 className="text-xl font-bold text-ink mb-3">8. Cookies</h2>
             <p>
               This website does not use tracking or advertising cookies. We do not use Google
               Analytics or any similar analytics tools.
@@ -115,11 +114,11 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-extrabold text-gray-900 mb-3">9. Contact</h2>
+            <h2 className="text-xl font-bold text-ink mb-3">9. Contact</h2>
             <p>
               If you have any questions about this policy or a complaint about how we handle
               your data, please email{" "}
-              <a href={EMAIL_HREF} className="text-brand underline">{EMAIL}</a>.
+              <a href={EMAIL_HREF} className="text-brand-light underline">{EMAIL}</a>.
             </p>
             <p className="mt-2">
               You also have the right to lodge a complaint with the Information Commissioner&apos;s
@@ -128,7 +127,7 @@ export default function PrivacyPage() {
                 href="https://ico.org.uk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-brand underline"
+                className="text-brand-light underline"
               >
                 ico.org.uk
               </a>.

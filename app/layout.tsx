@@ -16,32 +16,33 @@ import MobileBar from "./components/MobileBar";
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0D1F5C",
+  themeColor: "#0C0E14",
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://njplumbingheating.co.uk"),
+  metadataBase: new URL("https://bksgasheating.co.uk"),
   title: {
-    default: "NJ Plumbing & Heating Bedford | Plumber Bedford",
-    template: "%s | NJ Plumbing & Heating",
+    default: "BKS Gas & Heating | Gas Safe Engineer West London",
+    template: "%s | BKS Gas & Heating",
   },
   description:
-    "Bedford's trusted plumber. Plumbing repairs, drainage, bathrooms and heating across Bedford and Bedfordshire. Call 07927 910665.",
+    "Gas Safe registered heating engineer in West London. Boiler installation, servicing, plumbing repairs and bathroom fitting across West London, Surrey, Buckinghamshire and Hertfordshire. Gas Safe No. 973556.",
   keywords: [
-    "plumber Bedford",
-    "emergency plumber Bedford",
-    "drain unblocking Bedford",
-    "plumbing services Bedford",
-    "heating Bedford",
-    "bathroom installation Bedford",
-    "NJ Plumbing",
-    "NJ Plumbing Heating Bedford",
+    "boiler installation West London",
+    "boiler service West London",
+    "Gas Safe engineer West London",
+    "plumber West Drayton",
+    "heating engineer West London",
+    "bathroom installation West London",
+    "BKS Gas Heating",
+    "boiler repair Uxbridge",
+    "Gas Safe registered engineer",
   ],
   openGraph: {
     type: "website",
     locale: "en_GB",
-    siteName: "NJ Plumbing & Heating",
-    images: [{ url: "/logo.jpg", width: 800, height: 800, alt: "NJ Plumbing & Heating Bedford" }],
+    siteName: "BKS Gas & Heating",
+    images: [{ url: "/images/van-side.jpg", width: 1200, height: 630, alt: "BKS Gas & Heating — West London" }],
   },
   alternates: {
     canonical: "/",
@@ -51,45 +52,41 @@ export const metadata: Metadata = {
 const schema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "NJ Plumbing & Heating",
-  url: "https://njplumbingheating.co.uk",
-  telephone: "07927910665",
-  email: "njplumbingandheating1@gmail.com",
+  name: "BKS Gas & Heating",
+  url: "https://bksgasheating.co.uk",
+  telephone: "07464420695",
+  email: "bksgas@outlook.com",
+  description: "Gas Safe registered heating engineer (No. 973556) based in West Drayton. Boiler installation and servicing, plumbing repairs and bathroom fitting across West London, Surrey, Buckinghamshire and Hertfordshire.",
   sameAs: [
-    "https://www.instagram.com/nj.plumbingandheating",
-    "https://maps.app.goo.gl/FEdm2KHkVyyugheu7",
+    "https://www.instagram.com/bksgasheating",
+    "https://www.facebook.com/share/18hiaNi3QD/",
   ],
-  hasMap: "https://maps.app.goo.gl/FEdm2KHkVyyugheu7",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "96 Hillesden Avenue",
-    addressLocality: "Bedford",
-    addressRegion: "Bedfordshire",
+    streetAddress: "96 Thornton Avenue",
+    addressLocality: "West Drayton",
+    addressRegion: "London",
+    postalCode: "UB7 9JY",
     addressCountry: "GB",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 52.136,
-    longitude: -0.467,
+    latitude: 51.506,
+    longitude: -0.472,
   },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "08:30",
-      closes: "17:00",
+      opens: "08:00",
+      closes: "18:00",
     },
   ],
   areaServed: [
-    "Bedford", "Kempston", "Ampthill", "Flitwick", "Sandy",
-    "Biggleswade", "Shefford", "Cranfield", "Wixams", "Bedfordshire",
-    "Milton Keynes", "Northampton",
+    "West London", "West Drayton", "Uxbridge", "Hayes", "Ealing", "Hounslow",
+    "Slough", "Windsor", "Richmond", "Kingston upon Thames", "Guildford",
+    "Woking", "Surrey", "Buckinghamshire", "Hertfordshire",
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "47",
-  },
   priceRange: "££",
 };
 
@@ -102,7 +99,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col bg-bg text-ink">
         <StickyBar />
         <Header />
         <main className="flex-1 pb-16 md:pb-0">{children}</main>

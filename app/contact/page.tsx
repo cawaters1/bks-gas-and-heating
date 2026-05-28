@@ -1,193 +1,152 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, ExternalLink, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, ShieldCheck, Clock } from "lucide-react";
 import QuoteForm from "../components/QuoteForm";
-import { PHONE, PHONE_HREF, EMAIL, EMAIL_HREF, LOCATION, GOOGLE_BUSINESS_URL, WHATSAPP } from "../lib/constants";
 import BreadcrumbSchema from "../components/BreadcrumbSchema";
+import { PHONE, PHONE_HREF, EMAIL, EMAIL_HREF, WHATSAPP, ADDRESS, GAS_SAFE_NUMBER, GOOGLE_BUSINESS_URL } from "../lib/constants";
 
 export const metadata: Metadata = {
-  title: "Contact NJ Plumbing & Heating Bedford | Get a Free Quote",
+  title: "Contact BKS Gas & Heating | Get a Free Quote West London",
   description:
-    "Contact NJ Plumbing & Heating in Bedford for a free, no-obligation quote. Call 07927 910665, WhatsApp or fill in our quick quote form.",
+    "Contact BKS Gas & Heating for a free, no-obligation quote. Gas Safe registered engineer serving West London, Surrey, Buckinghamshire and Hertfordshire. Call 07464 420695.",
   alternates: { canonical: "/contact" },
-  openGraph: { url: "https://njplumbingheating.co.uk/contact" },
+  openGraph: { url: "https://bksgasheating.co.uk/contact" },
 };
 
 export default function ContactPage() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "Home", url: "https://njplumbingheating.co.uk" }, { name: "Contact", url: "https://njplumbingheating.co.uk/contact" }]} />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Contact", href: "/contact" },
+        ]}
+      />
+
       {/* Hero */}
-      <section className="bg-brand text-white py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <nav className="text-sm text-white/50 mb-6">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span className="mx-2">/</span>
-            <span className="text-white">Contact</span>
-          </nav>
-          <h1 className="text-5xl font-extrabold mb-4">Get in Touch</h1>
-          <p className="text-blue-100 text-lg max-w-2xl">
-            Free estimates on all work. £80 call-out fee — first hour, diagnostics and repair included. We call you back within the hour.
+      <section className="bg-surface border-b border-border-dark py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 text-steel text-sm mb-4">
+            <Link href="/" className="hover:text-ink transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-ink">Contact</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-ink mb-3">Get in Touch</h1>
+          <p className="text-steel text-lg max-w-xl">
+            Free estimates on all work. £100 call-out — first hour, diagnostics and repair included. We aim to call you back within the hour.
           </p>
         </div>
       </section>
 
-      {/* Two-column layout */}
-      <section className="bg-offwhite py-20 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Left — contact details + map */}
-          <div>
-            <h2 className="text-2xl font-extrabold text-gray-900 mb-6">Contact Details</h2>
-
-            <div className="space-y-4 mb-8">
-              <a
-                href={PHONE_HREF}
-                className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-steel hover:border-brand transition-colors group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand transition-colors">
-                  <Phone size={20} className="text-brand group-hover:text-white transition-colors" />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-400 uppercase tracking-widest mb-0.5">Phone</p>
-                  <p className="font-bold text-gray-900 text-lg">{PHONE}</p>
-                  <p className="text-gray-500 text-xs mt-0.5">Call for immediate response</p>
-                </div>
-              </a>
-
-              <a
-                href={WHATSAPP}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-steel hover:border-green-400 transition-colors group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-100 transition-colors">
-                  <MessageCircle size={20} className="text-green-600" />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-400 uppercase tracking-widest mb-0.5">WhatsApp</p>
-                  <p className="font-bold text-gray-900 text-lg">Message Nick directly</p>
-                  <p className="text-gray-500 text-xs mt-0.5">Quick response via WhatsApp</p>
-                </div>
-              </a>
-
-              <a
-                href={EMAIL_HREF}
-                className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-steel hover:border-brand transition-colors group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand transition-colors">
-                  <Mail size={20} className="text-brand group-hover:text-white transition-colors" />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-400 uppercase tracking-widest mb-0.5">Email</p>
-                  <p className="font-bold text-gray-900 break-all">{EMAIL}</p>
-                </div>
-              </a>
-
-              <div className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-steel">
-                <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0">
-                  <MapPin size={20} className="text-brand" />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-400 uppercase tracking-widest mb-0.5">Location</p>
-                  <p className="font-bold text-gray-900">{LOCATION}</p>
-                </div>
+      {/* Contact Methods + Form */}
+      <section className="py-14 bg-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Left: contact details */}
+            <div>
+              <h2 className="text-2xl font-bold text-ink mb-6">Contact Details</h2>
+              <div className="space-y-4 mb-8">
+                <a
+                  href={PHONE_HREF}
+                  className="flex items-center gap-4 bg-surface border border-border-dark rounded-xl p-4 hover:border-border-emphasis transition-colors group"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-elevated flex items-center justify-center flex-shrink-0">
+                    <Phone size={20} className="text-brand-light" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-steel-muted uppercase tracking-wider mb-0.5">Phone</p>
+                    <p className="font-semibold text-ink group-hover:text-brand-light transition-colors">{PHONE}</p>
+                    <p className="text-xs text-steel">Mon–Sun 8am–6pm</p>
+                  </div>
+                </a>
+                <a
+                  href={WHATSAPP}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 bg-surface border border-border-dark rounded-xl p-4 hover:border-border-emphasis transition-colors group"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-elevated flex items-center justify-center flex-shrink-0">
+                    <MessageCircle size={20} className="text-green-400" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-steel-muted uppercase tracking-wider mb-0.5">WhatsApp</p>
+                    <p className="font-semibold text-ink group-hover:text-green-400 transition-colors">Message Bailey directly</p>
+                    <p className="text-xs text-steel">Quick responses</p>
+                  </div>
+                </a>
+                <a
+                  href={EMAIL_HREF}
+                  className="flex items-center gap-4 bg-surface border border-border-dark rounded-xl p-4 hover:border-border-emphasis transition-colors group"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-elevated flex items-center justify-center flex-shrink-0">
+                    <Mail size={20} className="text-steel" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-steel-muted uppercase tracking-wider mb-0.5">Email</p>
+                    <p className="font-semibold text-ink group-hover:text-brand-light transition-colors break-all">{EMAIL}</p>
+                    <p className="text-xs text-steel">We reply same day</p>
+                  </div>
+                </a>
               </div>
 
-              <div className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-steel">
-                <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0">
-                  <Clock size={20} className="text-brand" />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-400 uppercase tracking-widest mb-0.5">Opening Hours</p>
-                  <div className="space-y-0.5">
-                    <p className="font-bold text-gray-900 text-sm">Monday – Sunday: 8:30am – 5:00pm</p>
-                    <p className="text-brand text-xs font-semibold mt-1">Emergency call-outs available outside these hours</p>
+              {/* Address */}
+              <div className="bg-surface border border-border-dark rounded-xl p-5 mb-5">
+                <div className="flex items-start gap-3">
+                  <MapPin size={18} className="text-steel flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-ink mb-1">Based in West Drayton</p>
+                    <p className="text-steel text-sm">{ADDRESS}</p>
+                    <a
+                      href={GOOGLE_BUSINESS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-brand-light text-sm hover:text-ink transition-colors mt-1 inline-block"
+                    >
+                      View on Google Maps →
+                    </a>
                   </div>
                 </div>
               </div>
 
-              <a
-                href={GOOGLE_BUSINESS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-steel hover:border-brand transition-colors group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand transition-colors">
-                  <ExternalLink size={20} className="text-brand group-hover:text-white transition-colors" />
+              {/* Gas Safe + Hours */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-surface border border-border-dark rounded-xl p-4">
+                  <ShieldCheck size={18} className="text-gas-safe mb-2" />
+                  <p className="text-xs font-bold text-gas-safe">Gas Safe Registered</p>
+                  <p className="text-steel text-xs mt-0.5">No. {GAS_SAFE_NUMBER}</p>
                 </div>
-                <div>
-                  <p className="text-xs text-gray-400 uppercase tracking-widest mb-0.5">Google</p>
-                  <p className="font-bold text-brand text-sm">View us on Google Maps</p>
-                  <p className="text-gray-500 text-xs">Read reviews &amp; get directions</p>
+                <div className="bg-surface border border-border-dark rounded-xl p-4">
+                  <Clock size={18} className="text-steel mb-2" />
+                  <p className="text-xs font-bold text-ink">Operating Hours</p>
+                  <p className="text-steel text-xs mt-0.5">Mon–Sun 8am–6pm</p>
                 </div>
-              </a>
+              </div>
             </div>
 
-            {/* Map embed */}
-            <div className="rounded-2xl overflow-hidden border border-steel shadow-sm">
-              <iframe
-                src="https://maps.google.com/maps?q=Bedford,+Bedfordshire,+UK&output=embed"
-                width="100%"
-                height={300}
-                loading="lazy"
-                allowFullScreen
-                style={{ border: 0, display: "block" }}
-                title="NJ Plumbing & Heating — Bedford location"
-              />
-            </div>
-          </div>
-
-          {/* Right — quote form */}
-          <div>
-            <div className="bg-brand rounded-2xl p-8">
-              <h2 className="text-2xl font-extrabold text-white mb-2">
-                Request a Free Quote
-              </h2>
-              <p className="text-white/70 text-sm mb-6">
-                Fill in the form and we&apos;ll call you back within the hour.
-              </p>
+            {/* Right: quote form */}
+            <div>
+              <h2 className="text-2xl font-bold text-ink mb-6">Request a Quote</h2>
               <QuoteForm />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact FAQs */}
-      <section className="bg-white py-16 px-4">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-8">
-            Getting in Touch — FAQ
-          </h2>
-          <div className="divide-y divide-steel">
+      {/* FAQ */}
+      <section className="py-14 bg-surface border-t border-border-dark">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-ink mb-6">Getting in Touch</h2>
+          <div className="space-y-4">
             {[
-              {
-                q: "How quickly will you get back to me?",
-                a: "We aim to call back within the hour during normal working hours. For emergencies, call us directly on the number above for immediate response.",
-              },
-              {
-                q: "Is the quote genuinely free?",
-                a: "Yes — absolutely free, no obligation. We'll assess your job and provide a fixed price before any work starts. There's no charge for the visit or the quote.",
-              },
-              {
-                q: "Can I get a quote by email?",
-                a: "For some jobs, yes — email us a description and photos if you have them. For most work, we prefer to do a quick visit so we can give you an accurate fixed price.",
-              },
-              {
-                q: "Do you offer same-day appointments?",
-                a: "Yes — we offer same-day appointments for most plumbing, drainage and heating work. Availability depends on the day, but we'll always do our best to fit you in quickly.",
-              },
-              {
-                q: "I have an emergency — what do I do?",
-                a: "Call us immediately on the number above. Don't fill in a form for emergencies — call so we can respond straight away.",
-              },
+              { q: "How quickly will you get back to me?", a: "We aim to call back within the hour during normal working hours. For emergencies, call us directly for immediate response." },
+              { q: "Is the quote genuinely free?", a: "Yes — completely free, no obligation. We assess your job and give a fixed price before any work starts." },
+              { q: "Do you offer same-day appointments?", a: "Yes, where availability allows. Call or WhatsApp and we will do our best to get to you the same day." },
+              { q: "I have a gas emergency — what do I do?", a: "Call us immediately. If you smell gas, also call the National Gas Emergency Service on 0800 111 999 and ventilate the property." },
             ].map(({ q, a }) => (
-              <details key={q} className="group">
-                <summary className="cursor-pointer font-bold py-4 text-gray-900 list-none flex items-center justify-between gap-4 hover:text-brand transition-colors">
-                  {q}
-                  <span className="text-brand text-lg group-open:rotate-45 transition-transform flex-shrink-0">+</span>
-                </summary>
-                <p className="pb-4 text-gray-500 leading-relaxed text-sm">{a}</p>
-              </details>
+              <div key={q} className="bg-elevated border border-border-dark rounded-xl p-5">
+                <p className="font-semibold text-ink mb-1">{q}</p>
+                <p className="text-steel text-sm leading-relaxed">{a}</p>
+              </div>
             ))}
           </div>
         </div>

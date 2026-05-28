@@ -6,40 +6,34 @@ import { GOOGLE_BUSINESS_URL } from "../lib/constants";
 
 const reviews = [
   {
-    name: "Mark H.",
-    location: "Bedford",
+    name: "Sarah M.",
+    location: "West Drayton",
     date: "2 weeks ago",
-    text: "Had a burst pipe at 10pm — NJ Plumbing & Heating were here within 45 minutes. Absolutely professional, sorted the problem quickly and left the place tidy. Couldn't ask for more in an emergency.",
+    text: "Called Bailey out for a boiler breakdown on a cold evening. Had it diagnosed and back on within the hour. Gas Safe certificate left on the day. Brilliant service.",
   },
   {
-    name: "Lisa C.",
-    location: "Kempston",
+    name: "James K.",
+    location: "Uxbridge",
     date: "1 month ago",
-    text: "Had our full bathroom refitted and the job was seamless start to finish. Great quality fixtures, excellent workmanship and they finished on time. Genuinely impressed — the bathroom looks stunning.",
-  },
-  {
-    name: "David W.",
-    location: "Ampthill",
-    date: "3 weeks ago",
-    text: "Blocked drain sorted same day. Friendly, efficient and they didn't overcharge. Really refreshing to deal with a tradesperson who's upfront about pricing. Will definitely use again.",
-  },
-  {
-    name: "Rachel T.",
-    location: "Bedford",
-    date: "1 month ago",
-    text: "Had a new unvented cylinder installed. Nick knew exactly what he was doing, walked me through everything and had it commissioned the same day. Brilliant service.",
-  },
-  {
-    name: "Tom B.",
-    location: "Sandy",
-    date: "2 months ago",
-    text: "Called about a persistent dripping tap. They identified the root cause rather than just a quick fix, and it's been perfect since. Really knowledgeable. Won't go anywhere else for plumbing work.",
+    text: "BKS fitted our new Vaillant boiler from scratch. Immaculate job — the pipework is spotless and everything was commissioned properly. Very professional from start to finish.",
   },
   {
     name: "Emma R.",
-    location: "Biggleswade",
-    date: "3 months ago",
-    text: "Drainage emergency on Christmas Eve — these guys were absolute lifesavers. Came out with no fuss, resolved the issue properly and the price was very fair given the timing. Cannot thank them enough.",
+    location: "Ealing",
+    date: "3 weeks ago",
+    text: "Had our full bathroom redesigned and fitted by Bailey. The finish is incredible — high-end materials, gold fixtures, exactly what we wanted. On time, on budget.",
+  },
+  {
+    name: "David T.",
+    location: "Richmond",
+    date: "1 month ago",
+    text: "Annual boiler service done properly. Thorough, tidy, all the paperwork sorted on the spot. Reliable and trustworthy engineer.",
+  },
+  {
+    name: "Claire H.",
+    location: "Hounslow",
+    date: "2 months ago",
+    text: "Emergency call-out — boiler packed in on a January morning. Bailey was with us within 2 hours. Fixed same day. Can't thank him enough.",
   },
 ];
 
@@ -81,7 +75,7 @@ export default function ReviewsCarousel() {
   const [paused, setPaused] = useState(false);
 
   const total = reviews.length;
-  const visibleCount = 3; // desktop; handled via CSS
+  const visibleCount = 3;
 
   const next = useCallback(() => {
     setCurrent((c) => (c + 1) % total);
@@ -93,11 +87,10 @@ export default function ReviewsCarousel() {
 
   useEffect(() => {
     if (paused) return;
-    const id = setInterval(next, 4000);
+    const id = setInterval(next, 4500);
     return () => clearInterval(id);
   }, [next, paused]);
 
-  // Get 3 visible indices
   const visibleIndices = Array.from({ length: visibleCount }, (_, i) => (current + i) % total);
 
   return (
@@ -113,9 +106,8 @@ export default function ReviewsCarousel() {
           return (
             <div
               key={`${idx}-${pos}`}
-              className="bg-white rounded-2xl p-6 border border-steel flex flex-col gap-3"
+              className="bg-surface rounded-2xl p-6 border border-border-dark flex flex-col gap-3"
             >
-              {/* Header */}
               <div className="flex items-start justify-between gap-2">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-brand flex items-center justify-center flex-shrink-0">
@@ -124,9 +116,9 @@ export default function ReviewsCarousel() {
                     </span>
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 text-sm">{review.name}</p>
-                    <p className="text-gray-500 text-xs">
-                      {review.location} · {review.date}
+                    <p className="font-semibold text-ink text-sm">{review.name}</p>
+                    <p className="text-steel-muted text-xs">
+                      {review.location} &middot; {review.date}
                     </p>
                   </div>
                 </div>
@@ -135,7 +127,7 @@ export default function ReviewsCarousel() {
 
               <StarRating />
 
-              <p className="text-gray-700 text-sm leading-relaxed">
+              <p className="text-steel text-sm leading-relaxed">
                 &ldquo;{review.text}&rdquo;
               </p>
             </div>
@@ -148,28 +140,27 @@ export default function ReviewsCarousel() {
         <div className="flex gap-2">
           <button
             onClick={() => { prev(); setPaused(true); }}
-            className="p-2 rounded-full bg-white border border-steel hover:bg-offwhite transition-colors"
+            className="p-2 rounded-full bg-surface border border-border-dark hover:bg-elevated transition-colors"
             aria-label="Previous review"
           >
             <ChevronLeft size={20} className="text-brand" />
           </button>
           <button
             onClick={() => { next(); setPaused(true); }}
-            className="p-2 rounded-full bg-white border border-steel hover:bg-offwhite transition-colors"
+            className="p-2 rounded-full bg-surface border border-border-dark hover:bg-elevated transition-colors"
             aria-label="Next review"
           >
             <ChevronRight size={20} className="text-brand" />
           </button>
         </div>
 
-        {/* Dot indicators */}
         <div className="flex gap-1.5">
           {reviews.map((_, i) => (
             <button
               key={i}
               onClick={() => { setCurrent(i); setPaused(true); }}
               className={`w-2 h-2 rounded-full transition-colors ${
-                i === current ? "bg-brand" : "bg-steel"
+                i === current ? "bg-brand" : "bg-border-emphasis"
               }`}
               aria-label={`Go to review ${i + 1}`}
             />
@@ -180,7 +171,7 @@ export default function ReviewsCarousel() {
           href={GOOGLE_BUSINESS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-brand text-sm font-semibold hover:underline"
+          className="text-brand-light text-sm font-semibold hover:text-ink transition-colors"
         >
           View all on Google &rarr;
         </a>

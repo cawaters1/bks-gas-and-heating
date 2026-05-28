@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://njplumbingheating.co.uk/sitemap.xml",
+    sitemap: "https://bksgasheating.co.uk/sitemap.xml",
   };
 }

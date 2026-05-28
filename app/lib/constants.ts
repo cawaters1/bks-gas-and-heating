@@ -1,19 +1,23 @@
-export const BUSINESS_NAME = "NJ Plumbing & Heating";
-export const PHONE = "07927 910665";
-export const PHONE_HREF = "tel:07927910665";
-export const EMAIL = "njplumbingandheating1@gmail.com";
-export const EMAIL_HREF = "mailto:njplumbingandheating1@gmail.com";
-export const WHATSAPP = "https://wa.me/447927910665";
-export const INSTAGRAM = "https://www.instagram.com/nj.plumbingandheating";
-export const LOCATION = "Bedford, Bedfordshire";
-export const ADDRESS = "96 Hillesden Avenue, Bedford, Bedfordshire";
-export const CITY = "Bedford";
-export const GOOGLE_BUSINESS_URL = "https://maps.app.goo.gl/FEdm2KHkVyyugheu7";
-export const SITE_URL = "https://njplumbingheating.co.uk";
+export const BUSINESS_NAME = "BKS Gas & Heating";
+export const PHONE = "07464 420695";
+export const PHONE_HREF = "tel:07464420695";
+export const EMAIL = "bksgas@outlook.com";
+export const EMAIL_HREF = "mailto:bksgas@outlook.com";
+export const WHATSAPP = "https://wa.me/447464420695";
+export const INSTAGRAM = "https://www.instagram.com/bksgasheating";
+export const FACEBOOK = "https://www.facebook.com/share/18hiaNi3QD/";
+export const LOCATION = "West Drayton, London";
+export const ADDRESS = "96 Thornton Avenue, West Drayton UB7 9JY";
+export const CITY = "West Drayton";
+export const GAS_SAFE_NUMBER = "973556";
+export const GOOGLE_BUSINESS_URL = "https://maps.google.com/?q=BKS+Gas+and+Heating+West+Drayton";
+export const SITE_URL = "https://bksgasheating.co.uk";
 export const AREAS = [
-  "Bedford","Kempston","Elstow","Shortstown","Wixams","Stewartby",
-  "Ampthill","Flitwick","Sandy","Biggleswade","Shefford",
-  "Clapham","Bromham","Wilstead","Cranfield","Woburn",
-  "Marston Moretaine","Oakley","Turvey","Houghton Conquest","Flitton",
-  "Milton Keynes","Northampton",
+  "West Drayton","Uxbridge","Hayes","Southall","Ealing","Hounslow",
+  "Slough","Windsor","Maidenhead","Staines","Egham","Weybridge",
+  "Walton-on-Thames","Kingston upon Thames","Richmond","Twickenham",
+  "Isleworth","Chiswick","Feltham","Ashford","Sunbury","Esher",
+  "Cobham","Guildford","Woking","Amersham","Beaconsfield",
+  "Gerrards Cross","High Wycombe","Iver","Watford","Rickmansworth",
+  "Chorleywood","Bushey",
 ];
