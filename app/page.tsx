@@ -73,7 +73,7 @@ export default function Home() {
             <br />
             Engineers in
             <br />
-            <span className="text-[#3A6FBF]">West London.</span>
+            <span className="text-brand-light">West London.</span>
           </h1>
           <p className="text-base text-steel leading-relaxed mb-10 max-w-xl mx-auto">
             Boiler installation, servicing and repair by Gas Safe registered engineers. Heating systems, plumbing repairs and premium bathroom fitting across West London and surrounding areas.
@@ -217,7 +217,7 @@ export default function Home() {
               "/images/bathroom-1.jpg",
               "/images/bathroom-5.jpg",
               "/images/bathroom-detail-2.jpg",
-              "/images/cylinder-1.jpg",
+              "/images/cylinder-2.jpg",
             ].map((src) => (
               <div key={src} className="relative aspect-square rounded-xl overflow-hidden border border-border-dark">
                 <Image

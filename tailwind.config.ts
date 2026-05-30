@@ -24,6 +24,7 @@ const config: Config = {
         "border-emphasis":"#2E3345",
         offwhite:        "#F4F2EE",
         "gas-safe":      "#00A651",
+        whatsapp:        "#25D366",
       },
     },
   },
