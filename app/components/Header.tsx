@@ -11,6 +11,7 @@ const serviceLinks = [
   { label: "Heating", href: "/services/heating" },
   { label: "Plumbing", href: "/services/plumbing" },
   { label: "Bathrooms", href: "/services/bathrooms" },
+  { label: "Landlords", href: "/services/landlords" },
   { label: "Emergency", href: "/emergency" },
 ];
 
