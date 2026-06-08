@@ -13,11 +13,8 @@ export const GAS_SAFE_NUMBER = "973556";
 export const GOOGLE_BUSINESS_URL = "https://share.google/kKBGgQ77uFVC8g0N5";
 export const SITE_URL = "https://bksgasandheating.com";
 export const AREAS = [
-  "West Drayton","Uxbridge","Hayes","Southall","Ealing","Hounslow",
-  "Slough","Windsor","Maidenhead","Staines","Egham","Weybridge",
-  "Walton-on-Thames","Kingston upon Thames","Richmond","Twickenham",
-  "Isleworth","Chiswick","Feltham","Ashford","Sunbury","Esher",
-  "Cobham","Guildford","Woking","Amersham","Beaconsfield",
-  "Gerrards Cross","High Wycombe","Iver","Watford","Rickmansworth",
-  "Chorleywood","Bushey",
+  "West Drayton","Yiewsley","Hayes","Uxbridge","Harlington","Southall",
+  "Hillingdon","Heston","Hounslow","Feltham","Staines-upon-Thames",
+  "Ashford","Slough","Windsor","Iver","Langley","Ealing","Hanwell",
+  "Greenford","Sunbury-on-Thames",
 ];
