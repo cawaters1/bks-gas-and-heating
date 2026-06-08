@@ -98,12 +98,13 @@ export default function AboutPage() {
             </div>
 
             <div className="space-y-4">
-              <div className="relative rounded-2xl overflow-hidden border border-border-dark" style={{ aspectRatio: "16/9" }}>
+              <div className="rounded-2xl overflow-hidden border border-border-dark">
                 <Image
                   src="/images/van-side.jpg"
                   alt="BKS Gas & Heating van — West London"
-                  fill
-                  className="object-cover object-[left_35%]"
+                  width={945}
+                  height={1440}
+                  className="w-full h-auto"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
