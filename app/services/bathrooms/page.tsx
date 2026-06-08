@@ -21,7 +21,11 @@ export const metadata: Metadata = {
   description:
     "Complete bathroom fitting and installation service across West London. Full refits, en-suites, shower rooms — quality finish guaranteed. Free estimates. Call 07464 420695.",
   alternates: { canonical: "/services/bathrooms" },
-  openGraph: { url: "https://bksgasandheating.com/services/bathrooms" },
+  openGraph: {
+    title: "Bathroom Fitting West London | Full Bathroom Installations | BKS Gas & Heating",
+    description: "Complete bathroom fitting and installation service across West London. Full refits, en-suites, shower rooms — quality finish guaranteed. Free estimates.",
+    url: "https://bksgasandheating.com/services/bathrooms",
+  },
 };
 
 const serviceCards = [
@@ -43,9 +47,55 @@ const steps = [
   { step: "5", title: "Snagging", desc: "Final walk-through — we don't leave until you're completely happy." },
 ];
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Bathroom Installation",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "BKS Gas & Heating",
+    telephone: "07464420695",
+  },
+  areaServed: "West London",
+  description: "Complete bathroom fitting and installation service across West London. Full refits, en-suites, shower rooms — quality finish guaranteed.",
+};
+
+const bathroomFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Do you supply the bathroom suite?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We can supply or fit only. We are happy to work with sanitaryware you have purchased yourself, or we can source and supply everything — your choice.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long does a full bathroom refit take?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A typical full bathroom refit takes 5–7 working days depending on the scope of work. En-suites and smaller rooms can be completed in 3–4 days.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you provide a fixed quote?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes — we always provide a detailed fixed quote before any work begins. No hidden charges.",
+      },
+    },
+  ],
+};
+
 export default function BathroomsPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(bathroomFaqSchema) }} />
       <BreadcrumbSchema
         items={[
           { name: "Home", href: "/" },

@@ -8,9 +8,13 @@ import BreadcrumbSchema from "../components/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "Areas We Cover | Gas Safe Engineer West London & Surrey",
   description:
-    "BKS Gas & Heating covers West London, West Drayton, Uxbridge, Hayes, Slough, Windsor, Surrey, Buckinghamshire and Hertfordshire. Gas Safe registered. Call 07464 420695.",
+    "BKS Gas & Heating covers West Drayton, Uxbridge, Hayes, Slough, Windsor and surrounding West London areas. Gas Safe registered engineer.",
   alternates: { canonical: "/areas" },
-  openGraph: { url: "https://bksgasandheating.com/areas" },
+  openGraph: {
+    title: "Areas We Cover | Gas Safe Engineer West London & Surrey",
+    description: "BKS Gas & Heating covers West Drayton, Uxbridge, Hayes, Slough, Windsor and surrounding West London areas. Gas Safe registered engineer.",
+    url: "https://bksgasandheating.com/areas",
+  },
 };
 
 const featuredAreas = [

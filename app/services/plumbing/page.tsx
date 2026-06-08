@@ -15,9 +15,13 @@ import BreadcrumbSchema from "../../components/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "Plumbing Services West London | BKS Gas & Heating",
   description:
-    "Plumbing repairs and installations across West London. Leaking pipes, dripping taps, burst pipes, toilet repairs. Gas Safe registered. Call 07464 420695.",
+    "Plumbing repairs and installations across West London. Leaking pipes, dripping taps, burst pipes, frozen pipes, toilet repairs. Gas Safe registered.",
   alternates: { canonical: "/services/plumbing" },
-  openGraph: { url: "https://bksgasandheating.com/services/plumbing" },
+  openGraph: {
+    title: "Plumbing Services West London | BKS Gas & Heating",
+    description: "Plumbing repairs and installations across West London. Leaking pipes, dripping taps, burst pipes, frozen pipes, toilet repairs. Gas Safe registered.",
+    url: "https://bksgasandheating.com/services/plumbing",
+  },
 };
 
 const serviceSchema = {
@@ -41,6 +45,7 @@ const serviceCards = [
   { title: "Kitchen Plumbing", desc: "Sink installation, dishwasher connections, washing machine plumbing and more." },
   { title: "Outdoor Taps", desc: "External tap installation with proper isolation valves and freeze protection." },
   { title: "Burst Pipes", desc: "Emergency response to burst pipes — rapid repair to protect your home." },
+  { title: "Frozen Pipes", desc: "Pipes frozen in winter? We safely thaw and inspect for damage — preventing costly bursts before they happen." },
 ];
 
 export default function PlumbingPage() {
@@ -76,7 +81,7 @@ export default function PlumbingPage() {
             <h1 className="text-4xl md:text-5xl font-extrabold text-ink">Plumbing Services</h1>
           </div>
           <p className="text-steel text-lg max-w-2xl">
-            Reliable plumbing repairs and installations across West London. From a dripping tap to a full pipe replacement — fast, upfront pricing.
+            Reliable plumbing repairs and installations across West London. From a dripping tap to burst or frozen pipes — fast response, upfront pricing.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mt-8">
             <a href={PHONE_HREF} className="inline-flex items-center gap-2 bg-brand text-white font-semibold px-6 py-3 rounded-xl hover:bg-brand-light transition-colors">

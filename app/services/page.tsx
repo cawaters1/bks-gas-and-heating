@@ -10,6 +10,7 @@ import {
   CheckCircle,
   ShieldCheck,
   MessageCircle,
+  FileText,
 } from "lucide-react";
 import CTABanner from "../components/CTABanner";
 import BreadcrumbSchema from "../components/BreadcrumbSchema";
@@ -20,7 +21,11 @@ export const metadata: Metadata = {
   description:
     "Gas Safe registered engineer offering boiler installation, heating repairs, plumbing and premium bathroom fitting across West London. Gas Safe No. 973556.",
   alternates: { canonical: "/services" },
-  openGraph: { url: "https://bksgasandheating.com/services" },
+  openGraph: {
+    title: "Plumbing, Heating & Gas Services West London | BKS Gas & Heating",
+    description: "Gas Safe registered engineer offering boiler installation, heating repairs, plumbing and premium bathroom fitting across West London. Gas Safe No. 973556.",
+    url: "https://bksgasandheating.com/services",
+  },
 };
 
 const services = [
@@ -86,6 +91,22 @@ const services = [
       "First and second fix plumbing",
       "Tiling — including stone and herringbone",
       "Freestanding baths and premium sanitaryware",
+    ],
+  },
+  {
+    icon: FileText,
+    title: "Landlord Gas Safety",
+    slug: "landlords",
+    badge: "Gas Safe",
+    description:
+      "CP12 gas safety certificates and annual boiler servicing for landlords. Legal compliance made easy.",
+    bullets: [
+      "CP12 gas safety certificate (annual)",
+      "Annual boiler service",
+      "All appliances inspected",
+      "Same-day certificate issued",
+      "Boiler repair and replacement",
+      "Portfolio and multi-property scheduling",
     ],
   },
 ];

@@ -9,9 +9,13 @@ import { PHONE, PHONE_HREF, WHATSAPP, GAS_SAFE_NUMBER } from "../lib/constants";
 export const metadata: Metadata = {
   title: "About BKS Gas & Heating | Gas Safe Engineer West London",
   description:
-    "BKS Gas & Heating is run by Bailey Kessler-Sutton — Gas Safe registered engineer (No. 973556) with over 10 years experience. Boiler installation, servicing, plumbing and bathrooms across West London.",
+    "BKS Gas & Heating — Gas Safe registered engineer (No. 973556) with 10+ years experience in West London. Boilers, heating, plumbing and bathrooms.",
   alternates: { canonical: "/about" },
-  openGraph: { url: "https://bksgasandheating.com/about" },
+  openGraph: {
+    title: "About BKS Gas & Heating | Gas Safe Engineer West London",
+    description: "BKS Gas & Heating — Gas Safe registered engineer (No. 973556) with 10+ years experience in West London. Boilers, heating, plumbing and bathrooms.",
+    url: "https://bksgasandheating.com/about",
+  },
 };
 
 const values = [
@@ -173,13 +177,13 @@ export default function AboutPage() {
                 { src: "/images/cylinder-1.jpg", alt: "Unvented cylinder installation" },
                 { src: "/images/van-rear.jpg", alt: "BKS Gas & Heating van" },
               ].map((img) => (
-                <div key={img.src} className="aspect-square rounded-xl overflow-hidden border border-border-dark">
+                <div key={img.src} className="relative aspect-square rounded-xl overflow-hidden border border-border-dark">
                   <Image
                     src={img.src}
                     alt={img.alt}
-                    width={300}
-                    height={300}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 25vw"
                   />
                 </div>
               ))}

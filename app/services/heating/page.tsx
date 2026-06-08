@@ -15,9 +15,13 @@ import BreadcrumbSchema from "../../components/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "Heating Services West London | Radiators, Cylinders & Underfloor | BKS Gas & Heating",
   description:
-    "Gas Safe registered heating engineer West London. Radiator installation, unvented cylinders (G3 qualified), wet underfloor heating and power flushing. Call 07464 420695.",
+    "Gas Safe heating engineer West London. Radiators, unvented cylinders (G3 qualified), underfloor heating and power flushing. Free estimates.",
   alternates: { canonical: "/services/heating" },
-  openGraph: { url: "https://bksgasandheating.com/services/heating" },
+  openGraph: {
+    title: "Heating Services West London | Radiators, Cylinders & Underfloor | BKS Gas & Heating",
+    description: "Gas Safe heating engineer West London. Radiators, unvented cylinders (G3 qualified), underfloor heating and power flushing. Free estimates.",
+    url: "https://bksgasandheating.com/services/heating",
+  },
 };
 
 const serviceSchema = {

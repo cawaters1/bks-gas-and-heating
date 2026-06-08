@@ -8,9 +8,13 @@ import { PHONE, PHONE_HREF, EMAIL, EMAIL_HREF, WHATSAPP, ADDRESS, GAS_SAFE_NUMBE
 export const metadata: Metadata = {
   title: "Contact BKS Gas & Heating | Get a Free Quote West London",
   description:
-    "Contact BKS Gas & Heating for a free, no-obligation quote. Gas Safe registered engineer serving West London, Surrey, Buckinghamshire and Hertfordshire. Call 07464 420695.",
+    "Contact BKS Gas & Heating for a free quote. Gas Safe registered engineer covering West London, Hayes, Uxbridge, Slough and surrounding areas.",
   alternates: { canonical: "/contact" },
-  openGraph: { url: "https://bksgasandheating.com/contact" },
+  openGraph: {
+    title: "Contact BKS Gas & Heating | Get a Free Quote West London",
+    description: "Contact BKS Gas & Heating for a free quote. Gas Safe registered engineer covering West London, Hayes, Uxbridge, Slough and surrounding areas.",
+    url: "https://bksgasandheating.com/contact",
+  },
 };
 
 export default function ContactPage() {

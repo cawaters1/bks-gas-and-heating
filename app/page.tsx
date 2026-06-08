@@ -213,17 +213,17 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {[
-              "/images/boiler-install-1.jpg",
-              "/images/boiler-install-2.jpg",
-              "/images/bathroom-1.jpg",
-              "/images/bathroom-5.jpg",
-              "/images/bathroom-detail-2.jpg",
-              "/images/cylinder-2.jpg",
-            ].map((src) => (
+              { src: "/images/boiler-install-1.jpg", alt: "Boiler installation West London by BKS Gas & Heating" },
+              { src: "/images/boiler-install-2.jpg", alt: "New boiler fitted in West Drayton home" },
+              { src: "/images/bathroom-1.jpg", alt: "Full bathroom refit by BKS Gas & Heating West London" },
+              { src: "/images/bathroom-5.jpg", alt: "Premium bathroom installation West London" },
+              { src: "/images/bathroom-detail-2.jpg", alt: "Bathroom tiling and finishing West London" },
+              { src: "/images/cylinder-2.jpg", alt: "Unvented hot water cylinder installation West London" },
+            ].map(({ src, alt }) => (
               <div key={src} className="relative aspect-square rounded-xl overflow-hidden border border-border-dark">
                 <Image
                   src={src}
-                  alt="BKS Gas & Heating — recent work"
+                  alt={alt}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 50vw, 33vw"

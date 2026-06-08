@@ -16,9 +16,13 @@ import BreadcrumbSchema from "../components/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "Emergency Gas & Heating Engineer West London | BKS Gas & Heating",
   description:
-    "Emergency gas and heating engineer in West London. Boiler breakdowns, gas leaks, no heating — fast response 7 days a week. Gas Safe registered No. 973556. Call 07464 420695.",
+    "Emergency gas and heating engineer in West London. Boiler breakdowns, gas leaks, no heating — available 24/7. Gas Safe registered No. 973556.",
   alternates: { canonical: "/emergency" },
-  openGraph: { url: "https://bksgasandheating.com/emergency" },
+  openGraph: {
+    title: "Emergency Gas & Heating Engineer West London | BKS Gas & Heating",
+    description: "Emergency gas and heating engineer in West London. Boiler breakdowns, gas leaks, no heating — available 24/7. Gas Safe registered No. 973556.",
+    url: "https://bksgasandheating.com/emergency",
+  },
 };
 
 const emergencyReviews = [
@@ -42,9 +46,29 @@ const emergencyReviews = [
   },
 ];
 
+const emergencyServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Emergency Gas & Heating Engineer",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "BKS Gas & Heating",
+    telephone: "07464420695",
+  },
+  areaServed: "West London",
+  description: "Emergency gas and heating engineer in West London available 24 hours a day, 7 days a week. Boiler breakdowns, gas leaks and heating failures.",
+  hoursAvailable: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    opens: "00:00",
+    closes: "23:59",
+  },
+};
+
 export default function EmergencyPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(emergencyServiceSchema) }} />
       <BreadcrumbSchema
         items={[
           { name: "Home", href: "/" },
