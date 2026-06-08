@@ -99,7 +99,7 @@ export default function AboutPage() {
                   src="/images/van-side.jpg"
                   alt="BKS Gas & Heating van — West London"
                   fill
-                  className="object-cover object-[center_35%]"
+                  className="object-cover object-[left_35%]"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
