@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Gas Safe registered heating engineer West London. Radiator installation, unvented cylinders (G3 qualified), wet underfloor heating and power flushing. Call 07464 420695.",
   alternates: { canonical: "/services/heating" },
-  openGraph: { url: "https://bksgasheating.co.uk/services/heating" },
+  openGraph: { url: "https://bksgasandheating.com/services/heating" },
 };
 
 const serviceSchema = {

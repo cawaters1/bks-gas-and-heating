@@ -7,11 +7,11 @@ export const WHATSAPP = "https://wa.me/447464420695";
 export const INSTAGRAM = "https://www.instagram.com/bksgasheating";
 export const FACEBOOK = "https://www.facebook.com/share/18hiaNi3QD/";
 export const LOCATION = "West Drayton, London";
-export const ADDRESS = "96 Thornton Avenue, West Drayton UB7 9JY";
+export const ADDRESS = "96 Thornton Avenue, Uxbridge, West Drayton UB7 9JY";
 export const CITY = "West Drayton";
 export const GAS_SAFE_NUMBER = "973556";
-export const GOOGLE_BUSINESS_URL = "https://maps.google.com/?q=BKS+Gas+and+Heating+West+Drayton";
-export const SITE_URL = "https://bksgasheating.co.uk";
+export const GOOGLE_BUSINESS_URL = "https://share.google/kKBGgQ77uFVC8g0N5";
+export const SITE_URL = "https://bksgasandheating.com";
 export const AREAS = [
   "West Drayton","Uxbridge","Hayes","Southall","Ealing","Hounslow",
   "Slough","Windsor","Maidenhead","Staines","Egham","Weybridge",

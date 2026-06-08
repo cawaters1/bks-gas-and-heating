@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description:
     "Gas Safe registered boiler installation, servicing and repairs across West London. Worcester Bosch, Vaillant, Ideal and all major brands. Free estimates. Call 07464 420695.",
   alternates: { canonical: "/services/boilers" },
-  openGraph: { url: "https://bksgasheating.co.uk/services/boilers" },
+  openGraph: { url: "https://bksgasandheating.com/services/boilers" },
 };
 
 const serviceSchema = {

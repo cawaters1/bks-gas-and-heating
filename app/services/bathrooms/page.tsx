@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description:
     "Complete bathroom fitting and installation service across West London. Full refits, en-suites, shower rooms — quality finish guaranteed. Free estimates. Call 07464 420695.",
   alternates: { canonical: "/services/bathrooms" },
-  openGraph: { url: "https://bksgasheating.co.uk/services/bathrooms" },
+  openGraph: { url: "https://bksgasandheating.com/services/bathrooms" },
 };
 
 const serviceCards = [

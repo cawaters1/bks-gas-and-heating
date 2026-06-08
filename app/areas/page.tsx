@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "BKS Gas & Heating covers West London, West Drayton, Uxbridge, Hayes, Slough, Windsor, Surrey, Buckinghamshire and Hertfordshire. Gas Safe registered. Call 07464 420695.",
   alternates: { canonical: "/areas" },
-  openGraph: { url: "https://bksgasheating.co.uk/areas" },
+  openGraph: { url: "https://bksgasandheating.com/areas" },
 };
 
 const featuredAreas = [

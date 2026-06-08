@@ -1,4 +1,4 @@
-const BASE = "https://bksgasheating.co.uk";
+const BASE = "https://bksgasandheating.com";
 
 interface Item {
   name: string;

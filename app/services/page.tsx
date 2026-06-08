@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description:
     "Gas Safe registered engineer offering boiler installation, heating repairs, plumbing and premium bathroom fitting across West London. Gas Safe No. 973556.",
   alternates: { canonical: "/services" },
-  openGraph: { url: "https://bksgasheating.co.uk/services" },
+  openGraph: { url: "https://bksgasandheating.com/services" },
 };
 
 const services = [

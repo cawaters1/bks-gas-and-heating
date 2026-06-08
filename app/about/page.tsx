@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "BKS Gas & Heating is run by Bailey Kessler-Sutton — Gas Safe registered engineer (No. 973556) with over 10 years experience. Boiler installation, servicing, plumbing and bathrooms across West London.",
   alternates: { canonical: "/about" },
-  openGraph: { url: "https://bksgasheating.co.uk/about" },
+  openGraph: { url: "https://bksgasandheating.com/about" },
 };
 
 const values = [

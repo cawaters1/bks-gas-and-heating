@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Plumbing repairs and installations across West London. Leaking pipes, dripping taps, burst pipes, toilet repairs. Gas Safe registered. Call 07464 420695.",
   alternates: { canonical: "/services/plumbing" },
-  openGraph: { url: "https://bksgasheating.co.uk/services/plumbing" },
+  openGraph: { url: "https://bksgasandheating.com/services/plumbing" },
 };
 
 const serviceSchema = {

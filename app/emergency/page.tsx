@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "Emergency gas and heating engineer in West London. Boiler breakdowns, gas leaks, no heating — fast response 7 days a week. Gas Safe registered No. 973556. Call 07464 420695.",
   alternates: { canonical: "/emergency" },
-  openGraph: { url: "https://bksgasheating.co.uk/emergency" },
+  openGraph: { url: "https://bksgasandheating.com/emergency" },
 };
 
 const emergencyReviews = [
@@ -189,12 +189,12 @@ export default function EmergencyPage() {
           <Clock size={40} className="text-brand-light mx-auto mb-4" />
           <h2 className="text-3xl font-bold text-ink mb-4">Fast Response</h2>
           <p className="text-steel text-lg max-w-2xl mx-auto mb-8">
-            We aim to reach most West London postcodes within the hour. Available every day including evenings and weekends.
+            We aim to reach most West London postcodes within the hour. Available 24 hours a day, 7 days a week — including evenings, weekends and bank holidays.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { val: "~1hr", label: "Target response time" },
-              { val: "7 days", label: "Available every day" },
+              { val: "24/7", label: "Always available" },
               { val: "£100", label: "Call-out — first hour included" },
             ].map((stat) => (
               <div key={stat.label} className="bg-elevated border border-border-dark rounded-2xl p-6">

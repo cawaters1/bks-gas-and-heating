@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description:
     "Gas Safe registered heating engineer in West London. Boiler installation, servicing, plumbing repairs and premium bathroom fitting. Gas Safe No. 973556. Call 07464 420695.",
   alternates: { canonical: "/" },
-  openGraph: { url: "https://bksgasheating.co.uk" },
+  openGraph: { url: "https://bksgasandheating.com" },
 };
 
 const faqSchema = {
@@ -99,6 +99,7 @@ export default function Home() {
           <div className="flex flex-wrap gap-6 justify-center text-sm text-steel">
             {[
               { label: "Gas Safe No. 973556", icon: ShieldCheck, iconClass: "text-gas-safe" },
+              { label: "Available 24/7", icon: CheckCircle, iconClass: "text-brand-light" },
               { label: "10+ Years Experience", icon: CheckCircle, iconClass: "text-brand-light" },
               { label: "£100 Call-Out", icon: CheckCircle, iconClass: "text-brand-light" },
               { label: "Free Estimates", icon: CheckCircle, iconClass: "text-brand-light" },

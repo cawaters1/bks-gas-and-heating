@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bksgasheating.co.uk"),
+  metadataBase: new URL("https://bksgasandheating.com"),
   title: {
     default: "BKS Gas & Heating | Gas Safe Engineer West London",
     template: "%s | BKS Gas & Heating",
@@ -53,7 +53,7 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "BKS Gas & Heating",
-  url: "https://bksgasheating.co.uk",
+  url: "https://bksgasandheating.com",
   telephone: "07464420695",
   email: "bksgas@outlook.com",
   description: "Gas Safe registered heating engineer (No. 973556) based in West Drayton. Boiler installation and servicing, plumbing repairs and bathroom fitting across West London, Surrey, Buckinghamshire and Hertfordshire.",
@@ -63,7 +63,7 @@ const schema = {
   ],
   address: {
     "@type": "PostalAddress",
-    streetAddress: "96 Thornton Avenue",
+    streetAddress: "96 Thornton Avenue, Uxbridge",
     addressLocality: "West Drayton",
     addressRegion: "London",
     postalCode: "UB7 9JY",
@@ -78,8 +78,8 @@ const schema = {
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "08:00",
-      closes: "18:00",
+      opens: "00:00",
+      closes: "23:59",
     },
   ],
   areaServed: [

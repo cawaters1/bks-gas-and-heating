@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Transparent pricing from BKS Gas & Heating. £100 call-out fee covers the first hour, diagnostics and repair where possible. No hidden charges. Gas Safe registered No. 973556.",
   alternates: { canonical: "/pricing" },
-  openGraph: { url: "https://bksgasheating.co.uk/pricing" },
+  openGraph: { url: "https://bksgasandheating.com/pricing" },
 };
 
 const services = [

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Contact BKS Gas & Heating for a free, no-obligation quote. Gas Safe registered engineer serving West London, Surrey, Buckinghamshire and Hertfordshire. Call 07464 420695.",
   alternates: { canonical: "/contact" },
-  openGraph: { url: "https://bksgasheating.co.uk/contact" },
+  openGraph: { url: "https://bksgasandheating.com/contact" },
 };
 
 export default function ContactPage() {
@@ -117,8 +117,8 @@ export default function ContactPage() {
                 </div>
                 <div className="bg-surface border border-border-dark rounded-xl p-4">
                   <Clock size={18} className="text-steel mb-2" />
-                  <p className="text-xs font-bold text-ink">Operating Hours</p>
-                  <p className="text-steel text-xs mt-0.5">Mon–Sun 8am–6pm</p>
+                  <p className="text-xs font-bold text-ink">Available</p>
+                  <p className="text-steel text-xs mt-0.5">24 hours, 7 days a week</p>
                 </div>
               </div>
             </div>
